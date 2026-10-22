@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // Geometria pulsującego rdzenia (Data Node)
     const geometry = new THREE.IcosahedronGeometry(2, 2);
     const material = new THREE.MeshBasicMaterial({ 
         color: 0x38bdf8, 
@@ -20,7 +19,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    // Cząsteczki w tle
     const particlesGeo = new THREE.BufferGeometry();
     const count = 100;
     const positions = new Float32Array(count * 3);
@@ -42,7 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
         sphere.rotation.x = elapsedTime * 0.15;
         sphere.rotation.y = elapsedTime * 0.25;
         
-        // Efekt pulsowania BioPulse
         let scaleFactor = 1 + Math.sin(elapsedTime * 3) * 0.08;
         sphere.scale.set(scaleFactor, scaleFactor, scaleFactor);
 
