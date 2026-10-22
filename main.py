@@ -1,11 +1,10 @@
 """
-BioPulse Core Engine - Data Extraction & Validation Pipeline
-Autor: Twoje Imię / Portfolio Projektowe
-Opis: Moduł odpowiedzialny za bezpieczne wczytywanie, walidację i eksport danych strukturalnych.
+BioPulse Core Engine - Biomedical Data Extraction & Validation Pipeline
+Autor: Portfolio Inżynieryjne
+Opis: System walidacji i struktaryzacji danych biologicznych (np. parametry krwi i tkanki) do formatu CSV.
 """
 
 import csv
-import sys
 from typing import List, Dict, Any
 
 class BioPulseEngine:
@@ -14,57 +13,57 @@ class BioPulseEngine:
         self.raw_data: List[Dict[str, Any]] = []
         self.validated_data: List[Dict[str, Any]] = []
 
-    def load_mock_data(self) -> None:
-        """Symulacja wczytywania surowych danych z zewnętrznego źródła/pliku."""
-        print(f"[INFO]: Łączenie ze źródłem danych: {self.source_name}...")
-        # Przykładowe surowe dane biznesowe/analityczne wymagające walidacji
+    def load_biological_data(self) -> None:
+        """Wczytywanie ustrukturyzowanych danych z notatek (np. składniki krwi, tkanki)[cite: 1]."""
+        print(f"[INFO]: Łączę ze źródłem danych: {self.source_name}...")
+        
+        # Surowe dane oparte na Twoich notatkach z biologii (krew, tkanki)[cite: 1]
         self.raw_data = [
-            {"id": 1, "kategoria": "Produkt A", "wartosc": 150.5, "status": "aktywny"},
-            {"id": 2, "kategoria": "Produkt B", "wartosc": -20.0, "status": "bledny"}, # Anomalia do odrzucenia
-            {"id": 3, "kategoria": "Produkt C", "wartosc": 300.0, "status": "aktywny"},
-            {"id": 4, "kategoria": "Produkt D", "wartosc": 0.0, "status": "nieaktywny"}
+            {"składnik": "Osocze", "norma_objętości": "55%", "typ": "płynna tkanka łączna", "status": "prawidłowy"},
+            {"składnik": "Erytrocyty", "norma_objętości": "4.5 mln/mm3", "typ": "komórki bezjądrzaste", "status": "prawidłowy"},
+            {"składnik": "Trombocyty", "norma_objętości": "200-400 tys/mm3", "typ": "płytki krwi", "status": "prawidłowy"},
+            {"składnik": "Anomalia_Testowa", "norma_objętości": "0", "typ": "błąd pomiaru", "status": "odrzucony"} # Rekord testowy do odrzucenia
         ]
-        print(f"[INFO]: Pomyślnie wczytano {len(self.raw_data)} surowych rekordów.")
+        print(f"[INFO]: Pomyślnie wczytano {len(self.raw_data)} rekordów biologicznych.")
 
-    def validate_and_process(self) -> None:
-        """Silnik walidacji: odrzuca niepoprawne dane, przetwarza zdrowe rekordy."""
-        print("[INFO]: Uruchamianie silnika walidacji reguł biznesowych...")
+    def validate_records(self) -> None:
+        """Silnik walidacji odrzucający anomalie i dane niespełniające norm[cite: 1]."""
+        print("[INFO]: Uruchamiam walidację reguł medycznych/biologicznych...")
         valid_count = 0
         
         for item in self.raw_data:
-            # Reguła biznesowa: wartość musi być większa od 0, a status aktywny
-            if item["wartosc"] > 0 and item["status"] == "aktywny":
+            # Reguła: odrzucamy rekordy ze statusem odrzuconym lub błędnym typem
+            if item["status"] == "prawidłowy" and item["typ"] != "błąd pomiaru":
                 self.validated_data.append(item)
                 valid_count += 1
             else:
-                print(f"[WARNING]: Odrzucono rekord ID {item['id']} z powodu niespełnienia norm.")
+                print(f"[WARNING]: Odrzucono niepoprawny rekord: {item['składnik']}")
                 
-        print(f"[INFO]: Walidacja zakończona. Przetworzono poprawnie: {valid_count}/{len(self.raw_data)} rekordów.")
+        print(f"[INFO]: Walidacja zakończona. Zweryfikowano pomyślnie: {valid_count}/{len(self.raw_data)}.")
 
     def export_to_csv(self, filename: str) -> None:
-        """Eksport zweryfikowanych danych do formatu CSV (Gotowe dla biznesu/Excela)."""
+        """Eksport czystych danych do formatu CSV (Gotowe do analizy lub Excela)."""
         if not self.validated_data:
-            print("[ERROR]: Brak zweryfikowanych danych do eksportu.")
+            print("[ERROR]: Brak danych do eksportu.")
             return
 
         keys = self.validated_data[0].keys()
         try:
-            with open(filename, mode='w', newline='', encoding='utf-8') as output_file:
-                writer = csv.DictWriter(output_file, fieldnames=keys)
+            with open(filename, mode='w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=keys)
                 writer.writeheader()
                 for row in self.validated_data:
                     writer.writerow(row)
-            print(f"[SUCCESS]: Pomyślnie wyeksportowano raport do pliku '{filename}'.")
+            print(f"[SUCCESS]: Wyeksportowano zweryfikowaną bazę do pliku '{filename}'.")
         except Exception as e:
-            print(f"[ERROR]: Nie udało się zapisać pliku CSV: {e}")
+            print(f"[ERROR]: Błąd zapisu pliku CSV: {e}")
 
 if __name__ == "__main__":
-    print("=== START SYSTEMU BIOPULSE ===")
+    print("=== START SILNIKA BIOPULSE ===")
     
-    # Inicjalizacja silnika dla przykładowego strumienia danych
-    engine = BioPulseEngine(source_name="Stream-Data-API-v1")
-    engine.load_mock_data()
-    engine.validate_and_process()
-    engine.export_to_csv("raport_biznesowy.csv")
+    engine = BioPulseEngine(source_name="Notatki-Biologia-Tkanki-Krwi")
+    engine.load_biological_data()
+    engine.validate_records()
+    engine.export_to_csv("baza_biopulse_raport.csv")
     
-    print("=== ZAKOŃCZONO DZIAŁANIE PROGRAMU ===")
+    print("=== ZAKOŃCZONO PROCES ===\n")
