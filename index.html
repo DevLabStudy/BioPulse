@@ -3,195 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioPulse Enterprise | High-Performance Data Pipeline & Validation Engine</title>
+    <title>BioPulse Enterprise | High-Performance Data Pipeline & SaaS</title>
+    <!-- Profesjonalny Favicon SVG zakodowany w Base64 / inline -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5%22/></svg>">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
 
-    <!-- Górny pasek nawigacyjny -->
-    <header class="navbar">
-        <div class="logo">BioPulse <span>Enterprise</span></div>
-        <nav class="nav-links">
-            <a href="#features">Funkcje</a>
-            <a href="#architecture">Architektura</a>
-            <a href="#pricing">Cennik</a>
-            <a href="#contact" class="nav-btn">Wdróż System</a>
+    <header>
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            BioPulse <span class="brand-sub">Enterprise</span>
+        </a>
+        <nav>
+            <a href="#pipeline">Architektura</a>
+            <a href="#cluster-view">Telemetry 3D</a>
+            <a href="#contact" class="nav-cta">Wdrożenie B2B</a>
         </nav>
     </header>
 
-    <main>
-        <!-- Sekcja Hero -->
-        <section class="hero">
-            <div class="hero-badge">🚀 v2.4 Enterprise Release Ready</div>
-            <h1>Intelligent <span class="highlight">Data Pipeline</span> & Validation Engine</h1>
-            <p>Zautomatyzuj strumienie danych w swojej firmie. BioPulse Enterprise zapewnia błyskawiczny ingest, rygorystyczną walidację reguł biznesowych oraz natychmiastowe wykrywanie anomalii dla sektora SMB i korporacji.</p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn-primary">Rozpocznij darmowy test</a>
-                <a href="#architecture" class="btn-secondary">Zobacz dokumentację</a>
+    <section class="hero">
+        <div class="telemetry-pill">
+            <span class="pulse-dot"></span> CLUSTER US-EAST-1: <strong style="color: #38bdf8;">ONLINE</strong> &nbsp;|&nbsp; LATENCY: <strong>14ms</strong>
+        </div>
+        <h1>Autonomiczny potok danych <br><span>dla krytycznych operacji B2B</span></h1>
+        <p>Enterprise-grade architektura silnika walidacji strumieni, analityki wieloformatowej oraz inspekcji bezpieczeństwa pod marką <strong>devlabstudy</strong>.</p>
+        
+        <div class="hero-stats">
+            <div class="stat-box">
+                <span class="stat-num">99.99%</span>
+                <span class="stat-label">Uptime klastra</span>
             </div>
-        </section>
-
-        <!-- Interaktywna wizualizacja 3D (Core Engine) -->
-        <section class="visualizer-section">
-            <div class="visualizer-header">
-                <h3>BioPulse Core Stream Visualizer</h3>
-                <span class="live-indicator">● LIVE STREAM ACTIVE</span>
+            <div class="stat-box">
+                <span class="stat-num">&lt; 0.5ms</span>
+                <span class="stat-label">Czas walidacji rekordu</span>
             </div>
-            <div id="canvas3d-container"></div>
-        </section>
-
-        <!-- Kluczowe metryki produktu -->
-        <section class="metrics-section">
-            <div class="metric-box">
-                <h2>99.99%</h2>
-                <p>Gwarantowany SLA</p>
-            </div>
-            <div class="metric-box">
-                <h2>&lt; 10ms</h2>
-                <p>Czas walidacji rekordu</p>
-            </div>
-            <div class="metric-box">
-                <h2>2.4M+</h2>
-                <p>Przetworzonych rekordów/s</p>
-            </div>
-            <div class="metric-box">
-                <h2>0%</h2>
-                <p>Współczynnik fałszywych alarmów</p>
-            </div>
-        </section>
-
-        <!-- Sekcja funkcji (Features) -->
-        <section id="features" class="features-section">
-            <div class="section-title">
-                <h2>Zaprojektowany dla skalowalnego biznesu</h2>
-                <p>Narzędzie, które rośnie razem z Twoją firmą – od lokalnych systemów po korporacyjne chmury.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>High-Speed Stream Ingest</h3>
-                    <p>Wielowątkowy odczyt masowych pakietów danych z zewnętrznych systemów ERP, CRM, baz SQL oraz punktów końcowych API.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Advanced Anomaly Detection</h3>
-                    <p>Autorskie algorytmy dopasowywania wzorców w czasie rzeczywistym odrzucające błędne rekordy i próby manipulacji.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Multi-Format Enterprise Export</h3>
-                    <p>Błyskawiczny zapis zwalidowanych danych do struktur analitycznych CSV, ustrukturyzowanego JSON oraz bezpośredni strumień do webhooków.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sekcja Architektury -->
-        <section id="architecture" class="arch-section">
-            <div class="section-title">
-                <h2>Architektura silnika (`main.py`)</h2>
-                <p>Czysty, modularny kod w języku Python gotowy do wdrożenia na dowolnym serwerze lub w chmurze.</p>
-            </div>
-            <div class="arch-grid">
-                <div class="arch-step">
-                    <span>01</span>
-                    <h4>Ingestion Layer</h4>
-                    <p>Bezpieczny nasłuch i odbiór strumienia danych wejściowych.</p>
-                </div>
-                <div class="arch-step">
-                    <span>02</span>
-                    <h4>Validation Core</h4>
-                    <p>Rygorystyczne sprawdzenie zgodności z normami biznesowymi.</p>
-                </div>
-                <div class="arch-step">
-                    <span>03</span>
-                    <h4>Sanitization</h4>
-                    <p>Odrzucenie anomalii i odizolowanie błędnych paczek.</p>
-                </div>
-                <div class="arch-step">
-                    <span>04</span>
-                    <h4>Export Engine</h4>
-                    <p>Generowanie raportów końcowych CSV / JSON.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sekcja Cennika -->
-        <section id="pricing" class="pricing-section">
-            <div class="section-title">
-                <h2>Elastyczny cennik dla każdego budżetu</h2>
-                <p>Wybierz model dopasowany do skali swojej działalności.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter (SMB)</h3>
-                    <div class="price">Darmowy <span>/ open-source</span></div>
-                    <p>Idealny dla małych firm i lokalnych wdrożeń automatyzujących pliki.</p>
-                    <ul>
-                        <li>✔ Pełny kod silnika w Pythonie</li>
-                        <li>✔ Eksport CSV / JSON</li>
-                        <li>✔ Społecznościowe wsparcie</li>
-                    </ul>
-                    <a href="#contact" class="btn-card">Pobierz kod</a>
-                </div>
-                <div class="pricing-card popular">
-                    <div class="popular-tag">Najwyższy wybór</div>
-                    <h3>Enterprise Pro</h3>
-                    <div class="price">Indywidualny <span>/ B2B</span></div>
-                    <p>Dla średnich i dużych przedsiębiorstw wymagających dedykowanego wsparcia.</p>
-                    <ul>
-                        <li>✔ Skalowalne mikroserwisy chmurowe</li>
-                        <li>✔ Dedykowane reguły walidacji</li>
-                        <li>✔ SLA 99.99% i wsparcie 24/7</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary">Skontaktuj się</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sekcja Kontaktu - wysyłka na contact@devlabstudy.ovh -->
-        <section id="contact" class="contact-section">
-            <div class="section-title">
-                <h2>Porozmawiajmy o wdrożeniu BioPulse</h2>
-                <p>Wiadomości z formularza trafiają bezpośrednio na nasz korporacyjny adres: <strong>contact@devlabstudy.ovh</strong></p>
-            </div>
-            <!-- Używamy Formspree (zastąp 'TWOJ_KOD_FORMESPREE' swoim ID z formspree.io przypisanym do contact@devlabstudy.ovh) -->
-            <form class="contact-form" action="https://formspree.io/f/TWOJ_KOD_FORMSPREE" method="POST">
-                <input type="text" name="name" placeholder="Twoje Imię / Firma" required>
-                <input type="email" name="email" placeholder="Adres e-mail korporacyjny" required>
-                <textarea name="message" placeholder="Opisz swoje zapotrzebowanie na potok danych..." rows="4" required></textarea>
-                <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Wyślij zapytanie do Biura</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Profesjonalna stopka -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>BioPulse Enterprise</h4>
-                <p>Nowoczesny silnik przetwarzania danych dla nowoczesnych przedsiębiorstw.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Nawigacja</h4>
-                <ul>
-                    <li><a href="#features">Funkcje</a></li>
-                    <li><a href="#architecture">Architektura</a></li>
-                    <li><a href="#pricing">Cennik</a></li>
-                    <li><a href="https://devlabstudy.github.io" target="_blank">DevLab Study Hub</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Dokumenty Prawne</h4>
-                <ul>
-                    <li><a href="regulamin.html">Regulamin Serwisu</a></li>
-                    <li><a href="cookies.html">Polityka Cookies</a></li>
-                </ul>
+            <div class="stat-box">
+                <span class="stat-num">Zero-Trust</span>
+                <span class="stat-label">Architektura bezpieczeństwa</span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 BioPulse Enterprise. Autorski projekt inżynieryjny w ramach inicjatywy <strong>devlabstudy</strong> (Kontakt: contact@devlabstudy.ovh).</p>
+    </section>
+
+    <!-- Karuzela architektoniczna klasy korporacyjnej -->
+    <section class="carousel-section" id="pipeline">
+        <div class="carousel-container">
+            <div class="section-header-tag">PIPELINE LIFECYCLE</div>
+            <h2>Rygorystyczny cykl przetwarzania strumienia</h2>
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide active">
+                    <span class="slide-tag">FAZA 01 // INGESTION</span>
+                    <h3>⚡ Ingestion Stream Buffer</h3>
+                    <p>Bezpieczny ingest paczek danych wejściowych z zewnętrznych klastrów API, buforowanie pamięciowe oraz natychmiastowa wstępna normalizator strukturalna.</p>
+                </div>
+                <div class="carousel-slide">
+                    <span class="slide-tag">FAZA 02 // VALIDATION CORE</span>
+                    <h3>🛡️ Strict Validation Core</h3>
+                    <p>Zaawansowane algorytmy izolacji anomalii, rygorystyczna weryfikacja norm operacyjnych oraz odrzucanie niespójnych struktur w czasie rzeczywistym.</p>
+                </div>
+                <div class="carousel-slide">
+                    <span class="slide-tag">FAZA 03 // MULTI-SINK EXPORT</span>
+                    <h3>📊 Multi-Sink Analytics Export</h3>
+                    <p>Automatyczna generacja i dystrybucja raportów końcowych w formatach CSV oraz zoptymalizowanych strukturach JSON do systemów klasy ERP.</p>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitor Klastra 3D (WebGL) -->
+    <section class="cluster-section" id="cluster-view">
+        <div class="section-header-tag">REAL-TIME TELEMETRY</div>
+        <h2>Wizualizacja stanu klastra WebGL</h2>
+        <div id="canvas-container">
+            <div class="canvas-overlay-info">
+                <span>SYSTEM STATUS: STABLE</span>
+                <span>NODES ACTIVE: 12/12</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja kontaktowa B2B -->
+    <section class="contact-section" id="contact">
+        <div class="section-header-tag">INQUIRY PORTAL</div>
+        <h2>Inicjalizacja wdrożenia komercyjnego</h2>
+        <p class="contact-desc">Skontaktuj się z zespołem inżynieryjnym devlabstudy w celu uzyskania specyfikacji technicznej oraz dostępu do klastra testowego.</p>
+        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Korporacyjny adres e-mail..." required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Opis zapotrzebowania infrastrukturalnego lub zakresu wdrożenia..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Wyślij zapytanie inżynieryjne</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 devlabstudy. All rights reserved. Platforma BioPulse Enterprise.</p>
+            <div class="footer-links">
+                <a href="regulamin.html">Regulamin Serwisu</a>
+                <a href="cookies.html">Polityka Cookies</a>
+            </div>
         </div>
     </footer>
 
