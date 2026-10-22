@@ -10,7 +10,7 @@
 <body>
 
     <div class="top-announcement-bar">
-        <span>⚡ 100% Autorski Kod | Bez WordPressa | Szybkie i bezpieczne strony</span>
+        <span>⚡ 100% Autorski Kod | Bez WordPressa | Bezpośrednie linki do podstron demo</span>
     </div>
 
     <header>
@@ -28,10 +28,10 @@
 
     <section class="hero">
         <div class="telemetry-pill">
-            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">W 100% AUTORSKI KOD</strong>
+            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">STABILNA WERSJA BEZ BŁĘDÓW</strong>
         </div>
         <h1>Ultraszybkie strony internetowe <br><span>dla firm i twórców</span></h1>
-        <p>Tworzymy nieszablonowe serwisy internetowe od zera. Kliknij w kafelek poniżej, aby otworzyć podgląd i przejść do gotowej podstrony.</p>
+        <p>Kliknij w dowolny kafelek wzoru poniżej, aby przejść bezpośrednio do w pełni działającej podstrony demonstracyjnej.</p>
         <div class="hero-btns">
             <a href="#portfolio" class="btn-primary">Zobacz wzory projektów</a>
             <a href="#pricing" class="btn-secondary">Sprawdź cennik (od 350 zł)</a>
@@ -58,67 +58,38 @@
         </div>
     </section>
 
-    <!-- Portfolio / Kafelki projektów -->
+    <!-- Portfolio / Kafelki projektów jako bezpośrednie linki (100% pewności działania) -->
     <section class="portfolio-section" id="portfolio">
         <div class="section-header-tag">WZORY I REALIZACJE</div>
-        <h2>Interaktywny katalog wzorów stron</h2>
-        <p class="portfolio-desc">Kliknij w kafelek, aby otworzyć podgląd i przejść do gotowej podstrony demo.</p>
+        <h2>Katalog gotowych podstron demo</h2>
+        <p class="portfolio-desc">Kliknij kafelek, aby otworzyć gotowy szablon.</p>
         
         <div class="portfolio-grid">
-            <!-- Kafelek 1: Fotografia -->
-            <div class="portfolio-card zoom-card" onclick="openModal('Fotografia / Portfolio', 'ArtFocus Studio – Jasne Portfolio Fotografa', 'Nowoczesna, jasna podstrona dla fotografa w odcieniach kremu i beżu. Posiada wbudowany kalendarz rezerwacji terminów ze strefą recepcji chronioną hasłem oraz mapę zasięgu.', 'examples/photography/index.html')">
+            <!-- Kafelek 1: Fotografia -> prowadzi bezpośrednio do podstrony -->
+            <a href="examples/photography/index.html" class="portfolio-card zoom-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="p-tag">Fotografia / Portfolio</div>
                 <h3>ArtFocus Studio</h3>
                 <p>Elegancka, jasna strona w odcieniach kremu i beżu z kalendarzem rezerwacji i panelem wizyt.</p>
-                <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
-            </div>
+                <div class="project-hint" style="color: var(--accent-color); font-weight: 600; margin-top: 1rem;">Otwórz podstronę demo →</div>
+            </a>
 
             <!-- Kafelek 2: Bistro -->
-            <div class="portfolio-card zoom-card" onclick="openModal('Gastronomia', 'Bistro & Cafe „Aura”', 'Wzór strony dla lokalu gastronomicznego z interaktywnym menu i rezerwacją stolików.', 'examples/bistro/index.html')">
+            <a href="examples/bistro/index.html" class="portfolio-card zoom-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="p-tag">Gastronomia</div>
                 <h3>Bistro & Cafe „Aura”</h3>
                 <p>Strona wizytówkowa dla lokalu z interaktywnym menu i rezerwacją stolika.</p>
-                <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
-            </div>
+                <div class="project-hint" style="color: var(--accent-color); font-weight: 600; margin-top: 1rem;">Otwórz podstronę demo →</div>
+            </a>
 
             <!-- Kafelek 3: SaaS -->
-            <div class="portfolio-card zoom-card" onclick="openModal('SaaS / Tech', 'CloudFlow SaaS Landing', 'Nowoczesna strona produktowa dla aplikacji chmurowej z cennikiem i panelem funkcji.', 'examples/saas/index.html')">
+            <a href="examples/saas/index.html" class="portfolio-card zoom-card" style="text-decoration: none; color: inherit; display: block;">
                 <div class="p-tag">SaaS / Tech</div>
                 <h3>CloudFlow SaaS Landing</h3>
                 <p>Nowoczesna strona produktowa dla aplikacji chmurowej z cennikiem i panelem funkcji.</p>
-                <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
-            </div>
+                <div class="project-hint" style="color: var(--accent-color); font-weight: 600; margin-top: 1rem;">Otwórz podstronę demo →</div>
+            </a>
         </div>
     </section>
-
-    <!-- Okno Modalne z wbudowanym skryptem obsługi bezpośredniej -->
-    <div class="modal-overlay" id="projectModal">
-        <div class="modal-container">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div class="modal-tag" id="modalTag">Kategoria</div>
-            <h3 id="modalTitle">Tytuł</h3>
-            <p id="modalDesc">Opis...</p>
-            
-            <div class="modal-preview-box">
-                <div class="mockup-browser-bar">
-                    <span class="m-dot red"></span><span class="m-dot yellow"></span><span class="m-dot green"></span>
-                    <span class="m-url" id="modalUrlText">link...</span>
-                </div>
-                <div class="mockup-screen-content">
-                    <div class="mockup-hero-banner">
-                        <span class="live-badge">GOTOWY SZABLON</span>
-                        <h4 id="mockupHeading">Podgląd</h4>
-                        <p>Kliknij przycisk poniżej, aby otworzyć podstronę demo.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-actions">
-                <a href="#" id="modalFullLink" target="_blank" class="btn-primary">Przejdź do pełnej podstrony demo 🚀</a>
-                <button class="btn-secondary" onclick="closeModal()">Zamknij</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Cennik -->
     <section class="pricing-section" id="pricing">
@@ -180,24 +151,5 @@
         <p>&copy; 2026 WebCraft Studio. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
-    <!-- Bezpośrednie funkcje JavaScript uodpornione na błędy cache -->
-    <script>
-        function openModal(tag, title, desc, link) {
-            document.getElementById('modalTag').textContent = tag;
-            document.getElementById('modalTitle').textContent = title;
-            document.getElementById('modalDesc').textContent = desc;
-            document.getElementById('mockupHeading').textContent = title;
-            document.getElementById('modalUrlText').textContent = link;
-            document.getElementById('modalFullLink').setAttribute('href', link);
-            
-            document.getElementById('projectModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('projectModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    </script>
 </body>
 </html>
