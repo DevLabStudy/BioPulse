@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Recepcji | ArtFocus Studio</title>
+    <style>
+        :root {
+            --bg-light: #fdfbf7;
+            --card-light: #f4efe6;
+            --text-dark: #2c2420;
+            --text-muted: #6b615b;
+            --accent-warm: #d4a373;
+            --accent-hover: #bc6c25;
+            --border-warm: #e6dfd3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); padding: 3rem 5%; }
+        .container { max-width: 800px; margin: 0 auto; background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 20px; padding: 3rem; }
+        h2 { margin-bottom: 1.5rem; }
+        .login-box, .admin-panel { display: none; }
+        .login-box.active, .admin-panel.active { display: block; }
+        input, button { padding: 0.9rem 1.2rem; border-radius: 8px; border: 1px solid var(--border-warm); font-size: 1rem; }
+        input { width: 100%; margin-bottom: 1rem; background: #fff; }
+        .btn-gold { background-color: var(--accent-warm); color: #fff; font-weight: 700; border: none; cursor: pointer; width: 100%; }
+        .btn-gold:hover { background-color: var(--accent-hover); }
+        .booking-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: #fff; border-radius: 8px; overflow: hidden; }
+        .booking-table th, .booking-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-warm); font-size: 0.95rem; }
+        .booking-table th { background: #e6dfd3; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--text-dark); text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Powrót do strony głównej studia</a>
+
+        <!-- Ekran logowania (Hasło) -->
+        <div class="login-box active" id="loginBox">
+            <h2>🔒 Strefa Ograniczona – Panel Recepcji</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Wprowadź hasło dostępu, aby przeglądać harmonogram wizyt.</p>
+            <input type="password" id="adminPassword" placeholder="Wpisz hasło (domyślnie: webcraft2026)">
+            <button class="btn-gold" id="loginBtn">Zaloguj do panelu</button>
+            <p id="errorMsg" style="color: #ef4444; margin-top: 1rem; font-size: 0.85rem;"></p>
+        </div>
+
+        <!-- Panel Zarządzania Wizytami -->
+        <div class="admin-panel" id="adminPanel">
+            <h2>📋 Harmonogram Rezerwacji (Recepcja)</h2>
+            <p style="color: var(--text-muted);">Lista wszystkich wizyt zaplanowanych przez klientów na stronie.</p>
+            
+            <table class="booking-table">
+                <thead>
+                    <tr>
+                        <th>Klient</th>
+                        <th>Rodzaj Sesji</th>
+                        <th>Data</th>
+                        <th>Godzina</th>
+                    </tr>
+                </i>
+                <tbody id="adminBookingList">
+                    <!-- Dynamiczne wpisy -->
+                </tbody>
+            </table>
+            <button class="btn-gold" id="clearDataBtn" style="margin-top: 2rem; background: #ef4444;">Wyczyść wszystkie rezerwacje</button>
+        </div>
+    </div>
+
+    <script>
+        const loginBox = document.getElementById('loginBox');
+        const adminPanel = document.getElementById('adminPanel');
+        const loginBtn = document.getElementById('loginBtn');
+        const passwordInput = document.getElementById('adminPassword');
+        const errorMsg = document.getElementById('errorMsg');
+        const bookingList = document.getElementById('adminBookingList');
+        const clearBtn = document.getElementById('clearDataBtn');
+
+        // Hasło dostępu do recepcji
+        const CORRECT_PASSWORD = 'webcraft2026';
+
+        loginBtn.addEventListener('click', () => {
+            if (passwordInput.value === CORRECT_PASSWORD) {
+                loginBox.classList.remove('active');
+                adminPanel.classList.add('active');
+                loadBookings();
+            } else {
+                errorMsg.textContent = 'Nieprawidłowe hasło! Spróbuj ponownie.';
+            }
+        });
+
+        function loadBookings() {
+            const bookings = JSON.parse(localStorage.getItem('artFocusBookings')) || [];
+            bookingList.innerHTML = '';
+            
+            if (bookings.length === 0) {
+                bookingList.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Brak zaplanowanych wizyt w systemie.</td></tr>`;
+                return;
+            }
+
+            bookings.forEach(b => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><b>${b.name}</b></td>
+                    <td>${b.type}</td>
+                    <td>${b.date}</td>
+                    <td><span style="color: var(--accent-hover); font-weight: bold;">${b.time}</span></td>
+                `;
+                bookingList.appendChild(tr);
+            });
+        }
+
+        clearBtn.addEventListener('click', () => {
+            if (confirm('Czy na pewno chcesz usunąć wszystkie rezerwacje?')) {
+                localStorage.removeItem('artFocusBookings');
+                loadBookings();
+            }
+        });
+    </script>
+</body>
+</html>
