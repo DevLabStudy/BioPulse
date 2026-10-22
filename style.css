@@ -130,30 +130,42 @@ body {
     color: var(--accent);
 }
 
+/* Naprawiona, w pełni responsywna tabela z poziomym scrollem */
 .table-container {
+    width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
     font-size: 14px;
     text-align: left;
+    white-space: nowrap;
 }
 
 th, td {
-    padding: 12px 15px;
+    padding: 14px 18px;
     border-bottom: 1px solid var(--border);
 }
 
 th {
-    background-color: rgba(30, 41, 59, 0.5);
+    background-color: rgba(30, 41, 59, 0.8);
     color: var(--text);
+    font-weight: 600;
 }
 
 td {
     color: var(--text-dim);
+}
+
+td:nth-child(3), td:nth-child(4) {
+    white-space: normal;
+    min-width: 200px;
 }
 
 footer {
