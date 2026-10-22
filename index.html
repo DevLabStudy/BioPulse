@@ -87,7 +87,7 @@
             </div>
         </section>
 
-        <!-- Sekcja Architektury (Architecture Breakdown) -->
+        <!-- Sekcja Architektury -->
         <section id="architecture" class="arch-section">
             <div class="section-title">
                 <h2>Architektura silnika (`main.py`)</h2>
@@ -110,14 +110,14 @@
                     <p>Odrzucenie anomalii i odizolowanie błędnych paczek.</p>
                 </div>
                 <div class="arch-step">
-                    <h4>04</h4>
+                    <span>04</span>
                     <h4>Export Engine</h4>
                     <p>Generowanie raportów końcowych CSV / JSON.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sekcja Cennika (Pricing Plans) -->
+        <!-- Sekcja Cennika -->
         <section id="pricing" class="pricing-section">
             <div class="section-title">
                 <h2>Elastyczny cennik dla każdego budżetu</h2>
@@ -150,17 +150,18 @@
             </div>
         </section>
 
-        <!-- Sekcja Kontaktu / Wdrożenia -->
+        <!-- Sekcja Kontaktu - wysyłka na contact@devlabstudy.ovh -->
         <section id="contact" class="contact-section">
             <div class="section-title">
                 <h2>Porozmawiajmy o wdrożeniu BioPulse</h2>
-                <p>Zostaw swoje zapytanie, a nasz zespół inżynieryjny skontaktuje się z Tobą w ciągu 24 godzin.</p>
+                <p>Wiadomości z formularza trafiają bezpośrednio na nasz korporacyjny adres: <strong>contact@devlabstudy.ovh</strong></p>
             </div>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Dziękujemy! Formularz symulacyjny został wysłany.');">
-                <input type="text" placeholder="Twoje Imię / Firma" required>
-                <input type="email" placeholder="Adres e-mail korporacyjny" required>
-                <textarea placeholder="Opisz swoje zapotrzebowanie na potok danych..." rows="4" required></textarea>
-                <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Wyślij zapytanie</button>
+            <!-- Używamy Formspree (zastąp 'TWOJ_KOD_FORMESPREE' swoim ID z formspree.io przypisanym do contact@devlabstudy.ovh) -->
+            <form class="contact-form" action="https://formspree.io/f/TWOJ_KOD_FORMSPREE" method="POST">
+                <input type="text" name="name" placeholder="Twoje Imię / Firma" required>
+                <input type="email" name="email" placeholder="Adres e-mail korporacyjny" required>
+                <textarea name="message" placeholder="Opisz swoje zapotrzebowanie na potok danych..." rows="4" required></textarea>
+                <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer;">Wyślij zapytanie do Biura</button>
             </form>
         </section>
     </main>
@@ -190,7 +191,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 BioPulse Enterprise. Autorski projekt inżynieryjny w ramach inicjatywy <strong>devlabstudy</strong>.</p>
+            <p>&copy; 2026 BioPulse Enterprise. Autorski projekt inżynieryjny w ramach inicjatywy <strong>devlabstudy</strong> (Kontakt: contact@devlabstudy.ovh).</p>
         </div>
     </footer>
 
