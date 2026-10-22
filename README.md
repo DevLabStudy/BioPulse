@@ -14,13 +14,35 @@
 
 ## 📂 Struktura Projektu
 
-```text
-/
-├── index.html                 # Główna strona agencji WebCraft Studio
-├── style.css                  # Główny, zaawansowany arkusz stylów
-├── .nojekyll                  # Plik wyłączający silnik Jekyll na GitHub Pages
-└── examples/
-    └── photography/           # Dedykowana podstrona demo (Portfolio Fotografa)
-        ├── index.html         # Jasny motyw (krem/beż), kalendarz, mapa, karuzela
-        ├── admin.html         # Zabezpieczony panel recepcji (podgląd rezerwacji)
-        └── salon.jpg          # Tło sekcji hero
+- `index.html` – Główna strona agencji WebCraft Studio
+- `style.css` – Główny, zaawansowany arkusz stylów
+- `.nojekyll` – Plik wyłączający silnik Jekyll na GitHub Pages
+- `examples/`
+  - `photography/` – Dedykowana podstrona demo (Portfolio Fotografa)
+    - `index.html` – Jasny motyw (krem/beż), kalendarz, mapa, karuzela
+    - `admin.html` – Zabezpieczony panel recepcji (podgląd rezerwacji)
+    - `salon.jpg` – Tło sekcji hero
+
+---
+
+## 🔍 Podstrony Demonstracyjne w Katalogu `examples/`
+
+Projekt zawiera działające szablony pokazowe, które możesz zaprezentować potencjalnym klientom:
+1. **ArtFocus Studio (`examples/photography/index.html`)**
+   * Jasny, elegancki design dedykowany branży fotograficznej (odcienie bieli, beżu i kremu).
+   * Interaktywny kalendarz z wyborem dni oraz konkretnych godzin rezerwacji sesji.
+   * Automatyczna karuzela zdjęć z płynnym przewijaniem.
+   * Osadzona mapa Google Maps (zasięg ogólnokrajowy).
+   * **Strefa Recepcji (`admin.html`):** Panel zarządzania umówionymi wizytami chroniony hasłem (`webcraft2026`), zapisujący dane w pamięci przeglądarki (`localStorage`).
+
+---
+
+## 🛠️ Technologie
+* **Frontend:** Czysty HTML5, Nowoczesny CSS3 (Grid, Flexbox, zmienne, responsywne media queries), Vanilla JavaScript.
+* **Wizualizacje / Inne:** WebGL / Three.js (gotowe do wdrożenia w sekcjach zaawansowanych).
+* **Formularze:** Integracja z serwisem Formspree do obsługi powiadomień e-mail.
+
+---
+
+## 📄 Licencja i Prawa
+Projekt stworzony w celach komercyjnych i edukacyjnych przez **WebCraft Studio**. Wszelkie prawa zastrzeżone.
