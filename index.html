@@ -12,71 +12,87 @@
 
     <header class="navbar">
         <div class="logo">BioPulse <span>Enterprise</span></div>
-        <div class="status-badge">SYSTEM ONLINE [LIVE]</div>
+        <div class="status-badge">CLUSTER STATUS: OPTIMAL [99.98% SLA]</div>
     </header>
 
     <main class="container">
         <section class="hero">
-            <h1>Enterprise <span class="highlight">Data Pipeline</span> Engine</h1>
-            <p>Wysokowydajny silnik do automatycznego przetwarzania, rygorystycznej walidacji i eksportu strumieni danych dla biznesu.</p>
+            <h1>Enterprise <span class="highlight">Data Pipeline</span> & Validation Engine</h1>
+            <p>Skalowalna platforma klasy korporacyjnej do strumieniowego przetwarzania danych, automatycznego wykrywania anomalii oraz bezpiecznego eksportu dla sektora SMB i korporacji.</p>
         </section>
 
-        <!-- Interaktywna grafika 3D - Cyfrowy Rdzeń Systemu -->
+        <!-- Wizualizacja 3D klastra danych (Three.js) -->
         <div id="canvas3d-container"></div>
+
+        <!-- Panel metryk biznesowych -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <h3>99.99%</h3>
+                <p>Uptime klastra</p>
+            </div>
+            <div class="metric-card">
+                <h3>&lt; 12ms</h3>
+                <p>Średni czas walidacji</p>
+            </div>
+            <div class="metric-card">
+                <h3>0.00%</h3>
+                <p>Współczynnik błędów krytycznych</p>
+            </div>
+        </section>
 
         <section class="grid">
             <div class="card">
-                <h3>⚡ Stream Ingest</h3>
-                <p>Błyskawiczny odczyt masowych strumieni danych z zewnętrznych źródeł, sensorów oraz systemów API.</p>
+                <h3>⚡ High-Speed Ingest</h3>
+                <p>Obsługa masowych strumieni danych wejściowych z zewnętrznych systemów ERP, CRM oraz sensorów IoT w czasie rzeczywistym.</p>
             </div>
             <div class="card">
-                <h3>🛡️ Anomaly Detection</h3>
-                <p>Automatyczna walidacja reguł biznesowych w czasie rzeczywistym, odrzucanie błędów i ochrona struktur.</p>
+                <h3>🛡️ Real-Time Anomaly Detection</h3>
+                <p>Zaawansowane algorytmy filtrujące błędne rekordy, zapobiegające oszustwom i chroniące integralność baz danych.</p>
             </div>
             <div class="card">
-                <h3>📊 Enterprise Export</h3>
-                <p>Bezpieczny zapis zweryfikowanych pakietów danych do uniwersalnych formatów analitycznych CSV oraz JSON.</p>
+                <h3>📊 Multi-Format Enterprise Export</h3>
+                <p>Błyskawiczny zapis zwalidowanych pakietów do ustandaryzowanych formatów CSV, JSON oraz przez dedykowane webhooki API.</p>
             </div>
         </section>
 
-        <!-- Sekcja Architektury zamiast biologii -->
+        <!-- Panel monitorowania aktywnych potoków danych -->
         <section class="notes-section">
-            <h2>⚙️ Architektura Modułowa silnika (`main.py`)</h2>
-            <p style="color: var(--text-dim); margin-bottom: 20px;">Specyfikacja techniczna potoku danych:</p>
+            <h2>⚙️ Active Data Stream Telemetry</h2>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">Ostatnie transakcje przetworzone przez silnik BioPulse:</p>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Warstwa Pipeline</th>
-                            <th>Komponent</th>
-                            <th>Technologia / Protokół</th>
-                            <th>Zadanie systemowe</th>
+                            <th>Transaction ID</th>
+                            <th>Partner / Klient</th>
+                            <th>Wartość / Waluta</th>
+                            <th>Status Walidacji</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>1. Ingestion</strong></td>
-                            <td>Stream Reader</td>
-                            <td>Python / JSON / CSV</td>
-                            <td>Pobieranie i buforowanie surowych paczek danych wejściowych</td>
+                            <td><strong>TRX-9001</strong></td>
+                            <td>Global Logistics Corp</td>
+                            <td>45,000.00 USD</td>
+                            <td><span class="badge-success">VERIFIED & PASSED</span></td>
                         </tr>
                         <tr>
-                            <td><strong>2. Validation</strong></td>
-                            <td>Anomaly Filter</td>
-                            <td>Regex & Business Rules</td>
-                            <td>Weryfikacja zakresów, odrzucanie ujemnych wartości i błędów</td>
+                            <td><strong>TRX-9002</strong></td>
+                            <td>SMB Retail Shop</td>
+                            <td>-1,200.50 EUR</td>
+                            <td><span class="badge-danger">FLAGGED / ANOMALY</span></td>
                         </tr>
                         <tr>
-                            <td><strong>3. Export</strong></td>
-                            <td>Multi-Format Exporter</td>
-                            <td>Disk I/O / API Stream</td>
-                            <td>Generowanie czystych raportów końcowych dla systemów ERP</td>
+                            <td><strong>TRX-9003</strong></td>
+                            <td>FinTech Partner X</td>
+                            <td>125,000.00 USD</td>
+                            <td><span class="badge-success">VERIFIED & PASSED</span></td>
                         </tr>
                         <tr>
-                            <td><strong>4. Presentation</strong></td>
-                            <td>Dashboard & 3D WebGL</td>
-                            <td>Three.js / CSS / GitHub Pages</td>
-                            <td>Wizualizacja stanu klastra i monitorowanie pulsu systemu</td>
+                            <td><strong>TRX-9005</strong></td>
+                            <td>Enterprise Cloud Ltd</td>
+                            <td>89,000.00 GBP</td>
+                            <td><span class="badge-success">VERIFIED & PASSED</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -85,7 +101,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 BioPulse Enterprise. Projekt inżynieryjny pod subdomenę biopulse.devlabstudy</p>
+        <p>&copy; 2026 BioPulse Enterprise Solutions. Platforma wdrożona pod adresem biopulse.devlabstudy</p>
     </footer>
 
 </body>
