@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtFocus Studio | Portfolio Fotografa</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        /* Dodatkowe style specyficzne dla galerii fotografa */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        .photo-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .photo-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-color);
+        }
+        .photo-placeholder {
+            height: 220px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .photo-info {
+            padding: 1.5rem;
+        }
+        .photo-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        .photo-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../../index.html" class="logo">
+            ← Powrót do WebCraft Studio
+        </a>
+        <nav>
+            <a href="#galeria">Galeria</a>
+            <a href="#o-mnie">O mnie</a>
+            <a href="#kontakt" class="nav-cta">Zarezerwuj sesję</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="telemetry-pill">
+            <span class="pulse-dot"></span> ARTFOCUS STUDIO: <strong style="color: var(--accent-color);">WIZUALNA DOSKONAŁOŚĆ</strong>
+        </div>
+        <h1>Zatrzymuję emocje <br><span>w kadrach najwyższej jakości</span></h1>
+        <p>Profesjonalna fotografia portretowa, komercyjna oraz reportażowa. Tworzę historie pisane światłem.</p>
+        <div class="hero-btns">
+            <a href="#kontakt" class="btn-primary">Zapytaj o termin sesji</a>
+        </div>
+    </section>
+
+    <!-- Galeria prac -->
+    <section id="galeria">
+        <div class="section-header-tag">PORTFOLIO</div>
+        <h2>Wybrane realizacje</h2>
+        <div class="photo-gallery">
+            <div class="photo-item">
+                <div class="photo-placeholder">SESJA PORTRETOWA #01</div>
+                <div class="photo-info">
+                    <h4>Portret Studyjny</h4>
+                    <p>Naturalne światło i głęboka ekspresja.</p>
+                </div>
+            </div>
+            <div class="photo-item">
+                <div class="photo-placeholder">FOTOGRAFIA BIZNESOWA #02</div>
+                <div class="photo-info">
+                    <h4>Wizerunek Korporacyjny</h4>
+                    <p>Kadry budujące profesjonalny wizerunek w sieci.</p>
+                </div>
+            </div>
+            <div class="photo-item">
+                <div class="photo-placeholder">REPORTAŻ #03</div>
+                <div class="photo-info">
+                    <h4>Fotografia Eventowa</h4>
+                    <p>Dynamiczne ujęcia z wydarzeń i konferencji.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja kontaktowa -->
+    <section class="order-section" id="kontakt" style="margin-top: 4rem;">
+        <div class="section-header-tag">REZERWACJA</div>
+        <h2>Skontaktuj się w sprawie sesji</h2>
+        <p class="contact-desc">Masz pytania dotyczące wolnych terminów lub wyceny indywidualnej? Napisz do mnie.</p>
+        
+        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Twoje Imię</label>
+                    <input type="text" name="name" placeholder="np. Anna Nowak" required>
+                </div>
+                <div class="form-group">
+                    <label>Adres E-mail</label>
+                    <input type="email" name="email" placeholder="anna@domena.pl" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Rodzaj sesji / Wiadomość</label>
+                <textarea name="message" placeholder="Napisz, jaki rodzaj sesji Cię interesuje i w jakim terminie..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">Wyślij zapytanie o termin</button>
+        </form>
+    </section>
+
+    <footer style="margin-top: 4rem;">
+        <div class="footer-content">
+            <p>&copy; 2026 ArtFocus Studio. Szablon wykonany przez WebCraft Studio (Bez WordPressa).</p>
+        </div>
+    </footer>
+
+</body>
+</html>
