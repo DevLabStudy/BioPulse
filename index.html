@@ -23,7 +23,7 @@
             --font-sans: 'Inter', sans-serif;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-base);
@@ -294,7 +294,7 @@
         .service-box h3 { font-family: var(--font-mono); font-size: 1.25rem; color: #fff; margin-bottom: 1rem; line-height: 1.3; }
         .service-box p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; }
 
-        /* CENNIK - 5 KOLUMN */
+        /* CENNIK - 5 KOLUMN (STANDARD) */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -354,7 +354,42 @@
         .price-card ul li { color: var(--text-main); font-size: 0.8rem; padding-left: 1.2rem; position: relative; line-height: 1.4; }
         .price-card ul li::before { content: "›"; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold; font-size: 0.95rem; }
 
-        /* FORMULARZ KONTAKTOWY - NOWY DESIGN */
+        /* CENNIK SUBSKRYPCYJNY (SaaS) */
+        .saas-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 900px) {
+            .saas-pricing-grid { grid-template-columns: 1fr; }
+        }
+        .saas-card {
+            background: linear-gradient(145deg, rgba(12, 18, 30, 0.9) 0%, rgba(4, 6, 10, 0.95) 100%);
+            border: 1px solid rgba(255, 94, 0, 0.2);
+            border-radius: 14px;
+            padding: 2.2rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+        .saas-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 94, 0, 0.12);
+        }
+        .saas-card h3 { font-size: 1.15rem; color: #fff; margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .saas-price { font-size: 1.8rem; font-weight: 900; color: var(--accent-orange); margin-bottom: 0.8rem; font-family: var(--font-mono); }
+        .saas-price span { font-size: 0.85rem; color: var(--text-muted); font-weight: normal; }
+        .saas-card p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 1.5rem; line-height: 1.5; }
+        .saas-card ul { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+        .saas-card ul li { color: var(--text-main); font-size: 0.84rem; padding-left: 1.3rem; position: relative; line-height: 1.4; }
+        .saas-card ul li::before { content: "•"; position: absolute; left: 0; color: var(--accent-orange); font-weight: bold; font-size: 1.2rem; }
+
+        /* FORMULARZ KONTAKTOWY */
         .order-section {
             max-width: 950px;
             margin: 0 auto 6rem auto;
@@ -405,7 +440,7 @@
         }
         .form-group textarea { resize: vertical; min-height: 150px; }
 
-        /* PRZYCISK WYSYŁANIA - PREMIUM */
+        /* PRZYCISK WYSYŁANIA */
         .submit-btn-wrapper {
             margin-top: 2rem;
             text-align: center;
@@ -503,6 +538,7 @@
             <a href="#services">Usługi</a>
             <a href="#portfolio">Realizacje</a>
             <a href="#pricing">Cennik</a>
+            <a href="#saas-pricing">Model SaaS</a>
             <a href="#order-form" class="nav-cta">Zamów projekt</a>
         </nav>
     </header>
@@ -574,10 +610,10 @@
         </div>
     </div>
 
-    <!-- CENNIK (5 PAKIETÓW) -->
+    <!-- CENNIK JEDNORAZOWY (5 PAKIETÓW) -->
     <section class="container" id="pricing">
-        <div class="section-header-tag">// Model Finansowy</div>
-        <h2 class="section-title" style="text-align: center; margin-bottom: 3.5rem;">Pakiety Wdrożeniowe</h2>
+        <div class="section-header-tag">// Model Projektowy (Jednorazowy)</div>
+        <h2 class="section-title" style="margin-bottom: 2.5rem;">Pakiety Wdrożeniowe</h2>
         
         <div class="pricing-grid">
             <!-- Pakiet 1 -->
@@ -593,7 +629,7 @@
                         <li>Pełna responsywność</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.755rem; text-decoration: none;">Wybierz</a>
+                <a href="#order-form" class="select-package-btn btn-secondary full-width" data-package="Wizytówka Mikro (od 500 zł)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.755rem; text-decoration: none;">Wybierz</a>
             </div>
 
             <!-- Pakiet 2 (Wyróżniony) -->
@@ -610,7 +646,7 @@
                         <li>Zaawansowany formularz</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-primary full-width" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;">Wybierz</a>
+                <a href="#order-form" class="select-package-btn btn-primary full-width" data-package="Landing Page Pro (od 1 500 zł)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;">Wybierz</a>
             </div>
 
             <!-- Pakiet 3 -->
@@ -618,7 +654,7 @@
                 <div>
                     <h3>System B2B / Multi</h3>
                     <div class="price">od 3 200 zł</div>
-                    <p>Wielostronicowy serwis dla przedsiębiorств wymagających rozbudowy.</p>
+                    <p>Wielostronicowy serwis dla przedsiębiorstw wymagających rozbudowy.</p>
                     <ul>
                         <li>Do 5 dedykowanych podstron</li>
                         <li>Autorskie komponenty</li>
@@ -626,7 +662,7 @@
                         <li>Blog / Aktualności</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;">Wybierz</a>
+                <a href="#order-form" class="select-package-btn btn-secondary full-width" data-package="System B2B / Multi (od 3 200 zł)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;">Wybierz</a>
             </div>
 
             <!-- Pakiet 4 -->
@@ -642,7 +678,7 @@
                         <li>Priorytetowe wsparcie</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;">Wybierz</a>
+                <a href="#order-form" class="select-package-btn btn-secondary full-width" data-package="Enterprise / Sklep (od 5 500 zł)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;">Wybierz</a>
             </div>
 
             <!-- Pakiet 5 (Niestandardowy) -->
@@ -650,16 +686,76 @@
                 <div>
                     <div style="font-size: 0.65rem; font-family: var(--font-mono); color: var(--accent-orange); text-transform: uppercase; margin-bottom: 4px; font-weight: 700;">// Szyte na miarę</div>
                     <h3>Niestandardowy / Custom</h3>
-                    <div class="price" style="font-size: 1.3rem; color: var(--accent-orange);">Wycena indywidualna</div>
+                    <div class="price" style="font-size: 1.3rem; color: var(--accent-orange);">Indywidualna</div>
                     <p>Dla projektów o unikalnych, zaawansowanych wymaganiach technologicznych.</p>
                     <ul>
                         <li>Architektura na zamówienie</li>
-                        <li>Niestandardowe skrypty logiki</li>
-                        <li>Dedykowane środowiska testowe</li>
-                        <li>Opieka architekta systemu</li>
+                        <li>Niestandardowa logika UI</li>
+                        <li>Dedykowane środowiska</li>
+                        <li>Opieka architekta kodu</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none; border-color: var(--accent-orange); color: var(--accent-orange);">Wybierz Custom</a>
+                <a href="#order-form" class="select-package-btn btn-secondary full-width" data-package="Niestandardowy / Custom (Wycena indywidualna)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.8rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none; border-color: var(--accent-orange); color: var(--accent-orange);">Wybierz Custom</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ODRĘBNY CENNIK SUBSKRYPCYJNY (SaaS / Opieka) -->
+    <section class="container" id="saas-pricing">
+        <div class="section-header-tag">// Model Abonamentowy SaaS & Utrzymanie</div>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Opieka Techniczna i Usługi w Chmurze</h2>
+        <p style="color: var(--text-muted); max-width: 700px; margin-bottom: 2.5rem; font-size: 0.95rem;">Wybierz stały abonament na rozwój oprogramowania, monitoring infrastruktury oraz bieżące wsparcie technologiczne dla Twojej firmy.</p>
+        
+        <div class="saas-pricing-grid">
+            <!-- SaaS 1 -->
+            <div class="saas-card">
+                <div>
+                    <h3>Starter Cloud</h3>
+                    <div class="saas-price">199 zł <span>/ miesiąc</span></div>
+                    <p>Podstawowa opieka i monitoring dla mniejszych stron wizytówkowych.</p>
+                    <ul>
+                        <li>Hosting i certyfikaty SSL w cenie</li>
+                        <li>Miesięczna kopia zapasowa (Backup)</li>
+                        <li>Bieżące poprawki tekstów (do 2h)</li>
+                        <li>Gwarantowany czas reakcji do 48h</li>
+                    </ul>
+                </div>
+                <a href="#order-form" class="select-package-btn btn-secondary full-width" data-package="Abonament SaaS: Starter Cloud (199 zł/mc)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.85rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.78rem; text-decoration: none; border-color: rgba(255,94,0,0.3); color: #fff;">Wybierz SaaS Starter</a>
+            </div>
+
+            <!-- SaaS 2 (Wyróżniony) -->
+            <div class="saas-card" style="border-color: var(--accent-orange); background: linear-gradient(145deg, rgba(255, 94, 0, 0.08) 0%, rgba(8, 12, 20, 0.95) 100%);">
+                <div class="popular-badge" style="background: var(--accent-orange);">Rekomendowany</div>
+                <div>
+                    <h3>Business Ops</h3>
+                    <div class="saas-price">499 zł <span>/ miesiąc</span></div>
+                    <p>Pełny pakiet operacyjny dla rozwijających się firm i sklepów e-commerce.</p>
+                    <ul>
+                        <li>Wszystko z pakietu Starter</li>
+                        <li>Ciągły monitoring wydajności (Uptime)</li>
+                        <li>Rozbudowa funkcji i podstron (do 5h)</li>
+                        <li>Priorytetowe wsparcie (reakcja do 12h)</li>
+                        <li>Optymalizacja SEO co kwartał</li>
+                    </ul>
+                </div>
+                <a href="#order-form" class="select-package-btn btn-primary full-width" data-package="Abonament SaaS: Business Ops (499 zł/mc)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.85rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.78rem; text-decoration: none; background: var(--accent-orange); color: #fff; box-shadow: 0 0 20px rgba(255,94,0,0.4);">Wybierz SaaS Business</a>
+            </div>
+
+            <!-- SaaS 3 -->
+            <div class="saas-card">
+                <div>
+                    <h3>Enterprise Dev</h3>
+                    <div class="saas-price">1 299 zł <span>/ miesiąc</span></div>
+                    <p>Dedykowany dział IT i stały zespół programistyczny na wyłączność.</p>
+                    <ul>
+                        <li>Dedykowany architektur IT / Dev</li>
+                        <li>Nieograniczone drobne modyfikacje</li>
+                        <li>Szybkie wdrażanie nowych modułów</li>
+                        <div>SLA: Czas reakcji do 2 godzin</div>
+                        <li>Audyty bezpieczeństwa kodu</li>
+                    </ul>
+                </div>
+                <a href="#order-form" class="select-package-btn btn-secondary full-width" data-package="Abonament SaaS: Enterprise Dev (1299 zł/mc)" style="margin-top: 1.5rem; display: block; text-align: center; padding: 0.85rem; border-radius: 6px; font-family: var(--font-mono); font-size: 0.78rem; text-decoration: none; border-color: rgba(255,94,0,0.3); color: #fff;">Wybierz SaaS Enterprise</a>
             </div>
         </div>
     </section>
@@ -683,14 +779,21 @@
             </div>
 
             <div class="form-group">
-                <label>Wybierz Pakiet Zainteresowania</label>
-                <select name="selected_package" required>
-                    <option value="" disabled selected>-- Wybierz opcję z cennika --</option>
-                    <option value="Wizytówka Mikro (od 500 zł)">Wizytówka Mikro (od 500 zł)</option>
-                    <option value="Landing Page Pro (od 1 500 zł)">Landing Page Pro (od 1 500 zł)</option>
-                    <option value="System B2B / Multi (od 3 200 zł)">System B2B / Multi (od 3 200 zł)</option>
-                    <option value="Enterprise / Sklep (od 5 500 zł)">Enterprise / Sklep (od 5 500 zł)</option>
-                    <option value="Niestandardowy / Custom (Wycena indywidualna)">Niestandardowy / Custom (Wycena indywidualna)</option>
+                <label>Wybierz Pakiet / Opcję Abonamentową</label>
+                <select name="selected_package" id="packageSelect" required>
+                    <option value="" disabled selected>-- Wybierz opcję z cennika lub kliknij "Wybierz" wyżej --</option>
+                    <optgroup label="Pakiety Jednorazowe (Projektowe)">
+                        <option value="Wizytówka Mikro (od 500 zł)">Wizytówka Mikro (od 500 zł)</option>
+                        <option value="Landing Page Pro (od 1 500 zł)">Landing Page Pro (od 1 500 zł)</option>
+                        <option value="System B2B / Multi (od 3 200 zł)">System B2B / Multi (od 3 200 zł)</option>
+                        <option value="Enterprise / Sklep (od 5 500 zł)">Enterprise / Sklep (od 5 500 zł)</option>
+                        <option value="Niestandardowy / Custom (Wycena indywidualna)">Niestandardowy / Custom (Wycena indywidualna)</option>
+                    </optgroup>
+                    <optgroup label="Modele Abonamentowe SaaS">
+                        <option value="Abonament SaaS: Starter Cloud (199 zł/mc)">Abonament SaaS: Starter Cloud (199 zł/mc)</option>
+                        <option value="Abonament SaaS: Business Ops (499 zł/mc)">Abonament SaaS: Business Ops (499 zł/mc)</option>
+                        <option value="Abonament SaaS: Enterprise Dev (1299 zł/mc)">Abonament SaaS: Enterprise Dev (1299 zł/mc)</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -724,9 +827,29 @@
         <p>&copy; 2026 WebCraft Studio. Wszystkie prawa zastrzeżone. | High-End Web Engineering</p>
     </footer>
 
-    <!-- SKRYPT COOKIES -->
+    <!-- SKRYPTY (AUTOMATYCZNE WYBIERANIE PAKIETU + COOKIES) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Automatyczne zaznaczanie pakietu w formularzu po kliknięciu w cenniku
+            const packageButtons = document.querySelectorAll('.select-package-btn');
+            const packageSelect = document.getElementById('packageSelect');
+
+            packageButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const packageName = btn.getAttribute('data-package');
+                    if (packageName && packageSelect) {
+                        packageSelect.value = packageName;
+                        
+                        // Dodatkowa animacja podświetlenia selecta, żeby użytkownik zobaczył zmianę
+                        packageSelect.style.borderColor = 'var(--accent-orange)';
+                        setTimeout(() => {
+                            packageSelect.style.borderColor = 'var(--border-subtle)';
+                        }, 1000);
+                    }
+                });
+            });
+
+            // Obsługa banneru cookies
             const cookieBanner = document.getElementById('cookieBanner');
             const acceptBtn = document.getElementById('acceptCookies');
             const rejectBtn = document.getElementById('rejectCookies');
