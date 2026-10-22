@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AURA | Fine Dining & Artisan Coffee</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 
         /* NAGŁÓWEK */
         .header {
-            padding: 1.5rem 4rem;
+            padding: 1.2rem 2rem;
             border-bottom: 1px solid rgba(212, 175, 55, 0.12);
             display: flex;
             justify-content: space-between;
@@ -37,23 +37,25 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            gap: 1rem;
         }
         .back-btn {
             color: var(--accent-gold);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: 0.2s;
+            white-space: nowrap;
         }
         .back-btn:hover { color: var(--accent-gold-hover); }
         .brand-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            letter-spacing: 4px;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
             color: var(--accent-gold);
             text-transform: uppercase;
         }
@@ -61,69 +63,72 @@
         /* HERO */
         .hero {
             max-width: 1400px;
-            margin: 5rem auto;
-            padding: 0 4rem;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 6rem;
+            gap: 4rem;
             align-items: center;
         }
         .badge {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             background: rgba(212, 175, 55, 0.08);
             color: var(--accent-gold);
-            padding: 6px 16px;
+            padding: 6px 14px;
             border-radius: 30px;
             border: 1px solid var(--border);
             text-transform: uppercase;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 2rem;
-            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
         }
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 5vw, 4.8rem);
+            font-size: clamp(2.4rem, 5vw, 4.8rem);
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: #fff;
         }
         h1 span { font-style: italic; color: var(--accent-gold); font-weight: 400; }
         .desc {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
             max-width: 540px;
         }
 
-        /* AKcja / Zamówienia */
+        /* Akcja / Zamówienia */
         .order-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 1.5rem;
             border-radius: 8px;
             display: inline-flex;
             flex-direction: column;
-            gap: 5px;
-            margin-bottom: 2rem;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            max-width: 400px;
         }
-        .order-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .order-phone { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-gold); text-decoration: none; font-weight: 700; }
+        .order-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .order-phone { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent-gold); text-decoration: none; font-weight: 700; }
 
         .btn-gold {
             background: var(--accent-gold);
             color: #070605;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             border-radius: 4px;
             font-weight: 600;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
             display: inline-block;
             transition: 0.3s;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+            text-align: center;
         }
         .btn-gold:hover {
             background: var(--accent-gold-hover);
@@ -137,91 +142,98 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
         .bistro-img {
             width: 100%;
-            height: 580px;
+            height: 420px;
             object-fit: cover;
             display: block;
             filter: contrast(1.05);
         }
         .hours-badge {
             position: absolute;
-            bottom: 25px;
-            left: 25px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
             background: rgba(7, 6, 5, 0.92);
             border: 1px solid var(--border);
-            padding: 15px 25px;
+            padding: 12px 20px;
             border-radius: 6px;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
             backdrop-filter: blur(10px);
         }
-        .hours-badge strong { color: var(--accent-gold); display: block; margin-bottom: 3px; font-family: 'Playfair Display', serif; font-size: 1rem; }
+        .hours-badge strong { color: var(--accent-gold); display: block; margin-bottom: 2px; font-family: 'Playfair Display', serif; font-size: 0.95rem; }
 
         /* SEKCJA MENU */
         .menu-section {
             max-width: 1200px;
-            margin: 8rem auto;
-            padding: 0 4rem;
+            margin: 6rem auto;
+            padding: 0 1.5rem;
         }
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             color: #fff;
         }
         .menu-category {
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
         .category-name {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: var(--accent-gold);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-            margin-bottom: 2.5rem;
-            letter-spacing: 2px;
+            padding-bottom: 8px;
+            margin-bottom: 2rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
         .menu-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem 4rem;
+            gap: 2rem 3rem;
         }
         .menu-item {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: flex-start;
             border-bottom: 1px dashed rgba(255,255,255,0.08);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
+            gap: 15px;
         }
-        .item-name { font-weight: 500; font-size: 1.05rem; color: #fff; }
-        .item-desc { font-size: 0.82rem; color: var(--text-muted); width: 100%; margin-top: 5px; }
-        .item-price { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.2rem; font-weight: 600; white-space: nowrap; margin-left: 20px; }
+        .item-content { flex: 1; }
+        .item-name { font-weight: 500; font-size: 1rem; color: #fff; }
+        .item-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+        .item-price { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.1rem; font-weight: 600; white-space: nowrap; }
 
         /* STOPKA */
         .info-footer {
             background: #040303;
             border-top: 1px solid rgba(212, 175, 55, 0.12);
-            padding: 5rem 4rem;
+            padding: 4rem 1.5rem;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            gap: 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
         }
-        .info-col h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 1.2rem; letter-spacing: 1px; }
-        .info-col p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
+        .info-col h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 1px; }
+        .info-col p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 6px; }
 
+        /* RESPONSYWNOŚĆ DLA TELEFONÓW */
         @media(max-width: 968px) {
-            .hero, .menu-section, .info-footer, .header { padding: 2rem; }
-            .hero { grid-template-columns: 1fr; gap: 3rem; }
-            .menu-list { grid-template-columns: 1fr; }
-            .info-footer { grid-template-columns: 1fr; gap: 2rem; }
-            .bistro-img { height: 380px; }
+            .header { padding: 1rem; flex-wrap: wrap; justify-content: center; text-align: center; gap: 0.5rem; }
+            .back-btn { font-size: 0.75rem; }
+            .hero { margin: 2.5rem auto; padding: 0 1rem; grid-template-columns: 1fr; gap: 2.5rem; }
+            .menu-section { padding: 0 1rem; margin: 4rem auto; }
+            .menu-list { grid-template-columns: 1fr; gap: 1.5rem; }
+            .info-footer { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+            .bistro-img { height: 320px; }
+            .order-box { width: 100%; }
         }
     </style>
 </head>
@@ -230,7 +242,7 @@
     <div class="header">
         <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
         <div class="brand-logo">AURA</div>
-        <a href="#menu" class="btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Pełne Menu</a>
+        <a href="#menu" class="btn-gold" style="padding: 0.4rem 1rem; font-size: 0.65rem;">Pełne Menu</a>
     </div>
 
     <section class="hero">
@@ -240,7 +252,7 @@
             <p class="desc">Witamy w AURA – miejscu, gdzie pasja do autorskiej gastronomii spotyka się z unikalnym designem. Odkryj starannie wyselekcjonowane menu oraz niezapomnianą atmosferę.</p>
             
             <div class="order-box">
-                <span class="order-label">Zamówienia na wynos i rezerwacje stolików:</span>
+                <span class="order-label">Zamówienia na wynos i rezerwacje:</span>
                 <a href="tel:+48500600700" class="order-phone">+48 500 600 700</a>
             </div>
             <div>
@@ -249,7 +261,6 @@
         </div>
 
         <div class="image-container">
-            <!-- Wymaga pliku bistro.jpg w tym samym folderze -->
             <img src="bistro.jpg" alt="Bistro & Cafe Aura wnętrze" class="bistro-img">
             <div class="hours-badge">
                 <strong>Godziny Otwarcia</strong>
@@ -266,42 +277,42 @@
             <div class="category-name">Kawa & Napoje Rzemieślnicze</div>
             <div class="menu-list">
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Espresso Single Origin</div>
                         <div class="item-desc">Etiopia Yirgacheffe, nuty jaśminu i bergamotki.</div>
                     </div>
                     <div class="item-price">14 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Flat White Rzemieślnicze</div>
                         <div class="item-desc">Podwójne espresso, aksamitnie spienione mleko owsiane lub krowie.</div>
                     </div>
                     <div class="item-price">18 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Matcha Ceremonialna Latte</div>
                         <div class="item-desc">Sprowadzana bezpośrednio z plantacji w Uji, Japonia.</div>
                     </div>
                     <div class="item-price">24 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Autorskie Kakao z Tonką</div>
                         <div class="item-desc">Czekolada 72% z nutą wanilii i orzecha laskowego.</div>
                     </div>
                     <div class="item-price">22 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Świeżo Wyciskany Sok Pomarańczowy</div>
                         <div class="item-desc">100% naturalnych owoców, wyciskany na zamówienie.</div>
                     </div>
                     <div class="item-price">19 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Sezonowa Lemoniada Lawendowa</div>
                         <div class="item-desc">Domowy syrop lawendowy, sok z cytryny, woda gazowana.</div>
                     </div>
@@ -315,28 +326,28 @@
             <div class="category-name">Śniadania & Przekąski (do 13:00)</div>
             <div class="menu-list">
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Puszyste Jajecznica z Masłem Lurpak</div>
                         <div class="item-desc">Podawana z pieczywem rzemieślniczym i świeżym szczypiorkiem.</div>
                     </div>
                     <div class="item-price">28 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Tost z Awokado i Pochem</div>
                         <div class="item-desc">Gniotcone awokado, jajko w koszulce, piklowana szalotka, sezam.</div>
                     </div>
                     <div class="item-price">34 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Szakszuka z Pieczoną Fetą</div>
                         <div class="item-desc">Pomidory San Marzano, papryka, kmin rzymski, zioła, chrupiąca focaccia.</div>
                     </div>
                     <div class="item-price">38 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Pancakes z Ricottą i Syropem Klonowym</div>
                         <div class="item-desc">Puszyste placuszki, owoce leśne, mascarpone waniliowe.</div>
                     </div>
@@ -350,28 +361,28 @@
             <div class="category-name">Dania Główne & Bistro</div>
             <div class="menu-list">
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Truflowy Burger Wagyu</div>
                         <div class="item-desc">Sezonowana wołowina Wagyu, majonez truflowy, ser Gruyère.</div>
                     </div>
                     <div class="item-price">52 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Miska Poke z Łososiem</div>
                         <div class="item-desc">Marynowany łosoś sashimi, ryż sushi, edamame, awokado, mango, sos ponzu.</div>
                     </div>
                     <div class="item-price">48 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Ravioli z Ricottą i Szałwią</div>
                         <div class="item-desc">Ręcznie robiony makaron, palone masło, parmezan DOP.</div>
                     </div>
                     <div class="item-price">44 zł</div>
                 </div>
                 <div class="menu-item">
-                    <div>
+                    <div class="item-content">
                         <div class="item-name">Pucharek Cytrynowy z Bezą</div>
                         <div class="item-desc">Krem lemon curd, opalana domowa beza włoska, maślany crumble.</div>
                     </div>
@@ -386,7 +397,7 @@
             <h3>Lokalizacja</h3>
             <p>ul. Nowy Świat 42</p>
             <p>00-363 Warszawa</p>
-            <p style="margin-top: 15px; color: var(--accent-gold);">Rezerwacje stolików: +48 500 600 700</p>
+            <p style="margin-top: 10px; color: var(--accent-gold);">Rezerwacje: +48 500 600 700</p>
         </div>
         <div class="info-col">
             <h3>Filozofia AURA</h3>
@@ -396,7 +407,7 @@
             <h3>Media Społecznościowe</h3>
             <p>Instagram: @aura.bistro</p>
             <p>Facebook: /aurabistrocafe</p>
-            <p style="margin-top: 15px; font-size: 0.8rem;">Realizacja projektu: <strong>WebCraft Studio</strong></p>
+            <p style="margin-top: 10px; font-size: 0.75rem;">Realizacja: <strong>WebCraft Studio</strong></p>
         </div>
     </footer>
 
