@@ -15,7 +15,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             WebCraft <span>Studio</span>
         </a>
-        <nav>
+        <nav id="navMenu">
             <a href="#services" class="nav-link">Usługi</a>
             <a href="#portfolio" class="nav-link">Realizacje</a>
             <a href="#pricing" class="nav-link">Cennik</a>
@@ -35,82 +35,46 @@
         </div>
     </section>
 
-    <!-- KARUZELA PROJEKTÓW (ZOPTYMALIZOWANA DLA MOBILE I DESKTOP) -->
+    <!-- STABILNA KARUZELA REALIZACJI -->
     <section class="carousel-section" id="portfolio">
         <div class="section-header-tag">Katalog Realizacji / Podstrony Demo</div>
         
-        <div class="carousel-wrapper">
-            <!-- Górny rząd -->
-            <div class="carousel-track left" id="trackLeft">
-                <a href="examples/photography/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">Fotografia / Portfolio</div>
-                        <h3>ArtFocus Studio</h3>
-                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w wysokiej rozdzielczości.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-                <a href="examples/bistro/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">Gastronomia</div>
-                        <h3>Bistro & Cafe Aura</h3>
-                        <p>Nowoczesny layout dla lokalu gastronomicznego z interaktywnym menu oraz systemem rezerwacji stolików online.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-                <a href="examples/saas/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">SaaS / Cloud Tech</div>
-                        <h3>CloudFlow Landing</h3>
-                        <p>Zaawansowana strona produktowa dla platformy chmurowej z dynamicznym cennikiem i prezentacją funkcji.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-                <a href="examples/photography/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">Fotografia / Portfolio</div>
-                        <h3>ArtFocus Studio</h3>
-                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w wysokiej rozdzielczości.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-            </div>
+        <div class="portfolio-scroller">
+            <a href="examples/photography/index.html" class="carousel-card">
+                <div>
+                    <div class="tag">Fotografia / Portfolio</div>
+                    <h3>ArtFocus Studio</h3>
+                    <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w wysokiej rozdzielczości.</p>
+                </div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
+            </a>
 
-            <!-- Dolny rząd -->
-            <div class="carousel-track right" id="trackRight">
-                <a href="examples/saas/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">Enterprise SaaS</div>
-                        <h3>Nexus Core System</h3>
-                        <p>Korporacyjny panel analityczny z wykresami w czasie rzeczywistym i modułem bezpiecznego uwierzytelniania.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-                <a href="examples/bistro/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">E-Commerce / Katalog</div>
-                        <h3>Vanguard Storefront</h3>
-                        <p>Ultraszybki katalog produktów z filtrowaniem dynamicznym i błyskawicznym procesem składania zapytań.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-                <a href="examples/photography/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">Creative Agency</div>
-                        <h3>Vortex Media Group</h3>
-                        <p>Projekt portfolio agencji kreatywnej z pełnoekranowymi nagłowkami wideo i płynnymi przejściami DOM.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-                <a href="examples/saas/index.html" class="carousel-card">
-                    <div>
-                        <div class="tag">Enterprise SaaS</div>
-                        <h3>Nexus Core System</h3>
-                        <p>Korporacyjny panel analityczny z wykresami w czasie rzeczywistym i modułem bezpiecznego uwierzytelniania.</p>
-                    </div>
-                    <div class="card-link-hint">Otwórz podstronę demo →</div>
-                </a>
-            </div>
+            <a href="examples/bistro/index.html" class="carousel-card">
+                <div>
+                    <div class="tag">Gastronomia</div>
+                    <h3>Bistro & Cafe Aura</h3>
+                    <p>Nowoczesny layout dla lokalu gastronomicznego z interaktywnym menu oraz systemem rezerwacji stolików online.</p>
+                </div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
+            </a>
+
+            <a href="examples/saas/index.html" class="carousel-card">
+                <div>
+                    <div class="tag">SaaS / Cloud Tech</div>
+                    <h3>CloudFlow Landing</h3>
+                    <p>Zaawansowana strona produktowa dla platformy chmurowej z dynamicznym cennikiem i prezentacją funkcji.</p>
+                </div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
+            </a>
+
+            <a href="examples/saas/index.html" class="carousel-card">
+                <div>
+                    <div class="tag">Enterprise SaaS</div>
+                    <h3>Nexus Core System</h3>
+                    <p>Korporacyjny panel analityczny z wykresami w czasie rzeczywistym i modułem bezpiecznego uwierzytelniania.</p>
+                </div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
+            </a>
         </div>
     </section>
 
