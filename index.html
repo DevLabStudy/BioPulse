@@ -35,7 +35,6 @@
             min-height: 100vh;
         }
 
-        /* NAGŁÓWEK - KOMPAKTOWY NA MOBILNYCH */
         header {
             width: 100%; max-width: 1550px; margin: 0 auto; padding: 1rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
@@ -223,7 +222,6 @@
         .footer-links a { color: var(--accent-orange); text-decoration: none; cursor: pointer; }
         .footer-links a:hover { text-decoration: underline; }
 
-        /* SPECJALNE REAGOWANIE NA MOBILNYCH (HEADER) */
         @media (max-width: 768px) {
             header { padding: 0.8rem 1rem; flex-direction: row; gap: 0.5rem; }
             .logo { font-size: 0.85rem; }
@@ -561,7 +559,7 @@
         </div>
     </div>
 
-    <!-- MODAL REGULAMINu -->
+    <!-- MODAL REGULAMINU -->
     <div class="modal-overlay" id="regulaminModal">
         <div class="modal-content">
             <button class="modal-close" id="closeRegulamin">&times;</button>
@@ -577,14 +575,17 @@
         </div>
     </div>
 
-    <!-- 4. FORMULARZ -->
+    <!-- 4. FORMULARZ (WEB3FORMS) -->
     <section class="section-container" id="kontakt">
         <div class="order-section">
             <div class="section-header-tag" style="text-align: left;">// Zapytaj o ofertę</div>
             <h2 class="section-title" style="font-size: 1.35rem; margin-bottom: 0.4rem; text-align: left;">Formularz Zamówienia / Kontakt</h2>
             <p style="text-align: left; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">Wybierz interesujący Cię pakiet lub napisz w sprawie indywidualnego projektu.</p>
             
-            <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- TUTAJ WKLEJ SWÓJ KLUCZ ACCESS KEY Z WEB3FORMS -->
+                <input type="hidden" name="access_key" value="df7bd377-380f-4c44-b323-35672c45dd0f">
+
                 <div class="form-group">
                     <label>Interesujący Cię Pakiet / Usługa</label>
                     <select name="selected_plan" id="formPlanSelect" required>
@@ -614,6 +615,10 @@
                     <label>Wiadomość / Opis Projektu</label>
                     <textarea name="message" placeholder="Napisz, czego potrzebujesz lub podaj adres obecnej strony..."></textarea>
                 </div>
+
+                <!-- Opcjonalnie: antyspam honeypot dla Web3Forms -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.8rem;">Wyślij wiadomość</button>
             </form>
         </div>
