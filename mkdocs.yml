@@ -1,0 +1,10 @@
+site_name: BioPulse Enterprise
+site_description: Uniwersalny silnik walidacji i strukturyzacji danych biznesowych
+
+theme:
+  name: mkdocs
+
+nav:
+  - Strona Główna: index.md
+  - Architektura Systemu: architektura.md
+  - Przewodnik API: api.md
