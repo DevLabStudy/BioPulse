@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" data-theme="blue">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 <body>
 
     <div class="top-announcement-bar">
-        <span>⚡ 100% Autorski Kod | Brak WordPressa | Szybkie podglądy wzorów</span>
+        <span>⚡ 100% Autorski Kod | Bez WordPressa | Szybkie i bezpieczne strony</span>
     </div>
 
     <header>
@@ -30,12 +30,12 @@
 
     <section class="hero">
         <div class="telemetry-pill">
-            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">GOTOWE DO WDROŻENIA</strong>
+            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">W 100% AUTORSKI KOD</strong>
         </div>
         <h1>Ultraszybkie strony internetowe <br><span>dla firm i twórców</span></h1>
-        <p>Kliknij w dowolny kafelek wzoru poniżej, aby otworzyć panel podglądu i przejść do działającej podstrony demo.</p>
+        <p>Tworzymy nieszablonowe serwisy internetowe od zera. Kliknij w kafelek poniżej, aby przetestować działający wzór podstrony.</p>
         <div class="hero-btns">
-            <a href="#portfolio" class="btn-primary">Przeglądaj wzory stron</a>
+            <a href="#portfolio" class="btn-primary">Zobacz wzory projektów</a>
             <a href="#pricing" class="btn-secondary">Sprawdź cennik (od 350 zł)</a>
         </div>
     </section>
@@ -43,41 +43,43 @@
     <!-- Usługi -->
     <section class="services-section" id="services">
         <div class="section-header-tag">OFERTA</div>
-        <h2>Profesjonalne rozwiązania webowe</h2>
+        <h2>Co zyskujesz, współpracując z nami?</h2>
         <div class="services-grid">
             <div class="card">
-                <h3>📷 Wizytówki Mikro (Start)</h3>
-                <p>Szybkie, eleganckie strony typu One-Page idealne dla fotografów, artystów i małych usług.</p>
+                <h3>⚡ Błyskawiczne ładowanie</h3>
+                <p>Brak zbędnych wtyczek i ciężkich systemów CMS sprawia, że strona ładuje się w ułamku sekundy.</p>
             </div>
             <div class="card">
-                <h3>🚀 Standard Landing Page</h3>
-                <p>Skuteczne strony jednostronicowe nastawione na konwersję i pozyskiwanie klientów.</p>
+                <h3>🎨 Unikalny projekt dla branży</h3>
+                <p>Dopasowujemy styl wizualny (np. jasne, eleganckie motywy dla fotografów) bezpośrednio pod Twoich klientów.</p>
             </div>
             <div class="card">
-                <h3>🏢 Strony Korporacyjne</h3>
-                <p>Rozbudowane serwisy wielostronicowe dla firm szukających poważnego wizerunku w sieci.</p>
+                <h3>🛡️ Pełne bezpieczeństwo</h3>
+                <p>Brak podatnych na ataki baz danych i przestarzałych paneli administracyjnych. Pełna stabilność w chmurze.</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio / Kafelki z poprawnymi atrybutami do modala -->
+    <!-- Portfolio / Kafelki projektów -->
     <section class="portfolio-section" id="portfolio">
         <div class="section-header-tag">WZORY I REALIZACJE</div>
         <h2>Interaktywny katalog wzorów stron</h2>
-        <p class="portfolio-desc">Kliknij w kafelek projektu, aby otworzyć panel podglądu.</p>
+        <p class="portfolio-desc">Kliknij w kafelek, aby otworzyć podgląd i przejść do gotowej podstrony demo.</p>
         
         <div class="portfolio-grid">
+            <!-- Kafelek Fotografia -->
             <div class="portfolio-card zoom-card open-modal" 
                  data-title="ArtFocus Studio – Jasne Portfolio Fotografa" 
-                 data-desc="Nowoczesna, jasna i elegancka podstrona dla fotografa w odcieniach bieli, kremu i beżu. Posiada kalendarz rezerwacji, panel zarządzania wizytami oraz mapę zasięgu." 
+                 data-desc="Nowoczesna, jasna podstrona dla fotografa w odcieniach kremu i beżu. Posiada wbudowany kalendarz rezerwacji terminów ze strefą recepcji chronioną hasłem oraz mapę zasięgu." 
                  data-link="examples/photography/index.html"
                  data-tag="Fotografia / Portfolio">
                 <div class="p-tag">Fotografia / Portfolio</div>
                 <h3>ArtFocus Studio</h3>
-                <p>Jasna, elegancka strona w odcieniach kremu i beżu z kalendarzem rezerwacji i panelem wizyt.</p>
+                <p>Elegancka, jasna strona w odcieniach kremu i beżu z kalendarzem rezerwacji i panelem wizyt.</p>
                 <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
             </div>
 
+            <!-- Kafelek Bistro -->
             <div class="portfolio-card zoom-card open-modal" 
                  data-title="Bistro & Cafe „Aura”" 
                  data-desc="Wzór strony dla lokalu gastronomicznego z interaktywnym menu i rezerwacją stolików." 
@@ -89,6 +91,7 @@
                 <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
             </div>
 
+            <!-- Kafelek SaaS -->
             <div class="portfolio-card zoom-card open-modal" 
                  data-title="CloudFlow SaaS Landing" 
                  data-desc="Nowoczesna strona produktowa dla aplikacji chmurowej z cennikiem i panelem funkcji." 
@@ -102,7 +105,7 @@
         </div>
     </section>
 
-    <!-- Naprawione Okno Modalne -->
+    <!-- Okno Modalne (Poprawnie działające) -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal-container">
             <button class="modal-close" id="closeModal">&times;</button>
@@ -119,7 +122,7 @@
                     <div class="mockup-hero-banner">
                         <span class="live-badge">GOTOWY SZABLON</span>
                         <h4 id="mockupHeading">Podgląd</h4>
-                        <p>Kliknij poniżej, aby przejść do w pełni działającej podstrony.</p>
+                        <p>Kliknij przycisk poniżej, aby otworzyć podstronę demo.</p>
                     </div>
                 </div>
             </div>
@@ -139,7 +142,7 @@
             <div class="price-card">
                 <h3>Wizytówka Mikro</h3>
                 <div class="price">od 350 zł</div>
-                <p>Idealne dla fotografów i freelancerów.</p>
+                <p>Idealne dla fotografów i freelancerów z małym budżetem.</p>
                 <ul>
                     <li>Strona One-Page (czysty kod)</li>
                     <li>Sekcja O mnie / Oferta / Kontakt</li>
@@ -153,9 +156,9 @@
                 <div class="price">od 1 200 zł</div>
                 <p>Dla firm szukających klientów.</p>
                 <ul>
-                    <li>Indywidualny design UI/UX</li>
-                    <li>Optymalizacja SEO</li>
-                    <li>Formularz kontaktowy</li>
+                    <li>Indywidualny design dla branży</li>
+                    <li>Optymalizacja SEO pod Google</li>
+                    <li>Formularz kontaktowy e-mail</li>
                 </ul>
                 <a href="#order-form" class="btn-primary">Wybierz</a>
             </div>
@@ -164,9 +167,9 @@
                 <div class="price">od 2 800 zł</div>
                 <p>Wielostronicowy serwis B2B.</p>
                 <ul>
-                    <li>Do 5 podstron</li>
-                    <li>Animacje Three.js</li>
-                    <li>Opieka techniczna</li>
+                    <li>Do 5 dedykowanych podstron</li>
+                    <li>Animacje i efekty interaktywne</li>
+                    <li>Wsparcie techniczne</li>
                 </ul>
                 <a href="#order-form" class="btn-secondary">Wybierz</a>
             </div>
