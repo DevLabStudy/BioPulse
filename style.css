@@ -86,7 +86,6 @@ body {
     overflow: hidden;
 }
 
-/* Metryki biznesowe */
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -217,10 +216,64 @@ td {
     border: 1px solid rgba(248, 113, 113, 0.3);
 }
 
-footer {
+/* Profesjonalna stopka korporacyjna */
+.site-footer {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+    color: var(--text-dim);
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.footer-col h4 {
+    color: var(--text);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.footer-col p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
     text-align: center;
     padding: 20px;
-    border-top: 1px solid var(--border);
-    color: var(--text-dim);
-    font-size: 13px;
+    font-size: 12px;
+}
+
+.footer-bottom strong {
+    color: var(--accent);
 }
