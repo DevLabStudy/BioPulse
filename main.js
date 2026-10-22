@@ -15,11 +15,16 @@ window.addEventListener('DOMContentLoaded', () => {
         modalCards.forEach(card => {
             card.addEventListener('click', (e) => {
                 e.preventDefault();
-                modalTag.textContent = card.getAttribute('data-tag');
-                modalTitle.textContent = card.getAttribute('data-title');
-                modalDesc.textContent = card.getAttribute('data-desc');
-                mockupHeading.textContent = card.getAttribute('data-title');
-                const link = card.getAttribute('data-link');
+                
+                const tag = card.getAttribute('data-tag') || 'Projekt';
+                const title = card.getAttribute('data-title') || 'Wzór strony';
+                const desc = card.getAttribute('data-desc') || 'Opis projektu...';
+                const link = card.getAttribute('data-link') || '#';
+
+                modalTag.textContent = tag;
+                modalTitle.textContent = title;
+                modalDesc.textContent = desc;
+                mockupHeading.textContent = title;
                 modalFullLink.setAttribute('href', link);
                 modalUrlText.textContent = link;
 
