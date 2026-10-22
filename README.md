@@ -1,38 +1,26 @@
-# 🧬 BioPulse Enterprise
-> **High-Performance Data Pipeline & Validation Engine**
+# 🌐 WebCraft Studio | Profesjonalny Web Development (100% Custom Code)
 
-[![System Status](https://img.shields.io/badge/CLUSTER-ONLINE-38bdf8?style=flat-square&logo=databricks)](https://biopulse.devlabstudy.ovh)
-[![Python Engine](https://img.shields.io/badge/Python-3.x-38bdf8?style=flat-square&logo=python)](https://python.org)
-[![Frontend](https://img.shields.io/badge/Three.js-WebGL-38bdf8?style=flat-square&logo=three.js)](https://threejs.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-success?style=flat-square)](LICENSE)
+**WebCraft Studio** to nowoczesna agencja webowa skupiająca się na tworzeniu ultraszybkich, bezpiecznych i nieszablonowych stron internetowych. Projektujemy serwisy od zera w czystym kodzie (**HTML5, CSS3, JavaScript**), całkowicie odrzucając przestarzałe, powolne i podatne na ataki systemy CMS takie jak WordPress.
 
 ---
 
-## 🎯 1. Cel i Przeznaczenie Projektu
-
-**BioPulse Enterprise** to zaawansowana platforma inżynieryjna klasy B2B (SaaS), która łączy architekturę korporacyjnych potoków danych (*Data Pipeline*) z rygorystycznym systemem walidacji struktur i strumieni informacji. 
-
-Projekt powstał w ramach inicjatywy badawczo-inżynieryjnej **devlabstudy** jako kompleksowe narzędzie demonstrujące zaawansowane umiejętności z zakresu inżynierii oprogramowania, automatycznego przetwarzania strumieni oraz interaktywnych wizualizacji 3D.
-
-### Kluczowe założenia strategiczne:
-* **Komercyjny charakter B2B:** System został zaprojektowany z myślą o realnym zastosowaniu w firmach i korporacjach wymagających bezbłędnego audytu oraz czyszczenia strumieni danych.
-* **Wysoka wydajność i stabilność:** Architektura oparta na czystym języku Python gwarantuje minimalne opóźnienia i natychmiastowe wykrywanie anomalii.
-* **Integracja chmurowa:** Pełne wsparcie dla wdrożeń pod dedykowanymi subdomenami (`biopulse.devlabstudy`) z obsługą bezpiecznej komunikacji formularzy kontaktowych (`contact@devlabstudy.ovh`).
+## 🚀 Główne Zalety Architektury
+* **Zero WordPressa:** Brak zbędnych wtyczek, ciężkiego kodu PHP i dziur w bezpieczeństwie.
+* **Błyskawiczne ładowanie:** Zoptymalizowana struktura osiągająca najwyższe wyniki w testach Core Web Vitals.
+* **Hosting chmurowy:** Stabilna infrastruktura gotowa pod wdrożenie na GitHub Pages lub Cloudflare.
+* **Elastyczne pakiety:** Od budżetowych wizytówek dla fotografów (od 350 zł) po zaawansowane serwisy B2B.
 
 ---
 
-## ⚙️ 2. Architektura Silnika (`main.py`)
-
-Silnik główny realizuje rygorystyczny cykl życia danych podzielony na trzy kluczowe etapy (Data Pipeline Lifecycle):
+## 📂 Struktura Projektu
 
 ```text
-[ Zewnętrzne Źródło / Strumień API ] 
-                 │
-                 ▼
-1. ⚡ INGESTION STREAM ──> Pobieranie i buforowanie paczek wejściowych
-                 │
-                 ▼
-2. 🛡️ VALIDATION CORE   ──> Filtrowanie anomalii i weryfikacja norm
-                 │
-                 ▼
-3. 📊 MULTI-SINK EXPORT ──> Generowanie raportów końcowych CSV / JSON
+/
+├── index.html                 # Główna strona agencji WebCraft Studio
+├── style.css                  # Główny, zaawansowany arkusz stylów
+├── .nojekyll                  # Plik wyłączający silnik Jekyll na GitHub Pages
+└── examples/
+    └── photography/           # Dedykowana podstrona demo (Portfolio Fotografa)
+        ├── index.html         # Jasny motyw (krem/beż), kalendarz, mapa, karuzela
+        ├── admin.html         # Zabezpieczony panel recepcji (podgląd rezerwacji)
+        └── salon.jpg          # Tło sekcji hero
