@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WebCraft Studio | High-Performance Web Engineering</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5%22/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -10,20 +10,16 @@
 </head>
 <body>
 
-    <div class="top-bar">
-        <span>100% Autorski Kod | Bez WordPressa | Maksymalna Wydajność i Bezpieczeństwo</span>
-    </div>
-
     <header>
         <a href="index.html" class="logo">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             WebCraft <span>Studio</span>
         </a>
         <nav>
-            <a href="#services">Usługi</a>
-            <a href="#portfolio">Realizacje</a>
-            <a href="#pricing">Cennik</a>
-            <a href="#order-form" class="nav-cta">Zamów projekt</a>
+            <a href="#services" class="nav-link">Usługi</a>
+            <a href="#portfolio" class="nav-link">Realizacje</a>
+            <a href="#pricing" class="nav-link">Cennik</a>
+            <a href="#order-form" class="nav-cta">Zamów</a>
         </nav>
     </header>
 
@@ -39,18 +35,18 @@
         </div>
     </section>
 
-    <!-- ZAAWANSOWANA KARUZELA WIELOPOZIOMOWA -->
+    <!-- KARUZELA PROJEKTÓW (ZOPTYMALIZOWANA DLA MOBILE I DESKTOP) -->
     <section class="carousel-section" id="portfolio">
-        <div class="section-header-tag">Katalog Realizacji / Podstrony Demo (Multi-Row Showcase)</div>
+        <div class="section-header-tag">Katalog Realizacji / Podstrony Demo</div>
         
         <div class="carousel-wrapper">
-            <!-- Górny rząd (przewijanie w lewo) -->
+            <!-- Górny rząd -->
             <div class="carousel-track left" id="trackLeft">
                 <a href="examples/photography/index.html" class="carousel-card">
                     <div>
                         <div class="tag">Fotografia / Portfolio</div>
                         <h3>ArtFocus Studio</h3>
-                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w ultra-wysokiej rozdzielczości.</p>
+                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w wysokiej rozdzielczości.</p>
                     </div>
                     <div class="card-link-hint">Otwórz podstronę demo →</div>
                 </a>
@@ -74,13 +70,13 @@
                     <div>
                         <div class="tag">Fotografia / Portfolio</div>
                         <h3>ArtFocus Studio</h3>
-                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w ultra-wysokiej rozdzielczości.</p>
+                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w wysokiej rozdzielczości.</p>
                     </div>
                     <div class="card-link-hint">Otwórz podstronę demo →</div>
                 </a>
             </div>
 
-            <!-- Dolny rząd (przewijanie w prawo) -->
+            <!-- Dolny rząd -->
             <div class="carousel-track right" id="trackRight">
                 <a href="examples/saas/index.html" class="carousel-card">
                     <div>
@@ -121,7 +117,7 @@
     <!-- Usługi -->
     <div class="container" id="services">
         <div class="section-header-tag" style="text-align: center;">Inżynieria Standardów</div>
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3.5rem; color: #fff;">Dlaczego czysty kod wygrywa z szablonami?</h2>
+        <h2 style="text-align: center; font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 3rem; color: #fff;">Dlaczego czysty kod wygrywa z szablonami?</h2>
         <div class="services-grid">
             <div class="service-box">
                 <h3>Błyskawiczny czas reakcji</h3>
