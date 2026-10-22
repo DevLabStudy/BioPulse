@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebCraft Studio | High-Performance Web Engineering</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>WebCraft Studio | High-End Web Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-base: #030305;
-            --bg-card: rgba(13, 17, 23, 0.88);
-            --border-color: rgba(56, 189, 248, 0.25);
-            --accent: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-card: rgba(8, 12, 20, 0.75);
+            --border-subtle: rgba(0, 210, 255, 0.12);
+            --border-glow: rgba(0, 210, 255, 0.4);
+            --accent-blue: #00d2ff;
+            --accent-orange: #ff5e00;
+            --text-main: #f1f5f9;
+            --text-muted: #8b9bb4;
             --font-mono: 'JetBrains Mono', monospace;
             --font-sans: 'Inter', sans-serif;
         }
@@ -21,209 +23,529 @@
 
         body {
             background-color: var(--bg-base);
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(0, 210, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(255, 94, 0, 0.03) 0%, transparent 40%);
             color: var(--text-main);
             font-family: var(--font-sans);
             overflow-x: hidden;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
+        /* NAGŁÓWEK / NAVBAR */
         header {
             width: 100%;
-            max-width: 1400px;
+            max-width: 1550px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1.5rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid var(--border-subtle);
             position: sticky;
             top: 0;
-            background: rgba(3, 3, 5, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(3, 3, 5, 0.85);
+            backdrop-filter: blur(16px);
             z-index: 1000;
         }
 
         .logo {
             font-family: var(--font-mono);
-            font-weight: 800;
-            font-size: 1.1rem;
+            font-weight: 900;
+            font-size: 1.25rem;
             color: #fff;
             text-decoration: none;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .logo span { color: var(--accent); }
+        .logo svg { stroke: var(--accent-orange); width: 22px; height: 22px; }
+        .logo span { color: var(--accent-blue); }
 
-        nav { display: flex; gap: 1.5rem; align-items: center; }
-        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
-        nav a:hover { color: var(--accent); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+        nav a:hover { color: var(--accent-blue); }
+        
         .nav-cta {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent-blue), #0099ff);
             color: #030305;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1300px;
+            margin: 6rem auto 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .telemetry-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 210, 255, 0.06);
+            border: 1px solid var(--border-subtle);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-orange);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 18px var(--accent-orange); }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            color: #fff;
+        }
+        h1 span {
+            background: linear-gradient(135deg, #fff 30%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-bottom: 6rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.95rem 2rem;
             border-radius: 6px;
             font-weight: 700;
             font-family: var(--font-mono);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.25s ease;
+        }
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #030305;
+            box-shadow: 0 4px 25px rgba(0, 210, 255, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 35px rgba(0, 210, 255, 0.55);
+            background: #33dbff;
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+        }
+        .btn-secondary:hover {
+            background: rgba(0, 210, 255, 0.08);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
         }
 
-        .hero {
-            max-width: 1200px;
-            margin: 4rem auto 2rem auto;
-            padding: 0 1.5rem;
-            text-align: center;
-        }
-        h1 {
-            font-size: clamp(2rem, 4vw, 3.8rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        h1 span { color: var(--accent); }
-
-        /* KARUZELA REALIZACJI - UKŁAD SIATKI / PIONOWY BEZ BŁĘDÓW */
+        /* KARUZELA REALIZACJI / GRID PRESTIŻOWY */
         .carousel-section {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 1.5rem;
+            width: 100%;
+            max-width: 1550px;
+            margin: 0 auto 7rem auto;
+            padding: 0 3rem;
         }
         .section-header-tag {
             font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--accent);
+            font-size: 0.75rem;
+            color: var(--accent-orange);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-            margin-bottom: 2rem;
+            letter-spacing: 2.5px;
+            margin-bottom: 1rem;
+            font-weight: 800;
         }
+        .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 3rem;
+            letter-spacing: -0.5px;
+        }
+
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
+
         .carousel-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, border-color 0.2s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .carousel-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 3px; height: 100%;
+            background: var(--accent-blue);
+            opacity: 0.6;
+            transition: opacity 0.3s;
         }
         .carousel-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
+            border-color: var(--border-glow);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px rgba(0, 210, 255, 0.15);
         }
+        .carousel-card:hover::before { opacity: 1; }
+
         .carousel-card .tag {
             font-family: var(--font-mono);
             font-size: 0.7rem;
-            color: var(--accent);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 3px 8px;
+            color: var(--accent-blue);
+            background: rgba(0, 210, 255, 0.08);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            padding: 4px 10px;
             border-radius: 4px;
             width: fit-content;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
         }
-        .carousel-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
-        .carousel-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
-        .card-link-hint { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); font-weight: 700; }
+        .carousel-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: #fff; font-weight: 800; }
+        .carousel-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 2rem; line-height: 1.7; }
+        .card-link-hint { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 4rem 1.5rem; }
+        /* SEKCJA USŁUG */
+        .container { max-width: 1550px; margin: 0 auto 7rem auto; padding: 0 3rem; }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
         }
         .service-box {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2.5rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(12px);
+            transition: border-color 0.3s, transform 0.3s;
         }
-        .service-box h3 { font-family: var(--font-mono); color: #fff; margin-bottom: 1rem; }
-        .service-box p { color: var(--text-muted); }
+        .service-box:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+        }
+        .service-box h3 { font-family: var(--font-mono); font-size: 1.3rem; color: #fff; margin-bottom: 1rem; }
+        .service-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+        /* CENNIK */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+        .price-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-5px);
+        }
+        .price-card.featured {
+            background: linear-gradient(180deg, rgba(0, 210, 255, 0.08) 0%, rgba(8, 12, 20, 0.9) 100%);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.15);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-orange);
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 900;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .price-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .price { font-size: 2.2rem; font-weight: 900; color: var(--accent-blue); margin-bottom: 1rem; font-family: var(--font-mono); }
+        .price-card p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+        .price-card ul { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+        .price-card ul li { color: var(--text-main); font-size: 0.88rem; padding-left: 1.5rem; position: relative; }
+        .price-card ul li::before { content: "›"; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; }
+
+        /* FORMULARZ KONTAKTOWY */
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 7rem auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+        .form-group label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+        .form-group input, .form-group textarea {
+            background: rgba(3, 3, 5, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 1rem;
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            width: 100%;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
+        }
+        .form-group textarea { resize: vertical; min-height: 140px; }
+        .full-width { width: 100%; cursor: pointer; border: none; text-align: center; }
 
         footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem;
             text-align: center;
             font-family: var(--font-mono);
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
+            background: #010103;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 1.2rem 1.5rem; flex-direction: column; gap: 1rem; }
+            .carousel-section, .container { padding: 0 1.5rem; }
+            .order-section { padding: 2rem 1.5rem; margin: 0 1rem 5rem 1rem; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">WebCraft <span>Studio</span></a>
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            WebCraft <span>Studio</span>
+        </a>
         <nav>
             <a href="#services">Usługi</a>
             <a href="#portfolio">Realizacje</a>
-            <a href="#order" class="nav-cta">Zamów</a>
+            <a href="#pricing">Cennik</a>
+            <a href="#order-form" class="nav-cta">Zamów projekt</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Ultraszybkie strony internetowe <br><span>dla wymagających projektów</span></h1>
-        <p style="color: var(--text-muted);">Tworzymy bezkompromisowe serwisy w oparciu o czysty kod i optymalizację.</p>
+        <div class="telemetry-badge">
+            <span class="pulse-dot"></span> ARCHITEKTURA CYFROWA: <strong style="color: var(--accent-blue);">WYSOKA WYDAJNOŚĆ</strong>
+        </div>
+        <h1>Bezkompromisowy kod.<br><span>Strony, które generują realny zysk.</span></h1>
+        <p>Projektujemy i wdrażamy elastyczne serwisy internetowe oraz aplikacje oparte na czystej architekturze, eliminujące opóźnienia i maksymalizujące konwersję.</p>
+        <div class="hero-btns">
+            <a href="#portfolio" class="btn-primary">Zobacz realizacje demo</a>
+            <a href="#pricing" class="btn-secondary">Sprawdź pakiety i ceny</a>
+        </div>
     </section>
 
+    <!-- REALIZACJE / DEMO -->
     <section class="carousel-section" id="portfolio">
-        <div class="section-header-tag">// Katalog Realizacji / Podstrony Demo</div>
+        <div class="section-header-tag">// Portfel Wdrożeń Komercyjnych</div>
+        <h2 class="section-title">Katalog Podstron Demo</h2>
+        
         <div class="portfolio-grid">
-            <a href="#" class="carousel-card">
+            <a href="examples/photography/index.html" class="carousel-card">
                 <div>
-                    <div class="tag">Fotografia</div>
+                    <div class="tag">Fotografia / Portfolio</div>
                     <h3>ArtFocus Studio</h3>
-                    <p>Minimalistyczna strona wizytówkowa z kalendarzem rezerwacji.</p>
+                    <p>Minimalistyczny serwis wizytówkowy ze zintegrowanym systemem rezerwacji terminów i galerią ultra-HD.</p>
                 </div>
-                <div class="card-link-hint">Otwórz demo →</div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
             </a>
-            <a href="#" class="carousel-card">
+
+            <a href="examples/bistro/index.html" class="carousel-card">
                 <div>
-                    <div class="tag">Gastronomia</div>
+                    <div class="tag">Gastronomia / HoReCa</div>
                     <h3>Bistro & Cafe Aura</h3>
-                    <p>Nowoczesny layout dla lokalu gastronomicznego z interaktywnym menu.</p>
+                    <p>Nowoczesny layout dedykowany branży gastronomicznej z interaktywną kartą menu oraz rezerwacją stolików.</p>
                 </div>
-                <div class="card-link-hint">Otwórz demo →</div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
             </a>
-            <a href="#" class="carousel-card">
+
+            <a href="examples/saas/index.html" class="carousel-card">
                 <div>
-                    <div class="tag">SaaS / Cloud</div>
+                    <div class="tag">SaaS / Cloud Tech</div>
                     <h3>CloudFlow Landing</h3>
-                    <p>Zaawansowana strona produktowa dla platformy chmurowej.</p>
+                    <p>Zaawansowana platforma produktowa dla sektora chmurowego z dynamicznym cennikiem i sekcją analityczną.</p>
                 </div>
-                <div class="card-link-hint">Otwórz demo →</div>
+                <div class="card-link-hint">Otwórz podstronę demo →</div>
             </a>
         </div>
     </section>
 
+    <!-- USŁUGI -->
     <div class="container" id="services">
-        <div class="section-header-tag" style="text-align: center;">// Inżynieria Standardów</div>
+        <div class="section-header-tag">// Standardy Przemysłowe</div>
+        <h2 class="section-title">Dlaczego czysty kod wygrywa z szablonami?</h2>
         <div class="services-grid">
             <div class="service-box">
                 <h3>Błyskawiczny czas reakcji</h3>
-                <p>Brak ciężkich motywów WordPressa gwarantuje wskaźnik Lighthouse na poziomie 99-100 punktów.</p>
+                <p>Odrzucamy ociężałe bazy danych MySQL i skrypty WordPressa. Nasze serwisy osiągają wskaźnik wydajności Lighthouse na poziomie 99-100 punktów.</p>
             </div>
             <div class="service-box">
-                <h3>Optymalizacja UI</h3>
-                <p>Płynne animacje i responsywne siatki CSS dostosowane do każdego ekranu.</p>
+                <h3>Precyzyjna Optymalizacja UI</h3>
+                <p>Wdrażamy płynne animacje i systemy siatek oparte na najnowszych standardach CSS, gwarantując nienaganny wygląd na każdym urządzeniu.</p>
             </div>
             <div class="service-box">
-                <h3>Maksymalne bezpieczeństwo</h3>
-                <p>Architektura statyczna całkowicie eliminuje podatności na ataki i luki w wtyczkach.</p>
+                <h3>Maksymalne Bezpieczeństwo</h3>
+                <p>Statyczna architektura chmurowa całkowicie eliminuje luki w wtyczkach, podatności na ataki typu SQL Injection oraz potrzebę ciągłych aktualizacji.</p>
             </div>
         </div>
     </div>
 
+    <!-- CENNIK -->
+    <section class="container" id="pricing">
+        <div class="section-header-tag">// Model Finansowy</div>
+        <h2 class="section-title" style="text-align: center; margin-bottom: 3.5rem;">Pakiety Wdrożeniowe</h2>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <h3>Wizytówka Mikro</h3>
+                    <div class="price">od 350 zł</div>
+                    <p>Dla ekspertów i małych firm potrzebujących profesjonalnej obecności w sieci.</p>
+                    <ul>
+                        <li>Strona typu One-Page</li>
+                        <li>Czysty kod z optymalizacją</li>
+                        <li>Sekcja kontaktowa i portfolio</li>
+                        <li>Pełna responsywność</li>
+                    </ul>
+                </div>
+                <a href="#order-form" class="btn-secondary full-width" style="margin-top: 2rem; display: block;">Wybierz pakiet</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="popular-badge">Najwyższa Konwersja</div>
+                <div>
+                    <h3>Landing Page Standard</h3>
+                    <div class="price">od 1 200 zł</div>
+                    <p>Kompleksowe rozwiązanie nastawione na agresywne pozyskiwanie klientów.</p>
+                    <ul>
+                        <li>Indywidualny design branżowy</li>
+                        <li>Interaktywne elementy i animacje</li>
+                        <li>Pełna optymalizacja SEO pod Google</li>
+                        <li>Zaawansowany formularz z powiadomieniami</li>
+                    </ul>
+                </div>
+                <a href="#order-form" class="btn-primary full-width" style="margin-top: 2rem; display: block;">Wybierz pakiet</a>
+            </div>
+
+            <div class="price-card">
+                <div>
+                    <h3>System B2B / Korporacja</h3>
+                    <div class="price">od 2 800 zł</div>
+                    <p>Wielostronicowy serwis dla stabilnych przedsiębiorstw wymagających klasy enterprise.</p>
+                    <ul>
+                        <li>Do 5 dedykowanych podstron</li>
+                        <li>Autorskie sekcje i komponenty</li>
+                        <li>Najwyższy wynik wydajności</li>
+                        <li>Priorytetowe wsparcie techniczne</li>
+                    </ul>
+                </div>
+                <a href="#order-form" class="btn-secondary full-width" style="margin-top: 2rem; display: block;">Wybierz pakiet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARZ -->
+    <section class="order-section" id="order-form">
+        <div class="section-header-tag" style="text-align: center;">// Inicjalizacja Współpracy</div>
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2.5rem; color: #fff;">Skonfiguruj swój projekt</h2>
+        
+        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Imię / Nazwa Firmy</label>
+                    <input type="text" name="name" required placeholder="Wpisz dane...">
+                </div>
+                <div class="form-group">
+                    <label>Adres E-mail</label>
+                    <input type="email" name="email" required placeholder="kontakt@domena.pl">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Szczegóły projektu lub wybrany pakiet</label>
+                <textarea name="message" required placeholder="Opisz krótko swój biznes, oczekiwania i cele..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">Wyślij zapytanie ofertowe</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2026 WebCraft Studio. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2026 WebCraft Studio. Wszystkie prawa zastrzeżone. | High-End Web Engineering</p>
     </footer>
 
 </body>
