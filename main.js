@@ -29,7 +29,30 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === 2. WIZUALIZACJA 3D KLASTRA (THREE.JS) ===
+    // === 2. DYNAMICZNA SYMULACJA TERMINALA ===
+    const terminalLogs = document.getElementById('terminalLogs');
+    if (terminalLogs) {
+        const liveMessages = [
+            { type: 'info', text: '[INFO] Oczekiwanie na pakiety wejściowe w klastrze...' },
+            { type: 'info', text: '[INGEST] Ingest strumienia: TRX-9006, TRX-9007 pomyślnie zbuforowane.' },
+            { type: 'success', text: '[VALIDATE] Przepuszczono 2 nowe rekordy korporacyjne.' },
+            { type: 'warn', text: '[WARNING] Wykryto anomalię w paczce TRX-9008 - brak pola status.' },
+            { type: 'success', text: '[EXPORT] Synchronizacja z węzłem docelowym JSON zakończona.' }
+        ];
+
+        let msgIndex = 0;
+        setInterval(() => {
+            const msg = liveMessages[msgIndex];
+            const p = document.createElement('p');
+            p.className = `log-${msg.type}`;
+            p.textContent = msg.text;
+            terminalLogs.appendChild(p);
+            terminalLogs.scrollTop = terminalLogs.scrollHeight;
+            msgIndex = (msgIndex + 1) % liveMessages.length;
+        }, 4000);
+    }
+
+    // === 3. WIZUALIZACJA 3D KLASTRA (THREE.JS) ===
     const container = document.getElementById('canvas-container');
     if (!container) return;
 
