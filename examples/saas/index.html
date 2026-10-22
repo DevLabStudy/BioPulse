@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudFlow Landing | Demo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff5e00' stroke-width='2.5'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #030305;
+            --accent-blue: #00d2ff;
+            --text-main: #f1f5f9;
+            --text-muted: #8b9bb4;
+        }
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            padding: 2rem 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+        h1 span { color: var(--accent-blue); }
+        p { color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; max-width: 700px; margin: 0 auto 3rem auto; }
+        .tech-box {
+            background: rgba(0, 210, 255, 0.04);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            padding: 3rem;
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
+        <span style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--text-muted);">// DEMO SAAS / CLOUD</span>
+    </div>
+    
+    <div class="content">
+        <span style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-blue); text-transform: uppercase; font-weight: 700;">// Sektor Chmurowy & Software</span>
+        <h1>CloudFlow <span>Landing</span></h1>
+        <p>Zaawansowana platforma produktowa dla sektora cloud tech. Zaprojektowana z myślą o maksymalnej konwersji użytkowników na subskrypcje roczne i miesięczne.</p>
+        
+        <div class="tech-box">
+            [ STATUS SYSTEMU: 100% OPERACYJNY ]<br>
+            <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 10px;">Architektura bezserwerowa oparta na czystym HTML5 i zoptymalizowanym CSS.</span>
+        </div>
+    </div>
+</body>
+</html>
