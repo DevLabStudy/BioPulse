@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CloudFlow SaaS | High-End Cloud Platform Demo</title>
+    <title>CloudFlow SaaS | Opieka i Infrastruktura</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <style>
@@ -15,21 +15,17 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: rgba(56, 189, 248, 0.2);
-            --border-glow: rgba(56, 189, 248, 0.5);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body {
             background-color: var(--bg-base);
-            background-image: 
-                radial-gradient(circle at top center, rgba(56, 189, 248, 0.08), transparent 40%),
-                radial-gradient(circle at bottom right, rgba(6, 182, 212, 0.04), transparent 40%);
+            background-image: radial-gradient(circle at top center, rgba(56, 189, 248, 0.08), transparent 40%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             line-height: 1.7;
         }
 
-        /* HEADER */
         .header {
             padding: 1.2rem 2.5rem;
             border-bottom: 1px solid rgba(56, 189, 248, 0.1);
@@ -41,8 +37,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            gap: 1rem;
-            flex-wrap: wrap;
         }
         .back-btn {
             font-family: 'JetBrains Mono', monospace;
@@ -50,364 +44,205 @@
             text-decoration: none;
             font-size: 0.8rem;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: 0.2s;
-            white-space: nowrap;
         }
-        .back-btn:hover { color: #fff; }
-        .brand-logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: #fff;
-            letter-spacing: 1px;
-        }
+        .brand-logo { font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #fff; }
         .brand-logo span { color: var(--accent-blue); }
 
-        .header-actions { display: flex; gap: 10px; align-items: center; }
+        .hero { max-width: 1000px; margin: 4rem auto 2rem auto; padding: 0 1.5rem; text-align: center; }
+        .hero h1 { font-family: 'JetBrains Mono', monospace; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; margin-bottom: 1rem; color: #fff; }
+        .hero h1 span { color: var(--accent-blue); }
+        .hero p { color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto; }
 
-        /* HERO */
-        .hero {
-            max-width: 1200px;
-            margin: 4rem auto 3rem auto;
-            padding: 0 1.5rem;
-            text-align: center;
-        }
-        .badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-blue);
-            padding: 6px 14px;
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            text-transform: uppercase;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-        h1 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-            color: #fff;
-            letter-spacing: -1px;
-        }
-        h1 span { color: var(--accent-blue); }
-        .desc {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.7;
-            max-width: 680px;
-            margin: 0 auto 2.5rem auto;
-        }
+        .section-container { max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
+        .section-title { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; text-align: center; margin-bottom: 0.5rem; color: #fff; }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; font-size: 0.9rem; }
 
-        .btn-saas {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-            color: #030712;
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            font-weight: 800;
-            font-family: 'JetBrains Mono', monospace;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            letter-spacing: 1px;
-            display: inline-block;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            text-align: center;
-        }
-        .btn-saas:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            font-weight: 800;
-            font-family: 'JetBrains Mono', monospace;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            letter-spacing: 1px;
-            display: inline-block;
-            transition: 0.3s;
-            cursor: pointer;
-            text-align: center;
-        }
-        .btn-outline:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-            background: rgba(56, 189, 248, 0.05);
-        }
-
-        /* SEKCJE OGÓLNE */
-        .section-container {
-            max-width: 1200px;
-            margin: 5rem auto;
-            padding: 0 1.5rem;
-        }
-        .section-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
-            text-align: center;
-            margin-bottom: 0.8rem;
-            color: #fff;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-size: 0.95rem;
-        }
-
-        /* CENNIK */
+        /* 3 PAKIETY W GRIDZIE */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
+        }
+        @media(max-width: 968px) {
+            .pricing-grid { grid-template-columns: 1fr; }
         }
         .price-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 2.5rem 2rem;
-            position: relative;
-            backdrop-filter: blur(12px);
+            padding: 2.2rem 1.8rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
         }
         .price-card.featured {
             border-color: var(--accent-blue);
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
-            background: linear-gradient(180deg, rgba(56, 189, 248, 0.06) 0%, rgba(15, 23, 42, 0.95) 100%);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
         }
         .popular-tag {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-blue);
-            color: #030712;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 4px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            white-space: nowrap;
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--accent-blue); color: #030712; font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; text-transform: uppercase;
         }
-        .plan-name { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
-        .plan-price { font-family: 'JetBrains Mono', monospace; font-size: 2.2rem; font-weight: 800; color: var(--accent-blue); margin-bottom: 1.2rem; }
-        .plan-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.85rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 2rem; }
-        .plan-list li::before { content: "› "; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; }
+        .plan-name { font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; color: #fff; margin-bottom: 0.4rem; }
+        .plan-price { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 800; color: var(--accent-blue); margin-bottom: 1rem; }
+        .plan-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.82rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 1.5rem; }
+        .plan-list li::before { content: "› "; color: var(--accent-blue); font-weight: bold; }
 
-        /* OKNO SZCZEGÓŁÓW (MODAL / FULL DETAILS VIEW) */
+        .btn-saas {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: #030712; padding: 0.75rem; border-radius: 6px; font-weight: 800;
+            font-family: 'JetBrains Mono', monospace; text-decoration: none; text-transform: uppercase;
+            font-size: 0.75rem; text-align: center; display: block; cursor: pointer; border: none; width: 100%;
+        }
+        .btn-outline {
+            background: transparent; border: 1px solid var(--border); color: var(--text-main);
+            padding: 0.75rem; border-radius: 6px; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+            text-decoration: none; text-transform: uppercase; font-size: 0.75rem; text-align: center; display: block; cursor: pointer; width: 100%;
+        }
+
+        /* MODAL / OKNO SZCZEGÓŁÓW */
         .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(10px); z-index: 1000;
+            justify-content: center; align-items: center; padding: 1rem;
         }
         .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--accent-blue);
-            border-radius: 16px;
-            max-width: 650px;
-            width: 100%;
-            padding: 2.5rem;
-            position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-            max-height: 90vh;
-            overflow-y: auto;
+            background: var(--bg-card); border: 1px solid var(--accent-blue); border-radius: 14px;
+            max-width: 600px; width: 100%; padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto;
         }
-        .modal-close {
-            position: absolute;
-            top: 1.5rem; right: 1.5rem;
-            background: none; border: none; color: var(--text-muted);
-            font-size: 1.5rem; cursor: pointer; font-family: 'JetBrains Mono', monospace;
-        }
-        .modal-close:hover { color: #fff; }
-        .details-section-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 1.2rem 0 0.5rem 0;
-            font-weight: 700;
-        }
-        .details-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-        .details-list.included li::before { content: "✔ "; color: #22c55e; font-weight: bold; }
-        .details-list.excluded li::before { content: "✕ "; color: #ef4444; font-weight: bold; }
+        .modal-close { position: absolute; top: 1.2rem; right: 1.2rem; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+        .details-title { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-blue); text-transform: uppercase; margin: 1rem 0 0.4rem 0; font-weight: 700; }
+        .details-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+        .details-list.included li::before { content: "✔  "; color: #22c55e; font-weight: bold; }
+        .details-list.excluded li::before { content: "✕  "; color: #ef4444; font-weight: bold; }
 
-        /* FORMULARZ KONTAKTOWY */
-        .order-section {
-            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 0.95));
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 3rem 2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        /* FORMULARZ */
+        .order-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem 2rem; max-width: 650px; margin: 0 auto; }
         .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; font-weight: 700; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 6px; background: rgba(3, 7, 18, 0.9); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.95rem;
-        }
-        .form-group select { cursor: pointer; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-blue); box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
-        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-group label { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 700; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: rgba(3, 7, 18, 0.9); color: #fff; font-size: 0.9rem; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
 
-        /* STOPKA */
-        .saas-footer {
-            border-top: 1px solid rgba(56, 189, 248, 0.1);
-            padding: 3rem 1.5rem;
-            text-align: center;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            background: #02040a;
-        }
-
-        @media(max-width: 768px) {
-            .header { padding: 1rem 1.2rem; justify-content: center; text-align: center; }
-            .modal-content { padding: 1.5rem; }
-        }
+        footer { border-top: 1px solid rgba(56, 189, 248, 0.1); padding: 2rem 1rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted); background: #02040a; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
+        <a href="index.html" class="back-btn">← Powrót do WebCraft Studio</a>
         <div class="brand-logo">Cloud<span>Flow</span></div>
-        <div class="header-actions">
-            <a href="#pricing" class="btn-saas" style="padding: 0.4rem 1rem; font-size: 0.7rem;">Cennik</a>
-        </div>
     </div>
 
     <section class="hero">
-        <div class="badge">// Cloud Infrastructure Engine</div>
-        <h1>Skalowalna Chmura <span>dla Twoich Aplikacji</span></h1>
-        <p class="desc">CloudFlow to nowoczesna platforma SaaS ułatwiająca zarządzanie infrastrukturą serwerową, bezpieczeństwem sieci i autoryzacją użytkowników w czasie rzeczywistym.</p>
-        <a href="#pricing" class="btn-saas">Wybierz Swój Pakiet</a>
+        <h1>Stała Opieka i <span>Infrastruktura SaaS</span></h1>
+        <p>Wybierz model abonamentowy dla swojej firmy. Zapewniamy pełne wsparcie techniczne, hosting i bezpieczeństwo.</p>
     </section>
 
-    <!-- CENNIK -->
+    <!-- 3 PAKIETY -->
     <div class="section-container" id="pricing">
-        <h2 class="section-title">Wybierz Pakiet Usługi</h2>
-        <p class="section-subtitle">Kliknij przycisk poniżej, aby sprawdzić dokładną specyfikację, zasoby VPS oraz warunki wsparcia.</p>
+        <h2 class="section-title">Pakiety Abonamentowe</h2>
+        <p class="section-subtitle">Kliknij "Więcej szczegółów", aby zobaczyć pełną specyfikację.</p>
         
         <div class="pricing-grid">
-            <!-- Pakiet 1 -->
+            <!-- Pakiet 1: Starter Cloud -->
             <div class="price-card">
                 <div>
-                    <div class="plan-name">Developer Node</div>
-                    <div class="plan-price">149 zł <span style="font-size: 0.8rem; color: var(--text-muted);">/mc</span></div>
+                    <div class="plan-name">Starter Cloud</div>
+                    <div class="plan-price">199 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Do 5,000 użytkowników</li>
-                        <li>Wsparcie standardowe 24h</li>
-                        <li>Globalne CDN (50GB transferu)</li>
+                        <li>Hosting i SSL w cenie</li>
+                        <li>Miesięczny backup</li>
+                        <li>Poprawki tekstów (do 2h)</li>
                     </ul>
                 </div>
                 <button class="btn-outline open-modal-btn" 
-                    data-title="Developer Node (149 zł / mc)"
-                    data-price="149 zł / miesiąc"
-                    data-vps="2 vCPU, 4 GB RAM, 40 GB NVMe SSD"
-                    data-domain="W cenie darmowa subdomena *.cloudflow.ovh (własna domena .pl / .com płatna dodatkowo)"
-                    data-included="Automatyczne kopie zapasowe (raz w tygodniu), Certyfikat SSL Let's Encrypt, Standardowy Firewall DDoS"
-                    data-excluded="Brak dedykowanego adresu IP, Brak priorytetowego wsparcia telefonicznego, Ograniczenie do 1 bazy danych PostgreSQL"
-                    style="width: 100%; margin-top: 1.5rem;">Więcej szczegółów</button>
+                    data-title="Starter Cloud (199 zł / mc)"
+                    data-price="199 zł / miesiąc"
+                    data-desc="Podstawowa opieka i monitoring dla mniejszych stron wizytówkowych."
+                    data-included="Hosting w chmurze, Certyfikat SSL, Miesięczna kopia zapasowa, Drobne poprawki tekstów do 2h w miesiącu"
+                    data-excluded="Brak dedykowanego adresu IP, Brak wsparcia w weekendy, Czas reakcji do 48h, Brak własnej domeny .pl w cenie (subdomena)"
+                    style="width: 100%; margin-top: 1rem;">Więcej szczegółów</button>
             </div>
 
-            <!-- Pakiet 2 (Wyróżniony) -->
+            <!-- Pakiet 2: Business Ops (Wyróżniony) -->
             <div class="price-card featured">
                 <div class="popular-tag">Rekomendowany</div>
                 <div>
-                    <div class="plan-name">Enterprise Cluster</div>
-                    <div class="plan-price">499 zł <span style="font-size: 0.8rem; color: var(--text-muted);">/mc</span></div>
+                    <div class="plan-name">Business Ops</div>
+                    <div class="plan-price">499 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Nieograniczona liczba użytkowników</li>
-                        <li>Dedykowane klastry serwerowe</li>
-                        <li>Priorytetowe wsparcie inżynieryjne</li>
+                        <li>Wszystko z pakietu Starter</li>
+                        <li>Ciągły monitoring Uptime</li>
+                        <li>Rozbudowa funkcji (do 5h)</li>
                     </ul>
                 </div>
                 <button class="btn-saas open-modal-btn" 
-                    data-title="Enterprise Cluster (499 zł / mc)"
+                    data-title="Business Ops (499 zł / mc)"
                     data-price="499 zł / miesiąc"
-                    data-vps="8 vCPU, 16 GB RAM, 160 GB NVMe SSD (Wysoka wydajność)"
-                    data-domain="Pełna domena firmowa (.pl lub .com) w cenie abonamentu przez cały okres współpracy"
-                    data-included="Codzienne backupy w chmurze, Dedykowany adres IP, Pełny dostęp do API i Webhooks, Zaawansowana ochrona Web Application Firewall"
-                    data-excluded="Brak limitów na transfer danych w ramach europejskich węzłów CDN"
-                    style="width: 100%; margin-top: 1.5rem;">Więcej szczegółów</button>
+                    data-desc="Pełny pakiet operacyjny dla rozwijających się firm i sklepów e-commerce."
+                    data-included="Wszystko z pakietu Starter, Ciągły monitoring działania strony, Rozbudowa funkcji i podstron do 5h, Priorytetowe wsparcie (reakcja do 12h), Optymalizacja SEO co kwartał"
+                    data-excluded="Brak dedykowanego zespołu programistów na wyłączność 24/7"
+                    style="width: 100%; margin-top: 1rem;">Więcej szczegółów</button>
+            </div>
+
+            <!-- Pakiet 3: Enterprise Dev -->
+            <div class="price-card">
+                <div>
+                    <div class="plan-name">Enterprise Dev</div>
+                    <div class="plan-price">1 299 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
+                    <ul class="plan-list">
+                        <li>Dedykowany architekt IT</li>
+                        <li>Nieograniczone modyfikacje</li>
+                        <li>SLA: Reakcja do 2h</li>
+                    </ul>
+                </div>
+                <button class="btn-outline open-modal-btn" 
+                    data-title="Enterprise Dev (1 299 zł / mc)"
+                    data-price="1 299 zł / miesiąc"
+                    data-desc="Dedykowany dział IT i stały zespół programistyczny na wyłączność."
+                    data-included="Dedykowany architekt IT / Dev, Nieograniczone drobne modyfikacje kodu, Szybkie wdrażanie nowych modułów i integracji, SLA: Czas reakcji do 2 godzin, Audyty bezpieczeństwa kodu"
+                    data-excluded="Brak jakichkolwiek ograniczeń technicznych w ramach roboczogodzin"
+                    style="width: 100%; margin-top: 1rem;">Więcej szczegółów</button>
             </div>
         </div>
     </div>
 
-    <!-- OKNO MODAL (SZCZEGÓŁY PAKIERU) -->
+    <!-- MODAL -->
     <div class="modal-overlay" id="detailsModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">&times;</button>
-            <h3 id="modalTitle" style="font-family: 'JetBrains Mono', monospace; font-size: 1.3rem; color: #fff; margin-bottom: 0.3rem;">Nazwa Pakietu</h3>
-            <div id="modalPrice" style="font-family: 'JetBrains Mono', monospace; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; margin-bottom: 1.5rem;">Cena</div>
+            <h3 id="modalTitle" style="font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; color: #fff; margin-bottom: 0.2rem;">Pakiet</h3>
+            <div id="modalPrice" style="font-family: 'JetBrains Mono', monospace; color: var(--accent-blue); font-size: 1rem; margin-bottom: 0.8rem; font-weight: bold;">Cena</div>
+            <p id="modalDesc" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;"></p>
 
-            <div class="details-section-title">// Specyfikacja VPS / Zasoby</div>
-            <p id="modalVps" style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;"></p>
-
-            <div class="details-section-title">// Domena i SSL</div>
-            <p id="modalDomain" style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;"></p>
-
-            <div class="details-section-title">// Co jest wliczone w cenę</div>
+            <div class="details-title">// Co jest wliczone</div>
             <ul class="details-list included" id="modalIncluded"></ul>
 
-            <div class="details-section-title">// Czego NIE ma w pakiecie (Ograniczenia)</div>
+            <div class="details-title">// Czego NIE ma w pakiecie</div>
             <ul class="details-list excluded" id="modalExcluded"></ul>
 
-            <div style="margin-top: 2rem; text-align: right;">
-                <button class="btn-saas" id="selectThisPackageBtn" style="width: 100%;">Zamów ten pakiet teraz</button>
+            <div style="margin-top: 1.5rem;">
+                <button class="btn-saas" id="selectThisPackageBtn">Wybierz ten pakiet w formularzu</button>
             </div>
         </div>
     </div>
 
-    <!-- FORMULARZ KONTAKTOWY / ZAMÓWIENIA -->
+    <!-- FORMULARZ -->
     <div class="section-container" id="order-form">
         <div class="order-section">
-            <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 0.5rem; text-align: left;">Formularz Zamówienia</h2>
-            <p class="section-subtitle" style="text-align: left; margin-bottom: 2rem;">Wypełnij dane, a my skontaktujemy się w celu aktywacji środowiska.</p>
+            <h2 class="section-title" style="font-size: 1.4rem; margin-bottom: 0.4rem; text-align: left;">Zamów Opiekę Abonamentową</h2>
+            <p class="section-subtitle" style="text-align: left; margin-bottom: 1.5rem; font-size: 0.85rem;">Wypełnij formularz, a skontaktujemy się z Tobą w sprawie konfiguracji.</p>
             
             <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
                 <div class="form-group">
                     <label>Wybrany Pakiet</label>
                     <select name="selected_plan" id="formPlanSelect" required>
-                        <option value="" disabled selected>-- Wybierz pakiet z cennika --</option>
-                        <option value="Developer Node (149 zł/mc)">Developer Node (149 zł/mc)</option>
-                        <option value="Enterprise Cluster (499 zł/mc)">Enterprise Cluster (499 zł/mc)</option>
+                        <option value="" disabled selected>-- Wybierz pakiet --</option>
+                        <option value="Starter Cloud (199 zł/mc)">Starter Cloud (199 zł/mc)</option>
+                        <option value="Business Ops (499 zł/mc)">Business Ops (499 zł/mc)</option>
+                        <option value="Enterprise Dev (1299 zł/mc)">Enterprise Dev (1299 zł/mc)</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -419,19 +254,19 @@
                     <input type="email" name="email" required placeholder="kontakt@domena.pl">
                 </div>
                 <div class="form-group">
-                    <label>Dodatkowe uwagi / Wymagania</label>
-                    <textarea name="message" placeholder="Napisz, czy potrzebujesz dedykowanej integracji lub pomocy przy migracji..."></textarea>
+                    <label>Uwagi / Informacje o stronie</label>
+                    <textarea name="message" placeholder="Podaj adres swojej strony lub opis projektu..."></textarea>
                 </div>
-                <button type="submit" class="btn-saas" style="width: 100%; margin-top: 1rem;">Wyślij zgłoszenie zamówienia</button>
+                <button type="submit" class="btn-saas" style="margin-top: 0.5rem;">Wyślij zgłoszenie</button>
             </form>
         </div>
     </div>
 
-    <footer class="saas-footer">
-        <p>&copy; 2026 CloudFlow Inc. Wszelkie prawa zastrzeżone. Projekt demonstracyjny stworzony przez WebCraft Studio.</p>
+    <footer>
+        <p>&copy; 2026 CloudFlow SaaS. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
-    <!-- SKRYPT DO OBSŁUGI OKNA SZCZEGÓŁÓW -->
+    <!-- SKRYPT MODALU -->
     <script>
         const modal = document.getElementById('detailsModal');
         const closeModal = document.getElementById('closeModal');
@@ -445,13 +280,10 @@
             btn.addEventListener('click', () => {
                 currentPackageName = btn.getAttribute('data-title').split(' (')[0];
                 
-                // Wypełnij dane w oknie
                 document.getElementById('modalTitle').textContent = btn.getAttribute('data-title');
                 document.getElementById('modalPrice').textContent = btn.getAttribute('data-price');
-                document.getElementById('modalVps').textContent = btn.getAttribute('data-vps');
-                document.getElementById('modalDomain').textContent = btn.getAttribute('data-domain');
+                document.getElementById('modalDesc').textContent = btn.getAttribute('data-desc');
 
-                // Listy wliczone / niewliczone
                 const includedList = document.getElementById('modalIncluded');
                 includedList.innerHTML = '';
                 btn.getAttribute('data-included').split(', ').forEach(item => {
@@ -472,17 +304,9 @@
             });
         });
 
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+        closeModal.addEventListener('click', () => { modal.style.display = 'none'; });
+        window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
 
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Przycisk "Zamów ten pakiet" w oknie szczegółów przenosi do formularza i zaznacza pakiet
         selectThisPackageBtn.addEventListener('click', () => {
             modal.style.display = 'none';
             for (let option of formPlanSelect.options) {
