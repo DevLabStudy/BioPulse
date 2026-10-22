@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" data-theme="blue">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 <body>
 
     <div class="top-announcement-bar">
-        <span>⚡ 100% Autorski Kod | Brak WordPressa i podatności | Pełna wydajność</span>
+        <span>⚡ 100% Autorski Kod | Brak WordPressa | Realne powiadomienia e-mail</span>
     </div>
 
     <header>
@@ -32,13 +32,13 @@
 
     <section class="hero">
         <div class="telemetry-pill">
-            <span class="pulse-dot"></span> STATUS AGENCJI: <strong style="color: #38bdf8;">PRZYJMUJEMY ZLECENIA</strong>
+            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">INTERAKTYWNY KONFIGURATOR ONLINE</strong>
         </div>
-        <h1>Tworzymy ultraszybkie strony, <br><span>które deklasują konkurencję</span></h1>
-        <p>Projektujemy i kodujemy unikalne serwisy internetowe od zera. Bez ciężkich wtyczek, bez zbędnego kodu, z maksymalną dbałością o detale.</p>
+        <h1>Ultraszybkie strony internetowe <br><span>dla firm i twórców</span></h1>
+        <p>Skonfiguruj swój projekt poniżej, wybierz kolorystykę i wyślij zgłoszenie – wiadomość natychmiast trafi bezpośrednio na naszą skrzynkę.</p>
         <div class="hero-btns">
-            <a href="#order-form" class="btn-primary">Skonfiguruj swój projekt</a>
-            <a href="#portfolio" class="btn-secondary">Zobacz wzory projektów</a>
+            <a href="#order-form" class="btn-primary">Przejdź do konfiguratora</a>
+            <a href="#pricing" class="btn-secondary">Sprawdź cennik (od 350 zł)</a>
         </div>
     </section>
 
@@ -54,9 +54,9 @@
                     <p>Brak systemów CMS i wtyczek sprawia, że strony ładują się błyskawicznie, zapewniając najwyższe wyniki w testach Core Web Vitals.</p>
                 </div>
                 <div class="carousel-slide">
-                    <span class="slide-tag">STANDARD 02 // UI/UX DESIGN</span>
-                    <h3>🎨 Unikalny projekt dopasowany do marki</h3>
-                    <p>Nie korzystamy ze sztampowych szablonów. Każdy interfejs jest projektowany tak, aby przyciągać wzrok i budować zaufanie klientów.</p>
+                    <span class="slide-tag">STANDARD 02 // DOSTĘPNOŚĆ BUDŻETOWA</span>
+                    <h3>💸 Elastyczne pakiety dla każdego</h3>
+                    <p>Niezależnie czy masz kilkaset złotych na start (fotograf, freelancer), czy szukasz korporacyjnego serwisu – znajdziemy rozwiązanie.</p>
                 </div>
                 <div class="carousel-slide">
                     <span class="slide-tag">STANDARD 03 // OPTYMALIZACJA SEO</span>
@@ -90,21 +90,21 @@
         <h2>Profesjonalne rozwiązania webowe</h2>
         <div class="services-grid">
             <div class="card">
-                <h3>🚀 Landing Page</h3>
-                <p>Skuteczne strony jednostronicowe nastawione na konwersję i pozyskiwanie klientów z reklam.</p>
+                <h3>📷 Wizytówki Mikro (Start)</h3>
+                <p>Szybkie, eleganckie strony typu One-Page idealne dla fotografów, artystów i małych usług z małym budżetem.</p>
+            </div>
+            <div class="card">
+                <h3>🚀 Standard Landing Page</h3>
+                <p>Skuteczne strony jednostronicowe nastawione na konwersję, bogatszą grafikę i pozyskiwanie klientów.</p>
             </div>
             <div class="card">
                 <h3>🏢 Strony Korporacyjne</h3>
                 <p>Rozbudowane serwisy wielostronicowe dla firm szukających poważnego wizerunku w sieci.</p>
             </div>
-            <div class="card">
-                <h3>💻 Dedykowany Frontend</h3>
-                <p>Niestandardowe aplikacje webowe i interfejsy SPA oparte o nowoczesny stack technologiczny.</p>
-            </div>
         </div>
     </section>
 
-    <!-- Portfolio / Wzory stron z efektem powiększenia po najechaniu -->
+    <!-- Portfolio / Wzory stron -->
     <section class="portfolio-section" id="portfolio">
         <div class="section-header-tag">WZORY I REALIZACJE</div>
         <h2>Przykładowe wzory stron i szablony</h2>
@@ -112,18 +112,18 @@
         
         <div class="portfolio-grid">
             <div class="portfolio-card zoom-card">
-                <div class="p-tag">Gastronomia / Usługi</div>
-                <h3>Bistro & Cafe „Aura”</h3>
-                <p>Strona wizytówkowa dla lokalu z interaktywnym menu i formularzem rezerwacji stolika.</p>
+                <div class="p-tag">Fotografia / Portfolio (Pakiet Start)</div>
+                <h3>ArtFocus Studio</h3>
+                <p>Minimalistyczna, elegancka strona dla twórców i fotografów z galerią prac w czystym kodzie.</p>
                 <div class="project-links">
                     <a href="#" class="btn-demo">Zobacz wzór</a>
                 </div>
             </div>
 
             <div class="portfolio-card zoom-card">
-                <div class="p-tag">Fotografia / Portfolio</div>
-                <h3>ArtFocus Studio</h3>
-                <p>Minimalistyczna, elegancka strona dla twórców z galerią zdjęć w pełnej rozdzielczości.</p>
+                <div class="p-tag">Gastronomia / Usługi</div>
+                <h3>Bistro & Cafe „Aura”</h3>
+                <p>Strona wizytówkowa dla lokalu z interaktywnym menu i formularzem rezerwacji stolika.</p>
                 <div class="project-links">
                     <a href="#" class="btn-demo">Zobacz wzór</a>
                 </div>
@@ -143,65 +143,106 @@
     <!-- Cennik -->
     <section class="pricing-section" id="pricing">
         <div class="section-header-tag">CENNIK</div>
-        <h2>Przejrzyste pakiety cenowe</h2>
+        <h2>Elastyczne pakiety cenowe dla każdego</h2>
         <div class="pricing-grid">
             <div class="price-card">
-                <h3>Landing Page</h3>
-                <div class="price">od 1 200 zł</div>
-                <p>Idealne rozwiązanie na start dla nowej oferty.</p>
+                <h3>Wizytówka Mikro (Start)</h3>
+                <div class="price">od 350 zł</div>
+                <p>Idealne dla fotografów i freelancerów z ograniczonym budżetem.</p>
                 <ul>
-                    <li>Strona One-Page (czysty kod)</li>
-                    <li>Indywidualny design UI/UX</li>
-                    <li>Pełna responsywność</li>
-                    <li>Formularz kontaktowy</li>
+                    <li>Prosta strona One-Page (czysty kod)</li>
+                    <li>Sekcja O mnie / Oferta / Kontakt</li>
+                    <li>Galeria prac lub portfolio zdjęć</li>
+                    <li>Pełna responsywność na telefonach</li>
                 </ul>
                 <a href="#order-form" class="btn-secondary">Wybierz pakiet</a>
             </div>
+
             <div class="price-card featured">
                 <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
-                <h3>Strona Korporacyjna</h3>
-                <div class="price">od 2 800 zł</div>
-                <p>Dla firm szukających profesjonalizmu.</p>
+                <h3>Landing Page Standard</h3>
+                <div class="price">od 1 200 zł</div>
+                <p>Dla firm szukających profesjonalnego pozyskiwania klientów.</p>
                 <ul>
-                    <li>Rozbudowana struktura (do 5 podstron)</li>
-                    <li>Zaawansowane animacje (Three.js)</li>
-                    <li>Optymalizacja SEO i prędkości</li>
-                    <li>Konfiguracja hostingu i SSL</li>
+                    <li>Indywidualny design UI/UX</li>
+                    <li>Optymalizacja pod kątem SEO Google</li>
+                    <li>Rozbudowany formularz kontaktowy</li>
+                    <li>Szybki hosting chmurowy</li>
                 </ul>
                 <a href="#order-form" class="btn-primary">Wybierz pakiet</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Strona Korporacyjna</h3>
+                <div class="price">od 2 800 zł</div>
+                <p>Dla firm oczekujących zaawansowanej struktury.</p>
+                <ul>
+                    <li>Wielostronicowa architektura (do 5 podstron)</li>
+                    <li>Zaawansowane animacje i efekty (Three.js)</li>
+                    <li>Pełna optymalizacja prędkości</li>
+                    <li>Opieka i wsparcie techniczne</li>
+                </ul>
+                <a href="#order-form" class="btn-secondary">Wybierz pakiet</a>
             </div>
         </div>
     </section>
 
-    <!-- Formularz -->
+    <!-- Zaawansowany Formularz Zamówienia (z obsługą Formspree / Web3Forms oraz wyborem kolorów) -->
     <section class="order-section" id="order-form">
-        <div class="section-header-tag">ZAMÓWIENIE</div>
-        <h2>Rozpocznij współpracę</h2>
-        <p class="contact-desc">Wypełnij formularz, aby omówić projekt. Odpowiadamy w ciągu 24 godzin.</p>
+        <div class="section-header-tag">KONFIGURATOR I ZAMÓWIENIE</div>
+        <h2>Skonfiguruj swój projekt</h2>
+        <p class="contact-desc">Wypełnij poniższe pola. Wyślij zapytanie, a wiadomość dotrze bezpośrednio na naszą pocztę e-mail.</p>
         
-        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+        <!-- Wklej swój unikalny URL z Formspree.io zamiast 'twoj-kod-formspree' -->
+        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST" id="advancedForm">
+            
             <div class="form-row">
                 <div class="form-group">
-                    <label>Imię / Nazwa Firmy</label>
-                    <input type="text" name="name" required>
+                    <label>Imię / Nazwa Firmy *</label>
+                    <input type="text" name="name" placeholder="np. Jan Kowalski" required>
                 </div>
                 <div class="form-group">
-                    <label>Adres E-mail</label>
-                    <input type="email" name="email" required>
+                    <label>Adres E-mail (do kontaktu) *</label>
+                    <input type="email" name="email" placeholder="kontakt@twojadres.pl" required>
                 </div>
             </div>
-            <div class="form-group">
-                <label>Wybierz pakiet</label>
-                <select name="package">
-                    <option value="landing">Landing Page (od 1 200 zł)</option>
-                    <option value="corporate">Strona Korporacyjna (od 2 800 zł)</option>
-                </select>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Wybierz pakiet usług</label>
+                    <select name="package" id="packageSelect">
+                        <option value="micro">Wizytówka Mikro (od 350 zł)</option>
+                        <option value="landing" selected>Landing Page Standard (od 1 200 zł)</option>
+                        <option value="corporate">Strona Korporacyjna (od 2 800 zł)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Wybierz preferowany kolor przewodni</label>
+                    <select name="accent_color" id="colorSelect">
+                        <option value="blue">Nowoczesny Błękit (Cyan / Blue)</option>
+                        <option value="purple">Głęboki Fiolet (Neon Purple)</option>
+                        <option value="emerald">Szmaragdowa Zieleń (Emerald Green)</option>
+                        <option value="amber">Złoty Bursztyn (Amber Glow)</option>
+                    </select>
+                </div>
             </div>
+
             <div class="form-group">
-                <label>Opis projektu</label>
-                <textarea name="message" required></textarea>
+                <label>Dodatkowe opcje (opcjonalnie)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="extra_fast" value="yes"> Ekspresowa realizacja (w 48h)</label>
+                    <label><input type="checkbox" name="extra_seo" value="yes"> Zaawansowany audyt i optymalizacja SEO</label>
+                </div>
             </div>
-            <button type="submit" class="btn-primary full-width">Wyślij zapytanie</button>
+
+            <div class="form-group">
+                <label>Szczegóły projektu / Opis wymagań *</label>
+                <textarea name="message" placeholder="Napisz, czym zajmuje się Twoja firma, czy masz już materiały graficzne..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary full-width">Wyślij zamówienie / zapytanie</button>
+            <p class="form-info-note">🔒 Twoje dane są w pełni bezpieczne. Odpowiadamy najpóźniej w 24 godziny.</p>
         </form>
     </section>
 
