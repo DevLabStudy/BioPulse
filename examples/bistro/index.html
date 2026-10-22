@@ -3,103 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bistro & Cafe Aura | Demo</title>
+    <title>Bistro & Cafe Aura | High-End HoReCa Demo</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff5e00' stroke-width='2.5'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-base: #030305;
+            --bg-card: rgba(8, 12, 20, 0.85);
             --accent-orange: #ff5e00;
             --accent-blue: #00d2ff;
             --text-main: #f1f5f9;
             --text-muted: #8b9bb4;
+            --border: rgba(255, 94, 0, 0.2);
         }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: var(--bg-base);
+            background-image: radial-gradient(circle at top right, rgba(255, 94, 0, 0.05), transparent 50%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden;
         }
         .header {
-            padding: 2rem 3rem;
+            padding: 1.5rem 3rem;
             border-bottom: 1px solid rgba(255,255,255,0.08);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(3, 3, 5, 0.9);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .back-btn {
             font-family: 'JetBrains Mono', monospace;
             color: var(--accent-orange);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
         }
-        .content {
-            max-width: 1200px;
+        .back-btn:hover { opacity: 0.8; }
+        .hero {
+            max-width: 1400px;
             margin: 4rem auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
             align-items: center;
         }
-        .bistro-img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid rgba(255,94,0,0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        .badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            background: rgba(255, 94, 0, 0.1);
+            color: var(--accent-orange);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-transform: uppercase;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
         }
         h1 {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
             color: #fff;
         }
         h1 span { color: var(--accent-orange); }
-        p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; }
-        .menu-preview {
-            background: rgba(10, 15, 25, 0.8);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 12px;
+        .desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
         }
-        .menu-item {
+        .menu-grid {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .menu-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            align-items: center;
             font-family: 'JetBrains Mono', monospace;
+            transition: 0.2s;
         }
-        .menu-item span:last-child { color: var(--accent-orange); }
-        @media (max-width: 768px) {
-            .content { grid-template-columns: 1fr; gap: 2rem; }
-            h1 { font-size: 2.2rem; }
+        .menu-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateX(4px);
+        }
+        .menu-name { font-weight: 700; font-size: 0.95rem; color: #fff; }
+        .menu-price { color: var(--accent-orange); font-weight: 800; }
+        .image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        }
+        .image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(3,3,5,0.8));
+            pointer-events: none;
+        }
+        .bistro-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.02);
+            transition: transform 0.5s ease;
+        }
+        .image-wrapper:hover .bistro-img { transform: scale(1); }
+        .status-tag {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
+            background: rgba(3, 3, 5, 0.9);
+            border: 1px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .live-dot { width: 8px; height: 8px; background: #00ff66; border-radius: 50%; box-shadow: 0 0 10px #00ff66; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+        @media(max-width: 968px) {
+            .hero { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 3rem; }
+            .header { padding: 1.2rem 1.5rem; }
+            .bistro-img { height: 350px; }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
-        <span style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--text-muted);">// DEMO HOReCa</span>
+        <span style="font-family: 'JetBrains Mono'; font-size: 0.72rem; color: var(--text-muted);">// DEMO_ID: RESTAURANT_AURA</span>
     </div>
-    
-    <div class="content">
+
+    <section class="hero">
         <div>
-            <span style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-orange); text-transform: uppercase; font-weight: 700;">// Gastronomia & Kawiarnie</span>
+            <div class="badge">// High-End HoReCa Platform</div>
             <h1>Bistro & Cafe <span>Aura</span></h1>
-            <p>Nowoczesny layout dedykowany branży gastronomicznej. Zintegrowana karta menu, system rezerwacji stolików online oraz pełna optymalizacja pod urządzenia mobilne.</p>
-            <div class="menu-preview">
-                <div class="menu-item"><span>Kawa Rzemieślnicza Flat White</span><span>18 PLN</span></div>
-                <div class="menu-item"><span>Autorskie Burger Truflowy</span><span>46 PLN</span></div>
-                <div class="menu-item"><span>Domowe Ciasto Cytrynowe</span><span>22 PLN</span></div>
+            <p class="desc">Ekskluzywny, ultraszybki interfejs gastronomiczny wyposażony w silnik rezerwacji stolików w czasie rzeczywistym oraz zintegrowane menu cyfrowe.</p>
+            
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <span class="menu-name">01. Kawa Rzemieślnicza Single Origin</span>
+                    <span class="menu-price">18 PLN</span>
+                </div>
+                <div class="menu-card">
+                    <span class="menu-name">02. Autorski Burger Truflowy Wagyu</span>
+                    <span class="menu-price">48 PLN</span>
+                </div>
+                <div class="menu-card">
+                    <span class="menu-name">03. Ręcznie Robione Ravioli z Ricottą</span>
+                    <span class="menu-price">42 PLN</span>
+                </div>
             </div>
         </div>
-        <div>
-            <!-- Zdjęcie bistro.jpg w tym samym folderze -->
+
+        <div class="image-wrapper">
+            <!-- Wymaga pliku bistro.jpg w tym samym folderze -->
             <img src="bistro.jpg" alt="Bistro & Cafe Aura" class="bistro-img">
+            <div class="status-tag">
+                <span class="live-dot"></span>
+                <span>STATUS LOKALU: OTWARTE / REZERWACJE AKTYWNE</span>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
