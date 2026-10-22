@@ -1,165 +1,136 @@
 """
-BioPulse Core Engine - Biomedical Data Extraction & Validation Pipeline
-Autor: Portfolio Inżynieryjne / BioPulse Project
-Opis: Silnik walidacji, strukturyzacji i eksportu danych biologicznych 
-      (oparty na notatkach: tkanki zwierzęce, nabłonki, mięśnie, krew).
+BioPulse Core Engine - Ultimate Biomedical Exporter
+Opis: Konwertuje pełną bazę wiedzy z notatek biologicznych (tkanki, krew, neuron) na plik JSON dla portfolio[cite: 1, 4].
 """
 
-import csv
-from typing import List, Dict, Any
+import json
 
 class BioPulseEngine:
-    def __init__(self, source_name: str):
-        self.source_name = source_name
-        self.raw_data: List[Dict[str, Any]] = []
-        self.validated_data: List[Dict[str, Any]] = []
+    def __init__(self):
+        self.knowledge_base = []
 
-    def load_biological_database(self) -> None:
-        """Wczytywanie ustrukturyzowanej bazy wiedzy o tkankach i składnikach krwi."""
-        print(f"[INFO]: Łączenie ze źródłem danych: {self.source_name}...")
-        
-        # Baza danych bezpośrednio z Twoich notatek z biologii
-        self.raw_data = [
-            # Tkanka Nabłonkowa
+    def build_database(self):
+        """Pobiera kompletne dane z notatek i rysunków biologicznych[cite: 1, 4]."""
+        self.knowledge_base = [
+            # --- TKANKA NABŁONKOWA ---
             {
-                "kategoria": "Tkanka Nabłonkowa", 
-                "obiekt": "Wielowarstwowy płaski", 
-                "lokalizacja": "Powierzchnia ciała, naskórek", 
-                "funkcja": "Ochronna (przed urazami i wysychaniem)", 
-                "status": "aktywny"
+                "id": 1,
+                "kategoria": "Tkanka Nabłonkowa",
+                "nazwa": "Wielowarstwowy płaski",
+                "lokalizacja": "Powierzchnia ciała, naskórek",
+                "budowa": "Wiele warstw komórek, spłaszczających się ku powierzchni[cite: 1, 2]",
+                "funkcja": "Głównie ochronna (przed urazami i wysychaniem)[cite: 1]"
             },
             {
-                "kategoria": "Tkanka Nabłonkowa", 
-                "obiekt": "Jednowarstwowy wielorzędowy", 
-                "lokalizacja": "Drogi oddechowe", 
-                "funkcja": "Usuwanie zanieczyszczeń rzęskami", 
-                "status": "aktywny"
+                "id": 2,
+                "kategoria": "Tkanka Nabłonkowa",
+                "nazwa": "Jednowarstwowy wielorzędowy",
+                "lokalizacja": "Drogi oddechowe",
+                "budowa": "Komórki o różnej wysokości, wyposażone w rzęski[cite: 1, 2]",
+                "funkcja": "Usuwanie zanieczyszczeń za pomocą rzęsek[cite: 1]"
             },
             {
-                "kategoria": "Tkanka Nabłonkowa", 
-                "obiekt": "Jednowarstwowy walcowaty", 
-                "lokalizacja": "Żołądek, jelito cienkie", 
-                "funkcja": "Wchłanianie i wydzielanie", 
-                "status": "aktywny"
+                "id": 3,
+                "kategoria": "Tkanka Nabłonkowa",
+                "nazwa": "Jednowarstwowy walcowaty",
+                "lokalizacja": "Żołądek, jelito cienkie[cite: 1, 2]",
+                "budowa": "Wysokie komórki, często z mikrokosmkami[cite: 1, 2]",
+                "funkcja": "Wchłanianie i wydzielanie substancji[cite: 1]"
             },
             {
-                "kategoria": "Tkanka Nabłonkowa", 
-                "obiekt": "Jednowarstwowy sześcienny", 
-                "lokalizacja": "Przewody gruczołowe, kanaliki nerkowe", 
-                "funkcja": "Wchłanianie i wydzielanie", 
-                "status": "aktywny"
+                "id": 4,
+                "kategoria": "Tkanka Nabłonkowa",
+                "nazwa": "Jednowarstwowy sześcienny",
+                "lokalizacja": "Przewody gruczołowe, kanaliki nerkowe[cite: 1, 2]",
+                "budowa": "Komórki w kształcie sześcianów[cite: 1, 2]",
+                "funkcja": "Wchłanianie i wydzielanie[cite: 1]"
             },
             {
-                "kategoria": "Tkanka Nabłonkowa", 
-                "obiekt": "Jednowarstwowy płaski", 
-                "lokalizacja": "Pęcherzyki płucne, ściany naczyń", 
-                "funkcja": "Transport i wymiana gazowa", 
-                "status": "aktywny"
-            },
-            
-            # Tkanka Mięśniowa[cite: 1]
-            {
-                "kategoria": "Tkanka Mięśniowa", 
-                "obiekt": "Poprzecznie prążkowana szkieletowa", 
-                "lokalizacja": "Mięśnie szkieletowe", 
-                "funkcja": "Praca zależna od woli, silna i szybka", 
-                "status": "aktywny"
-            },
-            {
-                "kategoria": "Tkanka Mięśniowa", 
-                "obiekt": "Poprzecznie prążkowana serca", 
-                "lokalizacja": "Serce", 
-                "funkcja": "Praca niezależna od woli, odporna na zmęczenie", 
-                "status": "aktywny"
-            },
-            {
-                "kategoria": "Tkanka Mięśniowa", 
-                "obiekt": "Gładka", 
-                "lokalizacja": "Ściany narządów wewnętrznych (żołądek, jelita)", 
-                "funkcja": "Powolne, długotrwałe skurcze niezależne od woli", 
-                "status": "aktywny"
+                "id": 5,
+                "kategoria": "Tkanka Nabłonkowa",
+                "nazwa": "Jednowarstwowy płaski",
+                "lokalizacja": "Pęcherzyki płucne, ściany naczyń[cite: 1, 2]",
+                "budowa": "Płaskie komórki umożliwiające dyfuzję[cite: 1, 2]",
+                "funkcja": "Transport i wymiana substancji (np. gazów)[cite: 1]"
             },
 
-            # Tkanka Łączna Płynna (Krew)[cite: 1]
+            # --- TKANKA MIĘŚNIOWA ---
             {
-                "kategoria": "Tkanka Łączna Płynna", 
-                "obiekt": "Osocze (Plasma)", 
-                "lokalizacja": "Krew (ok. 55% objętości)", 
-                "funkcja": "Transport składników odżywczych, hormonów i odpadów", 
-                "status": "aktywny"
+                "id": 6,
+                "kategoria": "Tkanka Mięśniowa",
+                "nazwa": "Poprzecznie prążkowana szkieletowa",
+                "lokalizacja": "Mięśnie szkieletowe[cite: 1]",
+                "budowa": "Długie, cylindryczne, wielojądrzyste włókna z widocznym prążkowaniem[cite: 1]",
+                "funkcja": "Praca zależna od woli, silna i szybka[cite: 1]"
             },
             {
-                "kategoria": "Tkanka Łączna Płynna", 
-                "obiekt": "Erytrocyty (Krwinki czerwone)", 
-                "lokalizacja": "Krew (4,5 mln/mm3)", 
-                "funkcja": "Transport tlenu (O2) i częściowo CO2", 
-                "status": "aktywny"
+                "id": 7,
+                "kategoria": "Tkanka Mięśniowa",
+                "nazwa": "Poprzecznie prążkowana serca",
+                "lokalizacja": "Serce[cite: 1]",
+                "budowa": "Komórki widlasto rozgałęzione, połączone wstawkami, 1-2 jądra[cite: 1]",
+                "funkcja": "Praca niezależna od woli, odporna na zmęczenie[cite: 1]"
             },
             {
-                "kategoria": "Tkanka Łączna Płynna", 
-                "obiekt": "Trombocyty (Płytki krwi)", 
-                "lokalizacja": "Krew (200-400 tys./mm3)", 
-                "funkcja": "Uczestniczą w procesie krzepnięcia krwi", 
-                "status": "aktywny"
-            },
-            {
-                "kategoria": "Tkanka Łączna Płynna", 
-                "obiekt": "Leukocyty (Krwinki białe)", 
-                "lokalizacja": "Krew (4-10 tys./mm3)", 
-                "funkcja": "Ochrona organizmu i reakcje odpornościowe", 
-                "status": "aktywny"
+                "id": 8,
+                "kategoria": "Tkanka Mięśniowa",
+                "nazwa": "Gładka",
+                "lokalizacja": "Ściany narządów wewnętrznych (żołądek, jelita)[cite: 1]",
+                "budowa": "Wrzecionowate komórki bez prążkowania, jedno jądro centralne[cite: 1]",
+                "funkcja": "Powolne, długotrwałe skurcze niezależne od woli[cite: 1]"
             },
 
-            # Rekord testowy do odrzucenia przez silnik walidacji
+            # --- TKANKA ŁĄCZNA PŁYNNA (KREW) ---
             {
-                "kategoria": "Błąd", 
-                "obiekt": "Anomalia testowa", 
-                "lokalizacja": "Nieznana", 
-                "funkcja": "Brak", 
-                "status": "odrzucony"
+                "id": 9,
+                "kategoria": "Tkanka Łączna Płynna",
+                "nazwa": "Osocze (Plasma)",
+                "lokalizacja": "Krew (ok. 55% objętości)[cite: 1]",
+                "budowa": "Płynna macierz (90% wody, białka, sole)[cite: 1]",
+                "funkcja": "Transportuje składniki odżywcze, hormony i odpady[cite: 1]"
+            },
+            {
+                "id": 10,
+                "kategoria": "Tkanka Łączna Płynna",
+                "nazwa": "Erytrocyty (Krwinki czerwone)",
+                "lokalizacja": "Krew (4,5 mln/mm³ / 4,5·10¹²/L)[cite: 1]",
+                "budowa": "Komórki bezjądrzaste z hemoglobiną[cite: 1]",
+                "funkcja": "Główna funkcja: transport tlenu ($O_2$) i częściowo $CO_2$[cite: 1]"
+            },
+            {
+                "id": 11,
+                "kategoria": "Tkanka Łączna Płynna",
+                "nazwa": "Trombocyty (Płytki krwi)",
+                "lokalizacja": "Krew (200-400 tys./mm³)[cite: 1]",
+                "budowa": "Fragmenty cytoplazmy megakariocytów[cite: 1]",
+                "funkcja": "Uczestniczą w procesie krzepnięcia krwi[cite: 1]"
+            },
+            {
+                "id": 12,
+                "kategoria": "Tkanka Łączna Płynna",
+                "nazwa": "Leukocyty (Krwinki białe)",
+                "lokalizacja": "Krew (4-10 tys./mm³)[cite: 1]",
+                "budowa": "Posiadają jądro komórkowe[cite: 1]",
+                "funkcja": "Ochrona organizmu i reakcje odpornościowe[cite: 1]"
+            },
+
+            # --- TKANKA NERWOWA (NEURON) ---
+            {
+                "id": 13,
+                "kategoria": "Tkanka Nerwowa",
+                "nazwa": "Struktura Neurona i Komórki Glejowe",
+                "lokalizacja": "Układ nerwowy[cite: 1]",
+                "budowa": "Dendryty, ciało komórkowe, jądro, akson (neuryt), osłonka mielinowa (lemocyty/komórki Schwanna), węzły Ranviera, kolbki synaptyczne[cite: 1, 4]",
+                "funkcja": "Odbiór, przetwarzanie i przewodzenie impulsów nerwowych[cite: 1]"
             }
         ]
-        print(f"[INFO]: Wczytano łącznie {len(self.raw_data)} rekordów z bazy wiedzy.")
 
-    def validate_and_filter(self) -> None:
-        """Silnik walidacji odrzucający anomalie i sprawdzający poprawność struktury[cite: 1]."""
-        print("[INFO]: Uruchamiam system walidacji reguł biologicznych...")
-        valid_count = 0
-        
-        for item in self.raw_data:
-            # Reguła biznesowo-medyczna: przepuszczamy tylko rekordy ze statusem 'aktywny'
-            if item["status"] == "aktywny" and item["kategoria"] != "Błąd":
-                self.validated_data.append(item)
-                valid_count += 1
-            else:
-                print(f"[WARNING]: Wykryto i odrzucono anomalię/błąd: {item['obiekt']}")
-                
-        print(f"[INFO]: Walidacja zakończona. Pomyślnie zweryfikowano: {valid_count}/{len(self.raw_data)} rekordów.")
-
-    def export_to_csv(self, filename: str) -> None:
-        """Eksport zweryfikowanych danych strukturalnych do pliku CSV."""
-        if not self.validated_data:
-            print("[ERROR]: Brak danych do eksportu.")
-            return
-
-        keys = self.validated_data[0].keys()
-        try:
-            with open(filename, mode='w', newline='', encoding='utf-8') as f:
-                writer = csv.DictWriter(f, fieldnames=keys)
-                writer.writeheader()
-                for row in self.validated_data:
-                    writer.writerow(row)
-            print(f"[SUCCESS]: Wyeksportowano czystą bazę wiedzy do pliku '{filename}'.")
-        except Exception as e:
-            print(f"[ERROR]: Nie udało się zapisać pliku CSV: {e}")
+    def export(self):
+        with open("biopulse_data.json", "w", encoding="utf-8") as f:
+            json.dump(self.knowledge_base, f, ensure_ascii=False, indent=4)
+        print("[SUCCESS]: Wygenerowano aktualny plik JSON z notatek biologicznych[cite: 1, 4]!")
 
 if __name__ == "__main__":
-    print("=== START SILNIKA BIOPULSE (MODUŁ BIOLOGICZNY) ===")
-    
-    # Inicjalizacja silnika dla bazy notatek
-    engine = BioPulseEngine(source_name="Notatki-Biologia-Tkanki-Zwierzece")
-    engine.load_biological_database()
-    engine.validate_and_filter()
-    engine.export_to_csv("baza_tkanki_zwierzece.csv")
-    
-    print("=== ZAKOŃCZONO PROCES ==-\n")
+    engine = BioPulseEngine()
+    engine.build_database()
+    engine.export()
