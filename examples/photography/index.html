@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ArtFocus Studio | Jasne Portfolio Fotografa</title>
     <style>
         :root {
@@ -15,87 +15,88 @@
             --border-warm: #e6dfd3;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 
         header {
-            display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
+            display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%;
             background: rgba(253, 251, 247, 0.95); border-bottom: 1px solid var(--border-warm); position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(10px); gap: 10px; flex-wrap: wrap;
         }
-        .back-link { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .back-link { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
         .back-link:hover { color: var(--accent-warm); }
-        .admin-link { color: var(--accent-hover); font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 1px solid var(--accent-hover); padding: 0.4rem 0.8rem; border-radius: 6px; }
+        .admin-link { color: var(--accent-hover); font-size: 0.8rem; font-weight: 700; text-decoration: none; border: 1px solid var(--accent-hover); padding: 0.3rem 0.6rem; border-radius: 6px; white-space: nowrap; }
 
-        /* Hero z tłem salon.jpg */
+        /* Hero */
         .photo-hero {
             position: relative; height: 75vh; background: url('salon.jpg') center/cover no-repeat;
             display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 0 5%;
         }
-        .photo-hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(44, 36, 32, 0.5); }
+        .photo-hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(44, 36, 32, 0.55); }
         .photo-hero-content { position: relative; z-index: 2; max-width: 800px; }
-        .photo-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
-        .photo-hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #f3f4f6; }
+        .photo-hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem; font-weight: 700; }
+        .photo-hero p { font-size: 1.05rem; margin-bottom: 2rem; color: #f3f4f6; }
 
         .btn-gold {
-            background-color: var(--accent-warm); color: #fff; padding: 0.9rem 2.2rem; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; border: none; cursor: pointer; transition: background 0.2s;
+            background-color: var(--accent-warm); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; border: none; cursor: pointer; transition: background 0.2s; font-size: 0.9rem; text-align: center;
         }
         .btn-gold:hover { background-color: var(--accent-hover); }
 
-        .section-container { max-width: 900px; margin: 5rem auto; padding: 0 5%; }
-        .section-title { text-align: center; font-size: 2.3rem; margin-bottom: 0.5rem; }
-        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; }
+        .section-container { max-width: 900px; margin: 4rem auto; padding: 0 1.5rem; }
+        .section-title { text-align: center; font-size: clamp(1.8rem, 3vw, 2.3rem); margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; font-size: 0.95rem; }
 
-        /* Interaktywny Kalendarz */
+        /* Kalendarz */
         .booking-box {
-            background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 20px; padding: 3rem;
+            background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 16px; padding: 2rem 1.5rem;
         }
         .calendar-grid {
-            display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; margin-bottom: 2rem; text-align: center;
+            display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 2rem; text-align: center;
         }
-        .c-header { font-weight: 700; color: var(--text-muted); padding-bottom: 0.5rem; }
+        .c-header { font-weight: 700; color: var(--text-muted); font-size: 0.8rem; padding-bottom: 0.4rem; }
         .c-day {
-            padding: 0.8rem; background: #fff; border-radius: 8px; border: 1px solid var(--border-warm); cursor: pointer; transition: all 0.2s; font-weight: 600;
+            padding: 0.6rem 0.2rem; background: #fff; border-radius: 6px; border: 1px solid var(--border-warm); cursor: pointer; transition: all 0.2s; font-weight: 600; font-size: 0.85rem;
         }
         .c-day:hover { border-color: var(--accent-warm); background: #fdfbf7; }
         .c-day.selected { background: var(--accent-warm); color: #fff; border-color: var(--accent-warm); }
 
         .time-slots {
-            display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;
+            display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;
         }
         .time-slot {
-            padding: 0.5rem 1rem; background: #fff; border: 1px solid var(--border-warm); border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;
+            padding: 0.5rem 0.9rem; background: #fff; border: 1px solid var(--border-warm); border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600;
         }
         .time-slot.selected { background: var(--accent-hover); color: #fff; border-color: var(--accent-hover); }
 
         .booking-form input, .booking-form select {
-            width: 100%; padding: 0.9rem; margin-bottom: 1rem; border: 1px solid var(--border-warm); border-radius: 8px; background: #fff; color: var(--text-dark);
+            width: 100%; padding: 0.85rem; margin-bottom: 1rem; border: 1px solid var(--border-warm); border-radius: 8px; background: #fff; color: var(--text-dark); font-size: 0.95rem;
         }
 
-        /* Mapa Google Maps */
-        .map-section { background: var(--card-light); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm); padding: 5rem 5%; text-align: center; }
-        .map-container { width: 100%; height: 400px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-warm); margin-top: 2rem; }
+        /* Mapa */
+        .map-section { background: var(--card-light); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm); padding: 4rem 1.5rem; text-align: center; }
+        .map-container { width: 100%; height: 350px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-warm); margin-top: 1.5rem; }
 
-        /* Karuzela zdjęć */
-        .carousel-photo-section { padding: 5rem 5%; text-align: center; overflow: hidden; }
+        /* Karuzela */
+        .carousel-photo-section { padding: 4rem 0; text-align: center; overflow: hidden; }
         .photo-carousel-track {
-            display: flex; gap: 1.5rem; width: max-content; animation: scrollCarousel 25s linear infinite;
+            display: flex; gap: 1rem; width: max-content; animation: scrollCarousel 25s linear infinite;
         }
         .photo-card-item {
-            width: 340px; height: 240px; background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--text-muted); flex-shrink: 0;
+            width: 280px; height: 200px; background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--text-muted); flex-shrink: 0; font-size: 0.9rem;
         }
         @keyframes scrollCarousel {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        footer { background: var(--card-light); padding: 3rem 5%; text-align: center; border-top: 1px solid var(--border-warm); color: var(--text-muted); font-size: 0.85rem; }
+        footer { background: var(--card-light); padding: 2.5rem 1.5rem; text-align: center; border-top: 1px solid var(--border-warm); color: var(--text-muted); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
         <a href="../../index.html" class="back-link">← Powrót do WebCraft Studio</a>
-        <span>ArtFocus Studio</span>
+        <span style="font-weight: 700; font-size: 0.95rem;">ArtFocus Studio</span>
         <a href="admin.html" class="admin-link">🔒 Panel Recepcji</a>
     </header>
 
@@ -113,7 +114,7 @@
         <p class="section-subtitle">Kliknij w interesujący Cię dzień, wybierz wolną godzinę i uzupełnij dane.</p>
         
         <div class="booking-box">
-            <h3 style="margin-bottom: 1rem; text-align: center;">Październik 2026</h3>
+            <h3 style="margin-bottom: 1rem; text-align: center; font-size: 1.1rem;">Październik 2026</h3>
             <div class="calendar-grid">
                 <div class="c-header">Pn</div><div class="c-header">Wt</div><div class="c-header">Śr</div><div class="c-header">Cz</div><div class="c-header">Pt</div><div class="c-header">So</div><div class="c-header">Nd</div>
                 <div class="c-day" data-date="2026-10-01">1</div><div class="c-day" data-date="2026-10-02">2</div><div class="c-day" data-date="2026-10-03">3</div><div class="c-day" data-date="2026-10-04">4</div><div class="c-day" data-date="2026-10-05">5</div><div class="c-day" data-date="2026-10-06">6</div><div class="c-day" data-date="2026-10-07">7</div>
@@ -122,7 +123,7 @@
                 <div class="c-day" data-date="2026-10-22">22</div><div class="c-day" data-date="2026-10-23">23</div><div class="c-day" data-date="2026-10-24">24</div><div class="c-day" data-date="2026-10-25">25</div><div class="c-day" data-date="2026-10-26">26</div><div class="c-day" data-date="2026-10-27">27</div><div class="c-day" data-date="2026-10-28">28</div>
             </div>
 
-            <p style="text-align: center; font-weight: 600; margin-bottom: 0.5rem;" id="selectedDateText">Wybierz dzień z kalendarza powyżej</p>
+            <p style="text-align: center; font-weight: 600; margin-bottom: 0.8rem; font-size: 0.9rem;" id="selectedDateText">Wybierz dzień z kalendarza powyżej</p>
             <div class="time-slots" id="timeSlotsContainer" style="display: none;">
                 <div class="time-slot" data-time="10:00">10:00</div>
                 <div class="time-slot" data-time="12:00">12:00</div>
@@ -130,7 +131,7 @@
                 <div class="time-slot" data-time="17:00">17:00</div>
             </div>
 
-            <form class="booking-form" id="bookingForm" style="display: none; margin-top: 1.5rem;">
+            <form class="booking-form" id="bookingForm" style="display: none; margin-top: 1rem;">
                 <input type="text" id="clientName" placeholder="Imię i Nazwisko / Firma" required>
                 <select id="sessionType">
                     <option value="Sesja Portretowa">Sesja Portretowa</option>
@@ -142,18 +143,18 @@
         </div>
     </section>
 
-    <!-- Mapa Google Maps -->
+    <!-- Mapa -->
     <section class="map-section">
         <h2 class="section-title">Obszar Działania</h2>
         <p class="section-subtitle">Działamy na terenie całej Polski (mobilne studio z dojazdem).</p>
         <div class="map-container">
-            <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?q=Poland&t=&z=6&ie=UTF8&iwloc=&output=embed"></iframe>
+            <iframe width="100%" height="100%" style="border:0;" loading="lazy" src="https://maps.google.com/maps?q=Poland&t=&z=6&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </section>
 
     <!-- Karuzela -->
     <section class="carousel-photo-section">
-        <h2 class="section-title" style="margin-bottom: 2rem;">Galeria Kadrów</h2>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Galeria Kadrów</h2>
         <div style="overflow: hidden; width: 100%;">
             <div class="photo-carousel-track">
                 <div class="photo-card-item">Kadr #01 – Światło dzienne</div>
@@ -210,7 +211,6 @@
             if (name && selectedDate && selectedTime) {
                 const newBooking = { name, type, date: selectedDate, time: selectedTime };
                 
-                // Pobierz dotychczasowe rezerwacje z localStorage
                 let bookings = JSON.parse(localStorage.getItem('artFocusBookings')) || [];
                 bookings.push(newBooking);
                 localStorage.setItem('artFocusBookings', JSON.stringify(bookings));
