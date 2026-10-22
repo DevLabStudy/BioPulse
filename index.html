@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioPulse Enterprise | High-Performance Data Pipeline & SaaS</title>
-    <!-- Profesjonalny Favicon SVG zakodowany w Base64 / inline -->
+    <title>BioPulse Enterprise | High-Performance Data Pipeline & Validation Engine</title>
+    <!-- Profesjonalny Favicon SVG -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5%22/></svg>">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="main.js" defer></script>
 </head>
 <body>
+
+    <!-- Pasek powiadomień enterprise w nagłówku -->
+    <div class="top-announcement-bar">
+        <span>🔥 DEVLABSTUDY INFRASTRUCTURE: <strong>BioPulse Core v2.4 Active</strong></span>
+    </div>
 
     <header>
         <a href="#" class="logo">
@@ -19,6 +24,7 @@
         </a>
         <nav>
             <a href="#pipeline">Architektura</a>
+            <a href="#terminal-preview">Live Engine</a>
             <a href="#cluster-view">Telemetry 3D</a>
             <a href="#contact" class="nav-cta">Wdrożenie B2B</a>
         </nav>
@@ -26,7 +32,7 @@
 
     <section class="hero">
         <div class="telemetry-pill">
-            <span class="pulse-dot"></span> CLUSTER US-EAST-1: <strong style="color: #38bdf8;">ONLINE</strong> &nbsp;|&nbsp; LATENCY: <strong>14ms</strong>
+            <span class="pulse-dot"></span> KLASTER US-EAST: <strong style="color: #38bdf8;">ONLINE</strong> &nbsp;|&nbsp; LATENCY: <strong id="dynamic-latency">12ms</strong>
         </div>
         <h1>Autonomiczny potok danych <br><span>dla krytycznych operacji B2B</span></h1>
         <p>Enterprise-grade architektura silnika walidacji strumieni, analityki wieloformatowej oraz inspekcji bezpieczeństwa pod marką <strong>devlabstudy</strong>.</p>
@@ -37,17 +43,39 @@
                 <span class="stat-label">Uptime klastra</span>
             </div>
             <div class="stat-box">
-                <span class="stat-num">&lt; 0.5ms</span>
+                <span class="stat-num">&lt; 0.3ms</span>
                 <span class="stat-label">Czas walidacji rekordu</span>
             </div>
             <div class="stat-box">
                 <span class="stat-num">Zero-Trust</span>
-                <span class="stat-label">Architektura bezpieczeństwa</span>
+                <span class="stat-label">Bezpieczeństwo end-to-end</span>
             </div>
         </div>
     </section>
 
-    <!-- Karuzela architektoniczna klasy korporacyjnej -->
+    <!-- Nowy element: Symulator żywego terminala silnika Python (main.py) -->
+    <section class="terminal-section" id="terminal-preview">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="t-btn red"></span>
+                    <span class="t-btn yellow"></span>
+                    <span class="t-btn green"></span>
+                </div>
+                <div class="terminal-title">devlabstudy@biopulse-engine:~ (prod-cluster)</div>
+            </div>
+            <div class="terminal-body" id="terminalLogs">
+                <p class="log-info">[INFO] Inicjalizacja strumienia danych dla pipeline: Prod-Cluster-US-East</p>
+                <p class="log-info">[INFO] Pomyślnie pobrano 5 rekordów ze źródła zewnętrznego API.</p>
+                <p class="log-info">[INFO] Uruchamianie silnika walidacji reguł biznesowych i detekcji anomalii...</p>
+                <p class="log-warn">[WARNING] Odrzucono anomalny rekord [TRX-9002]: Klient SMB Retail Shop (Błędny status)</p>
+                <p class="log-success">[SUCCESS] Walidacja ukończona. Przepuszczono: 3, Odrzucono anomalii: 2.</p>
+                <p class="log-success">[SUCCESS] Wygenerowano raporty komercyjne: biopulse_report.csv, biopulse_report.json</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Karuzela architektoniczna -->
     <section class="carousel-section" id="pipeline">
         <div class="carousel-container">
             <div class="section-header-tag">PIPELINE LIFECYCLE</div>
@@ -56,7 +84,7 @@
                 <div class="carousel-slide active">
                     <span class="slide-tag">FAZA 01 // INGESTION</span>
                     <h3>⚡ Ingestion Stream Buffer</h3>
-                    <p>Bezpieczny ingest paczek danych wejściowych z zewnętrznych klastrów API, buforowanie pamięciowe oraz natychmiastowa wstępna normalizator strukturalna.</p>
+                    <p>Bezpieczny ingest paczek danych wejściowych z zewnętrznych klastrów API, buforowanie pamięciowe oraz natychmiastowa normalizacja strukturalna.</p>
                 </div>
                 <div class="carousel-slide">
                     <span class="slide-tag">FAZA 02 // VALIDATION CORE</span>
@@ -66,7 +94,7 @@
                 <div class="carousel-slide">
                     <span class="slide-tag">FAZA 03 // MULTI-SINK EXPORT</span>
                     <h3>📊 Multi-Sink Analytics Export</h3>
-                    <p>Automatyczna generacja i dystrybucja raportów końcowych w formatach CSV oraz zoptymalizowanych strukturach JSON do systemów klasy ERP.</p>
+                    <p>Automatyczna generacja i dystrybucja raportów końcowych w formatach CSV oraz zoptymalizowanych strukturach JSON do systemów ERP.</p>
                 </div>
             </div>
             <div class="carousel-dots" id="carouselDots">
@@ -84,7 +112,7 @@
         <div id="canvas-container">
             <div class="canvas-overlay-info">
                 <span>SYSTEM STATUS: STABLE</span>
-                <span>NODES ACTIVE: 12/12</span>
+                <span>NODES ACTIVE: 16/16</span>
             </div>
         </div>
     </section>
