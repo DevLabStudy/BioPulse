@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro & Cafe Aura | Demo</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff5e00' stroke-width='2.5'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #030305;
+            --accent-orange: #ff5e00;
+            --accent-blue: #00d2ff;
+            --text-main: #f1f5f9;
+            --text-muted: #8b9bb4;
+        }
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            padding: 2rem 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .bistro-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255,94,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        h1 span { color: var(--accent-orange); }
+        p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; }
+        .menu-preview {
+            background: rgba(10, 15, 25, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .menu-item span:last-child { color: var(--accent-orange); }
+        @media (max-width: 768px) {
+            .content { grid-template-columns: 1fr; gap: 2rem; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
+        <span style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--text-muted);">// DEMO HOReCa</span>
+    </div>
+    
+    <div class="content">
+        <div>
+            <span style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-orange); text-transform: uppercase; font-weight: 700;">// Gastronomia & Kawiarnie</span>
+            <h1>Bistro & Cafe <span>Aura</span></h1>
+            <p>Nowoczesny layout dedykowany branży gastronomicznej. Zintegrowana karta menu, system rezerwacji stolików online oraz pełna optymalizacja pod urządzenia mobilne.</p>
+            <div class="menu-preview">
+                <div class="menu-item"><span>Kawa Rzemieślnicza Flat White</span><span>18 PLN</span></div>
+                <div class="menu-item"><span>Autorskie Burger Truflowy</span><span>46 PLN</span></div>
+                <div class="menu-item"><span>Domowe Ciasto Cytrynowe</span><span>22 PLN</span></div>
+            </div>
+        </div>
+        <div>
+            <!-- Zdjęcie bistro.jpg w tym samym folderze -->
+            <img src="bistro.jpg" alt="Bistro & Cafe Aura" class="bistro-img">
+        </div>
+    </div>
+</body>
+</html>
