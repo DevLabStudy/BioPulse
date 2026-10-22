@@ -3,135 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtFocus Studio | Portfolio Fotografa</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>ArtFocus Studio | Jasne Portfolio Fotografa</title>
     <style>
-        /* Dodatkowe style specyficzne dla galerii fotografa */
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5%;
+        :root {
+            --bg-light: #fdfbf7;
+            --card-light: #f4efe6;
+            --text-dark: #2c2420;
+            --text-muted: #6b615b;
+            --accent-warm: #d4a373;
+            --accent-hover: #bc6c25;
+            --border-warm: #e6dfd3;
         }
-        .photo-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
-        .photo-item:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent-color);
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
-        .photo-placeholder {
-            height: 220px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+        /* Górny pasek nawigacji */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            background: rgba(253, 251, 247, 0.95);
+            border-bottom: 1px solid var(--border-warm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover { color: var(--accent-warm); }
+
+        /* Sekcja Hero z tłem salon.jpg */
+        .photo-hero {
+            position: relative;
+            height: 70vh;
+            background: url('salon.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 5%;
+        }
+
+        .photo-hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .photo-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .photo-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .photo-hero p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            color: #f3f4f6;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-warm);
+            color: #fff;
+            padding: 0.9rem 2.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .btn-gold:hover { background-color: var(--accent-hover); }
+
+        /* Sekcja Kalendarza Rezerwacji */
+        .section-container {
+            max-width: 1000px;
+            margin: 5rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
             color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            margin-bottom: 3rem;
         }
-        .photo-info {
+
+        .booking-box {
+            background: var(--card-light);
+            border: 1px solid var(--border-warm);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .calendar-mockup {
+            background: #fff;
+            border: 1px solid var(--border-warm);
+            border-radius: 12px;
             padding: 1.5rem;
+            text-align: center;
         }
-        .photo-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
+
+        .calendar-mockup h4 { margin-bottom: 1rem; color: var(--accent-hover); }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            font-size: 0.9rem;
         }
-        .photo-info p {
+        .c-day {
+            padding: 0.5rem;
+            background: #fdfbf7;
+            border-radius: 6px;
+            border: 1px solid var(--border-warm);
+        }
+        .c-day.available { background: #e9edc9; color: #386641; font-weight: bold; cursor: pointer; }
+
+        .booking-form input, .booking-form select, .booking-form textarea {
+            width: 100%;
+            padding: 0.9rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            background: #fff;
+            color: var(--text-dark);
+        }
+
+        /* SztucznaMapa Google Maps (Zasięg: Cała Polska) */
+        .map-section {
+            background: var(--card-light);
+            border-top: 1px solid var(--border-warm);
+            border-bottom: 1px solid var(--border-warm);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .fake-map {
+            width: 100%;
+            height: 350px;
+            background: #e5e7eb url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f4efe6"/><path d="M0 50 Q 25 30, 50 50 T 100 50" fill="none" stroke="%23d4a373" stroke-width="3"/></svg>');
+            border-radius: 16px;
+            border: 1px solid var(--border-warm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .map-badge {
+            background: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            font-weight: 700;
+            color: var(--accent-hover);
+        }
+
+        /* Karuzela zdjęć na dole */
+        .carousel-photo-section {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .photo-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1.5rem;
+            scroll-snap-type: x mandatory;
+        }
+
+        .photo-card-item {
+            min-width: 320px;
+            height: 240px;
+            background: var(--card-light);
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background: var(--card-light);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--border-warm);
             color: var(--text-muted);
             font-size: 0.85rem;
+        }
+
+        @media(max-width: 768px) {
+            .booking-box { grid-template-columns: 1fr; }
+            .photo-hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="../../index.html" class="logo">
-            ← Powrót do WebCraft Studio
-        </a>
-        <nav>
-            <a href="#galeria">Galeria</a>
-            <a href="#o-mnie">O mnie</a>
-            <a href="#kontakt" class="nav-cta">Zarezerwuj sesję</a>
-        </nav>
+        <a href="../../index.html" class="back-link">← Powrót do WebCraft Studio</a>
+        <span>ArtFocus Studio – Fotografia Profesjonalna</span>
     </header>
 
-    <section class="hero">
-        <div class="telemetry-pill">
-            <span class="pulse-dot"></span> ARTFOCUS STUDIO: <strong style="color: var(--accent-color);">WIZUALNA DOSKONAŁOŚĆ</strong>
-        </div>
-        <h1>Zatrzymuję emocje <br><span>w kadrach najwyższej jakości</span></h1>
-        <p>Profesjonalna fotografia portretowa, komercyjna oraz reportażowa. Tworzę historie pisane światłem.</p>
-        <div class="hero-btns">
-            <a href="#kontakt" class="btn-primary">Zapytaj o termin sesji</a>
+    <!-- Sekcja Hero z tłem salon.jpg -->
+    <section class="photo-hero">
+        <div class="photo-hero-content">
+            <h1>ArtFocus Studio</h1>
+            <p>Ekskluzywna fotografia portretowa i komercyjna. Sprawdź wolne terminy w naszym kalendarzu.</p>
+            <a href="#rezerwacja" class="btn-gold">Zarezerwuj termin sesji</a>
         </div>
     </section>
 
-    <!-- Galeria prac -->
-    <section id="galeria">
-        <div class="section-header-tag">PORTFOLIO</div>
-        <h2>Wybrane realizacje</h2>
-        <div class="photo-gallery">
-            <div class="photo-item">
-                <div class="photo-placeholder">SESJA PORTRETOWA #01</div>
-                <div class="photo-info">
-                    <h4>Portret Studyjny</h4>
-                    <p>Naturalne światło i głęboka ekspresja.</p>
-                </div>
-            </div>
-            <div class="photo-item">
-                <div class="photo-placeholder">FOTOGRAFIA BIZNESOWA #02</div>
-                <div class="photo-info">
-                    <h4>Wizerunek Korporacyjny</h4>
-                    <p>Kadry budujące profesjonalny wizerunek w sieci.</p>
-                </div>
-            </div>
-            <div class="photo-item">
-                <div class="photo-placeholder">REPORTAŻ #03</div>
-                <div class="photo-info">
-                    <h4>Fotografia Eventowa</h4>
-                    <p>Dynamiczne ujęcia z wydarzeń i konferencji.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja kontaktowa -->
-    <section class="order-section" id="kontakt" style="margin-top: 4rem;">
-        <div class="section-header-tag">REZERWACJA</div>
-        <h2>Skontaktuj się w sprawie sesji</h2>
-        <p class="contact-desc">Masz pytania dotyczące wolnych terminów lub wyceny indywidualnej? Napisz do mnie.</p>
+    <!-- Sekcja Kalendarza i Rezerwacji -->
+    <section class="section-container" id="rezerwacja">
+        <h2 class="section-title">Wybierz termin sesji</h2>
+        <p class="section-subtitle">Sprawdź dostępność w kalendarzu i wyślij zgłoszenie.</p>
         
-        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Twoje Imię</label>
-                    <input type="text" name="name" placeholder="np. Anna Nowak" required>
+        <div class="booking-box">
+            <div class="calendar-mockup">
+                <h4>Październik 2026</h4>
+                <div class="calendar-days">
+                    <div class="c-day">Pn</div><div class="c-day">Wt</div><div class="c-day">Śr</div><div class="c-day">Cz</div><div class="c-day">Pt</div><div class="c-day">So</div><div class="c-day">Nd</div>
+                    <div class="c-day">1</div><div class="c-day">2</div><div class="c-day available">3</div><div class="c-day">4</div><div class="c-day">5</div><div class="c-day available">6</div><div class="c-day">7</div>
+                    <div class="c-day">8</div><div class="c-day available">9</div><div class="c-day">10</div><div class="c-day">11</div><div class="c-day available">12</div><div class="c-day">13</div><div class="c-day">14</div>
                 </div>
-                <div class="form-group">
-                    <label>Adres E-mail</label>
-                    <input type="email" name="email" placeholder="anna@domena.pl" required>
-                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">* Zielone pola oznaczają wolne dni sesyjne.</p>
             </div>
-            <div class="form-group">
-                <label>Rodzaj sesji / Wiadomość</label>
-                <textarea name="message" placeholder="Napisz, jaki rodzaj sesji Cię interesuje i w jakim terminie..." required></textarea>
-            </div>
-            <button type="submit" class="btn-primary full-width">Wyślij zapytanie o termin</button>
-        </form>
+
+            <form class="booking-form" action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+                <input type="text" name="client_name" placeholder="Twoje Imię i Nazwisko" required>
+                <input type="email" name="client_email" placeholder="Adres E-mail" required>
+                <select name="session_type">
+                    <option value="portret">Sesja Portretowa / Indywidualna</option>
+                    <option value="biznes">Sesja Biznesowa / Wizerunkowa</option>
+                    <option value="komercja">Fotografia Komercyjna / Salon</option>
+                </select>
+                <textarea name="notes" placeholder="Wybrany termin z kalendarza i uwagi..." rows="3" required></textarea>
+                <button type="submit" class="btn-gold" style="width: 100%;">Potwierdź rezerwację terminu</button>
+            </form>
+        </div>
     </section>
 
-    <footer style="margin-top: 4rem;">
-        <div class="footer-content">
-            <p>&copy; 2026 ArtFocus Studio. Szablon wykonany przez WebCraft Studio (Bez WordPressa).</p>
+    <!-- Sztuczna Mapa Google Maps (Zasięg: Cała Polska) -->
+    <section class="map-section">
+        <h2 class="section-title">Obszar Działania</h2>
+        <p class="section-subtitle">Realizujemy sesje fotograficzne na terenie całej Polski (dojazd do klienta lub w naszym salonie).</p>
+        <div class="fake-map">
+            <div class="map-badge">📍 Zasięg Usług: Cała Polska (Mobilne Studio)</div>
         </div>
+    </section>
+
+    <!-- Karuzela Zdjęć na dole -->
+    <section class="carousel-photo-section">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Galeria Kadrów</h2>
+        <div class="photo-carousel">
+            <div class="photo-card-item">Kadr #01 – Światło dzienne</div>
+            <div class="photo-card-item">Kadr #02 – Portret studyjny</div>
+            <div class="photo-card-item">Kadr #03 – Sesja biznesowa</div>
+            <div class="photo-card-item">Kadr #04 – Detal i wnętrze salonu</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ArtFocus Studio. Wszystkie prawa zastrzeżone. Projekt wykonany przez WebCraft Studio.</p>
     </footer>
 
 </body>
