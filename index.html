@@ -383,7 +383,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* BANNER COOKIES / RODO */
+        /* BANNER COOKIES / RODO (NAPRAWIONY) */
         #cookieBanner {
             display: none;
             position: fixed;
@@ -392,7 +392,7 @@
             right: 20px;
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(8, 12, 20, 0.95);
+            background: rgba(8, 12, 20, 0.96);
             border: 1px solid var(--border-subtle);
             backdrop-filter: blur(16px);
             padding: 20px 25px;
@@ -593,25 +593,38 @@
         <p>&copy; 2026 WebCraft Studio. Wszystkie prawa zastrzeżone. | High-End Web Engineering</p>
     </footer>
 
+    <!-- SKRYPT COOKIES -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const cookieBanner = document.getElementById('cookieBanner');
             const acceptBtn = document.getElementById('acceptCookies');
             const rejectBtn = document.getElementById('rejectCookies');
 
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.style.display = 'flex';
+            if (!cookieBanner) return;
+
+            const consent = localStorage.getItem('cookieConsent');
+            
+            if (!consent) {
+                setTimeout(() => {
+                    cookieBanner.style.display = 'flex';
+                }, 150);
+            } else {
+                cookieBanner.style.display = 'none';
             }
 
-            acceptBtn.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieBanner.style.display = 'none';
-            });
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    cookieBanner.style.display = 'none';
+                });
+            }
 
-            rejectBtn.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'rejected');
-                cookieBanner.style.display = 'none';
-            });
+            if (rejectBtn) {
+                rejectBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'rejected');
+                    cookieBanner.style.display = 'none';
+                });
+            }
         });
     </script>
 </body>
