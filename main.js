@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // Karuzela
+    // === 1. AUTOMATYCZNA KARUZELA (5 SLAJDÓW) ===
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
@@ -22,7 +22,16 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Płynne przewijanie
+    // === 2. DYNAMICZNA ZMIANA KOLORYSTYKI W FORMULARZU ===
+    const colorSelect = document.getElementById('colorSelect');
+    if (colorSelect) {
+        colorSelect.addEventListener('change', (e) => {
+            const theme = e.target.value;
+            document.documentElement.setAttribute('data-theme', theme);
+        });
+    }
+
+    // === 3. PŁYNNE PRZEWIJANIE (SMOOTH SCROLL) ===
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
