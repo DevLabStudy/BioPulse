@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCraft Studio | Profesjonalne Strony Internetowe</title>
-    <!-- Profesjonalny Favicon SVG -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5%22/></svg>">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
@@ -13,17 +12,16 @@
 <body>
 
     <div class="top-announcement-bar">
-        <span>⚡ 100% Autorski Kod | Brak WordPressa | Działające okna modalne i podstrony demo</span>
+        <span>⚡ 100% Autorski Kod | Brak WordPressa | Szybkie podglądy wzorów</span>
     </div>
 
     <header>
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             WebCraft <span class="brand-sub">Studio</span>
         </a>
         <nav>
             <a href="#services">Usługi</a>
-            <a href="#carousel-section">Standardy</a>
             <a href="#portfolio">Wzory i Projekty</a>
             <a href="#pricing">Cennik</a>
             <a href="#order-form" class="nav-cta">Zamów stronę</a>
@@ -32,55 +30,13 @@
 
     <section class="hero">
         <div class="telemetry-pill">
-            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">INTERAKTYWNY KATALOG WZORÓW</strong>
+            <span class="pulse-dot"></span> STATUS: <strong style="color: var(--accent-color);">GOTOWE DO WDROŻENIA</strong>
         </div>
         <h1>Ultraszybkie strony internetowe <br><span>dla firm i twórców</span></h1>
-        <p>Kliknij w dowolny kafelek wzoru poniżej, aby otworzyć rozszerzany panel podglądu i przejść do gotowej podstrony demo.</p>
+        <p>Kliknij w dowolny kafelek wzoru poniżej, aby otworzyć panel podglądu i przejść do działającej podstrony demo.</p>
         <div class="hero-btns">
             <a href="#portfolio" class="btn-primary">Przeglądaj wzory stron</a>
             <a href="#pricing" class="btn-secondary">Sprawdź cennik (od 350 zł)</a>
-        </div>
-    </section>
-
-    <!-- Karuzela Standardów -->
-    <section class="carousel-section" id="carousel-section">
-        <div class="carousel-container">
-            <div class="section-header-tag">STANDARDY WEBCRAFT</div>
-            <h2>Co nas wyróżnia na rynku?</h2>
-            <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-slide active">
-                    <span class="slide-tag">STANDARD 01 // CZYSTY KOD</span>
-                    <h3>⚡ Wydajność bez kompromisów</h3>
-                    <p>Brak systemów CMS i wtyczek sprawia, że strony ładują się błyskawicznie, zapewniając najwyższe wyniki.</p>
-                </div>
-                <div class="carousel-slide">
-                    <span class="slide-tag">STANDARD 02 // DOSTĘPNOŚĆ BUDŻETOWA</span>
-                    <h3>💸 Elastyczne pakiety dla każdego</h3>
-                    <p>Niezależnie czy masz kilkaset złotych na start (fotograf, freelancer), czy szukasz korporacyjnego serwisu.</p>
-                </div>
-                <div class="carousel-slide">
-                    <span class="slide-tag">STANDARD 03 // OPTYMALIZACJA SEO</span>
-                    <h3>📈 Widoczność w wyszukiwarce Google</h3>
-                    <p>Struktura kodu w HTML5 semantycznym gwarantuje idealne warunki pod pozycjonowanie organiczne.</p>
-                </div>
-                <div class="carousel-slide">
-                    <span class="slide-tag">STANDARD 04 // WEBGL / THREE.JS</span>
-                    <h3>✨ Efekty wizualne 3D w tle</h3>
-                    <p>Wprowadzamy nowoczesne animacje trójwymiarowe, które wyróżniają Twoją firmę na tle konkurencji.</p>
-                </div>
-                <div class="carousel-slide">
-                    <span class="slide-tag">STANDARD 05 // BEZPIECZEŃSTWO</span>
-                    <h3>🛡️ Ochrona i stabilność chmurowa</h3>
-                    <p>Infrastruktura oparta o Cloudflare eliminuje ryzyko awarii i ataków hakerskich.</p>
-                </div>
-            </div>
-            <div class="carousel-dots" id="carouselDots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-                <span class="dot" data-index="3"></span>
-                <span class="dot" data-index="4"></span>
-            </div>
         </div>
     </section>
 
@@ -91,7 +47,7 @@
         <div class="services-grid">
             <div class="card">
                 <h3>📷 Wizytówki Mikro (Start)</h3>
-                <p>Szybkie, eleganckie strony typu One-Page idealne dla fotografów, artystów i małych usług z małym budżetem.</p>
+                <p>Szybkie, eleganckie strony typu One-Page idealne dla fotografów, artystów i małych usług.</p>
             </div>
             <div class="card">
                 <h3>🚀 Standard Landing Page</h3>
@@ -104,78 +60,73 @@
         </div>
     </section>
 
-    <!-- Portfolio / Kafelki z działającym modalem -->
+    <!-- Portfolio / Kafelki z poprawnymi atrybutami do modala -->
     <section class="portfolio-section" id="portfolio">
         <div class="section-header-tag">WZORY I REALIZACJE</div>
         <h2>Interaktywny katalog wzorów stron</h2>
-        <p class="portfolio-desc">Kliknij w kafelek projektu, aby otworzyć rozszerzany panel podglądu.</p>
+        <p class="portfolio-desc">Kliknij w kafelek projektu, aby otworzyć panel podglądu.</p>
         
         <div class="portfolio-grid">
-            <!-- Kafelek 1: Fotografia -->
             <div class="portfolio-card zoom-card open-modal" 
                  data-title="ArtFocus Studio – Jasne Portfolio Fotografa" 
-                 data-desc="Nowoczesna, jasna i elegancka podstrona dla fotografa w odcieniach bieli, kremu i beżu. Posiada wbudowany kalendarz rezerwacji terminów, karuzelę zdjęć ze spersonalizowanym tłem salonu oraz mapę zasięgu ogólnokrajowego." 
+                 data-desc="Nowoczesna, jasna i elegancka podstrona dla fotografa w odcieniach bieli, kremu i beżu. Posiada kalendarz rezerwacji, panel zarządzania wizytami oraz mapę zasięgu." 
                  data-link="examples/photography/index.html"
-                 data-tag="Fotografia / Portfolio (Pakiet Start)">
-                <div class="p-tag">Fotografia / Portfolio (Pakiet Start)</div>
+                 data-tag="Fotografia / Portfolio">
+                <div class="p-tag">Fotografia / Portfolio</div>
                 <h3>ArtFocus Studio</h3>
-                <p>Elegancka, jasna strona dla fotografów w odcieniach kremu i beżu z kalendarzem rezerwacji i karuzelą.</p>
-                <div class="project-hint">Kliknij, aby otworzyć panel podglądu 🔍</div>
+                <p>Jasna, elegancka strona w odcieniach kremu i beżu z kalendarzem rezerwacji i panelem wizyt.</p>
+                <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
             </div>
 
-            <!-- Kafelek 2: Bistro -->
             <div class="portfolio-card zoom-card open-modal" 
-                 data-title="Bistro & Cafe „Aura” – Strona Gastronomiczna" 
-                 data-desc="Wzór strony dla lokalu gastronomicznego z interaktywnym menu, cennikiem oraz systemem rezerwacji stolików." 
+                 data-title="Bistro & Cafe „Aura”" 
+                 data-desc="Wzór strony dla lokalu gastronomicznego z interaktywnym menu i rezerwacją stolików." 
                  data-link="examples/bistro/index.html"
-                 data-tag="Gastronomia / Usługi">
-                <div class="p-tag">Gastronomia / Usługi</div>
+                 data-tag="Gastronomia">
+                <div class="p-tag">Gastronomia</div>
                 <h3>Bistro & Cafe „Aura”</h3>
-                <p>Strona wizytówkowa dla lokalu z interaktywnym menu i formularzem rezerwacji stolika.</p>
-                <div class="project-hint">Kliknij, aby otworzyć panel podglądu 🔍</div>
+                <p>Strona wizytówkowa dla lokalu z interaktywnym menu i rezerwacją stolika.</p>
+                <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
             </div>
 
-            <!-- Kafelek 3: SaaS -->
             <div class="portfolio-card zoom-card open-modal" 
-                 data-title="CloudFlow SaaS – Strona Produktowa" 
-                 data-desc="Nowoczesna strona produktowa dla aplikacji chmurowej z cennikiem, sekcją funkcji oraz panelem klienta." 
+                 data-title="CloudFlow SaaS Landing" 
+                 data-desc="Nowoczesna strona produktowa dla aplikacji chmurowej z cennikiem i panelem funkcji." 
                  data-link="examples/saas/index.html"
-                 data-tag="Technologia / SaaS">
-                <div class="p-tag">Technologia / SaaS</div>
+                 data-tag="SaaS / Tech">
+                <div class="p-tag">SaaS / Tech</div>
                 <h3>CloudFlow SaaS Landing</h3>
                 <p>Nowoczesna strona produktowa dla aplikacji chmurowej z cennikiem i panelem funkcji.</p>
-                <div class="project-hint">Kliknij, aby otworzyć panel podglądu 🔍</div>
+                <div class="project-hint">Kliknij, aby otworzyć podgląd 🔍</div>
             </div>
         </div>
     </section>
 
-    <!-- Rozszerzane Okno Modalne -->
+    <!-- Naprawione Okno Modalne -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal-container">
             <button class="modal-close" id="closeModal">&times;</button>
-            <div class="modal-tag" id="modalTag">Kategoria Projektu</div>
-            <h3 id="modalTitle">Tytuł Wzoru</h3>
-            <p id="modalDesc">Szczegółowy opis projektu...</p>
+            <div class="modal-tag" id="modalTag">Kategoria</div>
+            <h3 id="modalTitle">Tytuł</h3>
+            <p id="modalDesc">Opis...</p>
             
             <div class="modal-preview-box">
                 <div class="mockup-browser-bar">
-                    <span class="m-dot red"></span>
-                    <span class="m-dot yellow"></span>
-                    <span class="m-dot green"></span>
-                    <span class="m-url" id="modalUrlText">https://webcraft-studio.ovh/examples/...</span>
+                    <span class="m-dot red"></span><span class="m-dot yellow"></span><span class="m-dot green"></span>
+                    <span class="m-url" id="modalUrlText">link...</span>
                 </div>
                 <div class="mockup-screen-content">
                     <div class="mockup-hero-banner">
-                        <span class="live-badge">GOTOWY SZABLON PODSTRONY</span>
-                        <h4 id="mockupHeading">Podgląd Układu</h4>
-                        <p>Ten projekt posiada dedykowaną, w pełni zakodowaną podstronę demonstracyjną.</p>
+                        <span class="live-badge">GOTOWY SZABLON</span>
+                        <h4 id="mockupHeading">Podgląd</h4>
+                        <p>Kliknij poniżej, aby przejść do w pełni działającej podstrony.</p>
                     </div>
                 </div>
             </div>
 
             <div class="modal-actions">
                 <a href="#" id="modalFullLink" target="_blank" class="btn-primary">Przejdź do pełnej podstrony demo 🚀</a>
-                <button class="btn-secondary" id="closeModalBtn">Zamknij okno</button>
+                <button class="btn-secondary" id="closeModalBtn">Zamknij</button>
             </div>
         </div>
     </div>
@@ -183,108 +134,61 @@
     <!-- Cennik -->
     <section class="pricing-section" id="pricing">
         <div class="section-header-tag">CENNIK</div>
-        <h2>Elastyczne pakiety cenowe dla każdego</h2>
+        <h2>Elastyczne pakiety cenowe</h2>
         <div class="pricing-grid">
             <div class="price-card">
-                <h3>Wizytówka Mikro (Start)</h3>
+                <h3>Wizytówka Mikro</h3>
                 <div class="price">od 350 zł</div>
-                <p>Idealne dla fotografów i freelancerów z ograniczonym budżetem.</p>
+                <p>Idealne dla fotografów i freelancerów.</p>
                 <ul>
-                    <li>Prosta strona One-Page (czysty kod)</li>
+                    <li>Strona One-Page (czysty kod)</li>
                     <li>Sekcja O mnie / Oferta / Kontakt</li>
-                    <li>Galeria prac lub portfolio zdjęć</li>
-                    <li>Pełna responsywność na telefonach</li>
+                    <li>Galeria prac / portfolio</li>
                 </ul>
-                <a href="#order-form" class="btn-secondary">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-secondary">Wybierz</a>
             </div>
-
             <div class="price-card featured">
                 <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
                 <h3>Landing Page Standard</h3>
                 <div class="price">od 1 200 zł</div>
-                <p>Dla firm szukających profesjonalnego pozyskiwania klientów.</p>
+                <p>Dla firm szukających klientów.</p>
                 <ul>
                     <li>Indywidualny design UI/UX</li>
-                    <li>Optymalizacja pod kątem SEO Google</li>
-                    <li>Rozbudowany formularz kontaktowy</li>
-                    <li>Szybki hosting chmurowy</li>
+                    <li>Optymalizacja SEO</li>
+                    <li>Formularz kontaktowy</li>
                 </ul>
-                <a href="#order-form" class="btn-primary">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-primary">Wybierz</a>
             </div>
-
             <div class="price-card">
                 <h3>Strona Korporacyjna</h3>
                 <div class="price">od 2 800 zł</div>
-                <p>Dla firm oczekujących zaawansowanej struktury.</p>
+                <p>Wielostronicowy serwis B2B.</p>
                 <ul>
-                    <li>Wielostronicowa architektura (do 5 podstron)</li>
-                    <li>Zaawansowane animacje i efekty (Three.js)</li>
-                    <li>Pełna optymalizacja prędkości</li>
-                    <li>Opieka i wsparcie techniczne</li>
+                    <li>Do 5 podstron</li>
+                    <li>Animacje Three.js</li>
+                    <li>Opieka techniczna</li>
                 </ul>
-                <a href="#order-form" class="btn-secondary">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-secondary">Wybierz</a>
             </div>
         </div>
     </section>
 
     <!-- Formularz -->
     <section class="order-section" id="order-form">
-        <div class="section-header-tag">KONFIGURATOR I ZAMÓWIENIE</div>
+        <div class="section-header-tag">ZAMÓWIENIE</div>
         <h2>Skonfiguruj swój projekt</h2>
-        <p class="contact-desc">Wypełnij poniższe pola. Wyślij zapytanie, a wiadomość dotrze bezpośrednio na naszą pocztę e-mail.</p>
-        
-        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST" id="advancedForm">
+        <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
             <div class="form-row">
-                <div class="form-group">
-                    <label>Imię / Nazwa Firmy *</label>
-                    <input type="text" name="name" placeholder="np. Jan Kowalski" required>
-                </div>
-                <div class="form-group">
-                    <label>Adres E-mail (do kontaktu) *</label>
-                    <input type="email" name="email" placeholder="kontakt@twojadres.pl" required>
-                </div>
+                <div class="form-group"><label>Imię / Firma</label><input type="text" name="name" required></div>
+                <div class="form-group"><label>E-mail</label><input type="email" name="email" required></div>
             </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Wybierz pakiet usług</label>
-                    <select name="package" id="packageSelect">
-                        <option value="micro">Wizytówka Mikro (od 350 zł)</option>
-                        <option value="landing" selected>Landing Page Standard (od 1 200 zł)</option>
-                        <option value="corporate">Strona Korporacyjna (od 2 800 zł)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Wybierz preferowany kolor przewodni</label>
-                    <select name="accent_color" id="colorSelect">
-                        <option value="blue">Nowoczesny Błękit (Cyan / Blue)</option>
-                        <option value="purple">Głęboki Fiolet (Neon Purple)</option>
-                        <option value="emerald">Szmaragdowa Zieleń (Emerald Green)</option>
-                        <option value="amber">Złoty Bursztyn (Amber Glow)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Szczegóły projektu / Opis wymagań *</label>
-                <textarea name="message" placeholder="Napisz, czym zajmuje się Twoja firma, czy masz już materiały graficzne..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary full-width">Wyślij zamówienie / zapytanie</button>
-            <p class="form-info-note">🔒 Twoje dane są w pełni bezpieczne. Odpowiadamy najpóźniej w 24 godziny.</p>
+            <div class="form-group"><label>Wiadomość</label><textarea name="message" required></textarea></div>
+            <button type="submit" class="btn-primary full-width">Wyślij zapytanie</button>
         </form>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 WebCraft Studio. Wszelkie prawa zastrzeżone.</p>
-            <div class="footer-links">
-                <a href="regulamin.html">Regulamin</a>
-                <a href="cookies.html">Polityka Prywatności</a>
-            </div>
-        </div>
+        <p>&copy; 2026 WebCraft Studio. Wszelkie prawa zastrzeżone.</p>
     </footer>
-
 </body>
 </html>
