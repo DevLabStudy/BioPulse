@@ -16,7 +16,7 @@
 
     <header>
         <a href="index.html" class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             WebCraft <span>Studio</span>
         </a>
         <nav>
@@ -39,44 +39,89 @@
         </div>
     </section>
 
-    <!-- KARUZELA PROJEKTÓW -->
+    <!-- ZAAWANSOWANA KARUZELA WIELOPOZIOMOWA -->
     <section class="carousel-section" id="portfolio">
-        <div class="section-header-tag">Katalog Realizacji / Podstrony Demo</div>
-        <div class="carousel-container" id="carouselTrack">
-            <!-- Karta 1 -->
-            <a href="examples/photography/index.html" class="carousel-card">
-                <div>
-                    <div class="tag">Fotografia / Portfolio</div>
-                    <h3>ArtFocus Studio</h3>
-                    <p>Jasna, minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w wysokiej rozdzielczości.</p>
-                </div>
-                <div class="card-link-hint">Otwórz podstronę demo →</div>
-            </a>
-            <!-- Karta 2 -->
-            <a href="examples/bistro/index.html" class="carousel-card">
-                <div>
-                    <div class="tag">Gastronomia</div>
-                    <h3>Bistro & Cafe Aura</h3>
-                    <p>Nowoczesny layout dla lokalu gastronomicznego z interaktywnym menu oraz systemem rezerwacji stolików online.</p>
-                </div>
-                <div class="card-link-hint">Otwórz podstronę demo →</div>
-            </a>
-            <!-- Karta 3 -->
-            <a href="examples/saas/index.html" class="carousel-card">
-                <div>
-                    <div class="tag">SaaS / Cloud Tech</div>
-                    <h3>CloudFlow Landing</h3>
-                    <p>Zaawansowana strona produktowa dla platformy chmurowej z dynamicznym cennikiem i sekcjonalną prezentacją funkcji.</p>
-                </div>
-                <div class="card-link-hint">Otwórz podstronę demo →</div>
-            </a>
+        <div class="section-header-tag">Katalog Realizacji / Podstrony Demo (Multi-Row Showcase)</div>
+        
+        <div class="carousel-wrapper">
+            <!-- Górny rząd (przewijanie w lewo) -->
+            <div class="carousel-track left" id="trackLeft">
+                <a href="examples/photography/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">Fotografia / Portfolio</div>
+                        <h3>ArtFocus Studio</h3>
+                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w ultra-wysokiej rozdzielczości.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+                <a href="examples/bistro/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">Gastronomia</div>
+                        <h3>Bistro & Cafe Aura</h3>
+                        <p>Nowoczesny layout dla lokalu gastronomicznego z interaktywnym menu oraz systemem rezerwacji stolików online.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+                <a href="examples/saas/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">SaaS / Cloud Tech</div>
+                        <h3>CloudFlow Landing</h3>
+                        <p>Zaawansowana strona produktowa dla platformy chmurowej z dynamicznym cennikiem i prezentacją funkcji.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+                <a href="examples/photography/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">Fotografia / Portfolio</div>
+                        <h3>ArtFocus Studio</h3>
+                        <p>Minimalistyczna strona wizytówkowa zintegrowana z kalendarzem rezerwacji oraz galerią w ultra-wysokiej rozdzielczości.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+            </div>
+
+            <!-- Dolny rząd (przewijanie w prawo) -->
+            <div class="carousel-track right" id="trackRight">
+                <a href="examples/saas/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">Enterprise SaaS</div>
+                        <h3>Nexus Core System</h3>
+                        <p>Korporacyjny panel analityczny z wykresami w czasie rzeczywistym i modułem bezpiecznego uwierzytelniania.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+                <a href="examples/bistro/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">E-Commerce / Katalog</div>
+                        <h3>Vanguard Storefront</h3>
+                        <p>Ultraszybki katalog produktów z filtrowaniem dynamicznym i błyskawicznym procesem składania zapytań.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+                <a href="examples/photography/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">Creative Agency</div>
+                        <h3>Vortex Media Group</h3>
+                        <p>Projekt portfolio agencji kreatywnej z pełnoekranowymi nagłowkami wideo i płynnymi przejściami DOM.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+                <a href="examples/saas/index.html" class="carousel-card">
+                    <div>
+                        <div class="tag">Enterprise SaaS</div>
+                        <h3>Nexus Core System</h3>
+                        <p>Korporacyjny panel analityczny z wykresami w czasie rzeczywistym i modułem bezpiecznego uwierzytelniania.</p>
+                    </div>
+                    <div class="card-link-hint">Otwórz podstronę demo →</div>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Usługi -->
     <div class="container" id="services">
         <div class="section-header-tag" style="text-align: center;">Inżynieria Standardów</div>
-        <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #fff;">Dlaczego czysty kod wygrywa z szablonami?</h2>
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3.5rem; color: #fff;">Dlaczego czysty kod wygrywa z szablonami?</h2>
         <div class="services-grid">
             <div class="service-box">
                 <h3>Błyskawiczny czas reakcji</h3>
@@ -110,7 +155,7 @@
                         <li>Pełna responsywność</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1rem;">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1.5rem;">Wybierz pakiet</a>
             </div>
 
             <div class="price-card featured">
@@ -126,7 +171,7 @@
                         <li>Formularz kontaktowy z powiadomieniami</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-primary full-width" style="text-align: center; display: block; margin-top: 1rem;">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-primary full-width" style="text-align: center; display: block; margin-top: 1.5rem;">Wybierz pakiet</a>
             </div>
 
             <div class="price-card">
@@ -141,7 +186,7 @@
                         <li>Najwyższy wynik wydajności</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1rem;">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1.5rem;">Wybierz pakiet</a>
             </div>
 
             <div class="price-card">
@@ -156,7 +201,7 @@
                         <li>Wsparcie powdrożeniowe</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1rem;">Wybierz pakiet</a>
+                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1.5rem;">Wybierz pakiet</a>
             </div>
 
             <div class="price-card">
@@ -170,7 +215,7 @@
                         <li>Rozwiązania w 100% skrojone na miarę</li>
                     </ul>
                 </div>
-                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1rem;">Skonsultuj</a>
+                <a href="#order-form" class="btn-secondary full-width" style="text-align: center; display: block; margin-top: 1.5rem;">Skonsultuj</a>
             </div>
         </div>
     </section>
