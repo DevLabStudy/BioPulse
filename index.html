@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioPulse Enterprise | High-Performance Data Pipeline & Validation Engine</title>
+    <title>WebCraft Studio | Profesjonalne Strony Internetowe</title>
     <!-- Profesjonalny Favicon SVG -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5%22/></svg>">
     <link rel="stylesheet" href="style.css">
@@ -12,133 +12,192 @@
 </head>
 <body>
 
-    <!-- Pasek powiadomień enterprise w nagłówku -->
-    <div class="top-announcement-bar">
-        <span>🔥 DEVLABSTUDY INFRASTRUCTURE: <strong>BioPulse Core v2.4 Active</strong></span>
-    </div>
-
     <header>
         <a href="#" class="logo">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            BioPulse <span class="brand-sub">Enterprise</span>
+            WebCraft <span class="brand-sub">Studio</span>
         </a>
         <nav>
-            <a href="#pipeline">Architektura</a>
-            <a href="#terminal-preview">Live Engine</a>
-            <a href="#cluster-view">Telemetry 3D</a>
-            <a href="#contact" class="nav-cta">Wdrożenie B2B</a>
+            <a href="#services">Usługi</a>
+            <a href="#carousel-section">Standardy</a>
+            <a href="#portfolio">Realizacje</a>
+            <a href="#pricing">Cennik</a>
+            <a href="#order-form" class="nav-cta">Zamów stronę</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="telemetry-pill">
-            <span class="pulse-dot"></span> KLASTER US-EAST: <strong style="color: #38bdf8;">ONLINE</strong> &nbsp;|&nbsp; LATENCY: <strong id="dynamic-latency">12ms</strong>
+            <span class="pulse-dot"></span> STATUS: <strong style="color: #38bdf8;">PRZYJMUJEMY ZLECENIA NA Q2/Q3</strong>
         </div>
-        <h1>Autonomiczny potok danych <br><span>dla krytycznych operacji B2B</span></h1>
-        <p>Enterprise-grade architektura silnika walidacji strumieni, analityki wieloformatowej oraz inspekcji bezpieczeństwa pod marką <strong>devlabstudy</strong>.</p>
-        
-        <div class="hero-stats">
-            <div class="stat-box">
-                <span class="stat-num">99.99%</span>
-                <span class="stat-label">Uptime klastra</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-num">&lt; 0.3ms</span>
-                <span class="stat-label">Czas walidacji rekordu</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-num">Zero-Trust</span>
-                <span class="stat-label">Bezpieczeństwo end-to-end</span>
-            </div>
+        <h1>Tworzymy ultraszybkie strony, <br><span>które budują przewagę w sieci</span></h1>
+        <p>Porzuć przestarzałego WordPressa i powolne motywy. Projektujemy unikalne, bezpieczne i zoptymalizowane serwisy w czystym kodzie.</p>
+        <div class="hero-btns">
+            <a href="#order-form" class="btn-primary">Skonfiguruj swój projekt</a>
+            <a href="#pricing" class="btn-secondary">Sprawdź pakiety cenowe</a>
         </div>
     </section>
 
-    <!-- Nowy element: Symulator żywego terminala silnika Python (main.py) -->
-    <section class="terminal-section" id="terminal-preview">
-        <div class="terminal-container">
-            <div class="terminal-header">
-                <div class="terminal-buttons">
-                    <span class="t-btn red"></span>
-                    <span class="t-btn yellow"></span>
-                    <span class="t-btn green"></span>
-                </div>
-                <div class="terminal-title">devlabstudy@biopulse-engine:~ (prod-cluster)</div>
-            </div>
-            <div class="terminal-body" id="terminalLogs">
-                <p class="log-info">[INFO] Inicjalizacja strumienia danych dla pipeline: Prod-Cluster-US-East</p>
-                <p class="log-info">[INFO] Pomyślnie pobrano 5 rekordów ze źródła zewnętrznego API.</p>
-                <p class="log-info">[INFO] Uruchamianie silnika walidacji reguł biznesowych i detekcji anomalii...</p>
-                <p class="log-warn">[WARNING] Odrzucono anomalny rekord [TRX-9002]: Klient SMB Retail Shop (Błędny status)</p>
-                <p class="log-success">[SUCCESS] Walidacja ukończona. Przepuszczono: 3, Odrzucono anomalii: 2.</p>
-                <p class="log-success">[SUCCESS] Wygenerowano raporty komercyjne: biopulse_report.csv, biopulse_report.json</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Karuzela architektoniczna -->
-    <section class="carousel-section" id="pipeline">
+    <!-- Karuzela napisów (5 etapów / standardów tworzenia stron) -->
+    <section class="carousel-section" id="carousel-section">
         <div class="carousel-container">
-            <div class="section-header-tag">PIPELINE LIFECYCLE</div>
-            <h2>Rygorystyczny cykl przetwarzania strumienia</h2>
+            <div class="section-header-tag">STANDARDY WEBCRAFT</div>
+            <h2>Dlaczego nasze strony generują zyski?</h2>
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-slide active">
-                    <span class="slide-tag">FAZA 01 // INGESTION</span>
-                    <h3>⚡ Ingestion Stream Buffer</h3>
-                    <p>Bezpieczny ingest paczek danych wejściowych z zewnętrznych klastrów API, buforowanie pamięciowe oraz natychmiastowa normalizacja strukturalna.</p>
+                    <span class="slide-tag">STANDARD 01 // CZYSTY KOD</span>
+                    <h3>⚡ Zero WordPressa – Pełna kontrola technologiczna</h3>
+                    <p>Budujemy w oparciu o czysty HTML5, CSS3 i JavaScript. Brak zbędnych wtyczek oznacza błyskawiczny czas ładowania i odporność na awarie.</p>
                 </div>
                 <div class="carousel-slide">
-                    <span class="slide-tag">FAZA 02 // VALIDATION CORE</span>
-                    <h3>🛡️ Strict Validation Core</h3>
-                    <p>Zaawansowane algorytmy izolacji anomalii, rygorystyczna weryfikacja norm operacyjnych oraz odrzucanie niespójnych struktur w czasie rzeczywistym.</p>
+                    <span class="slide-tag">STANDARD 02 // UI/UX DESIGN</span>
+                    <h3>🎨 Indywidualny projekt dopasowany do marki</h3>
+                    <p>Nie używamy gotowych szablonów. Każdy interfejs projektujemy z myślą o unikalnym wizerunku firmy i maksymalnej konwersji klientów.</p>
                 </div>
                 <div class="carousel-slide">
-                    <span class="slide-tag">FAZA 03 // MULTI-SINK EXPORT</span>
-                    <h3>📊 Multi-Sink Analytics Export</h3>
-                    <p>Automatyczna generacja i dystrybucja raportów końcowych w formatach CSV oraz zoptymalizowanych strukturach JSON do systemów ERP.</p>
+                    <span class="slide-tag">STANDARD 03 // OPTYMALIZACJA SEO</span>
+                    <h3>📈 Wysoka widoczność w wyszukiwarkach</h3>
+                    <p>Struktura kodu przygotowana zgodnie z najwyższymi standardami Google, co zapewnia świetne wyniki Core Web Vitals i wyższe pozycje.</p>
+                </div>
+                <div class="carousel-slide">
+                    <span class="slide-tag">STANDARD 04 // WEBGL & INTERAKTYWNOŚĆ</span>
+                    <h3>✨ Nowoczesne animacje trójwymiarowe</h3>
+                    <p>Wyróżnij się na tle konkurencji dzięki płynnym elementom Three.js i dynamicznym efektom wizualnym w tle.</p>
+                </div>
+                <div class="carousel-slide">
+                    <span class="slide-tag">STANDARD 05 // HOSTING & BEZPIECZEŃSTWO</span>
+                    <h3>🛡️ Infrastruktura Cloudflare i GitHub Pages</h3>
+                    <p>Gwarantujemy bezawaryjność, darmowe certyfikaty SSL klasy korporacyjnej oraz całkowity brak kosztów stałych za serwery.</p>
                 </div>
             </div>
             <div class="carousel-dots" id="carouselDots">
                 <span class="dot active" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
                 <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
             </div>
         </div>
     </section>
 
-    <!-- Monitor Klastra 3D (WebGL) -->
-    <section class="cluster-section" id="cluster-view">
-        <div class="section-header-tag">REAL-TIME TELEMETRY</div>
-        <h2>Wizualizacja stanu klastra WebGL</h2>
-        <div id="canvas-container">
-            <div class="canvas-overlay-info">
-                <span>SYSTEM STATUS: STABLE</span>
-                <span>NODES ACTIVE: 16/16</span>
+    <!-- Usługi -->
+    <section class="services-section" id="services">
+        <div class="section-header-tag">OFERTA AGENCJI</div>
+        <h2>Rozwiązania webowe skrojone pod biznes</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>🚀 Landing Page & Wizytówki</h3>
+                <p>Nowoczesne strony jedno lub wielostronicowe stworzone z myślą o kampaniach reklamowych i szybkim pozyskiwaniu klientów.</p>
+            </div>
+            <div class="card">
+                <h3>🏢 Strony Korporacyjne i SaaS</h3>
+                <p>Rozbudowane serwisy firmowe, panele administracyjne oraz platformy prezentujące zaawansowane usługi B2B.</p>
+            </div>
+            <div class="card">
+                <h3>💻 Dedykowany Frontend</h3>
+                <p>Przepisanie przestarzałych systemów na nowoczesny, wydajny stack technologiczny bez bloated code.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sekcja kontaktowa B2B -->
-    <section class="contact-section" id="contact">
-        <div class="section-header-tag">INQUIRY PORTAL</div>
-        <h2>Inicjalizacja wdrożenia komercyjnego</h2>
-        <p class="contact-desc">Skontaktuj się z zespołem inżynieryjnym devlabstudy w celu uzyskania specyfikacji technicznej oraz dostępu do klastra testowego.</p>
+    <!-- Portfolio -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="section-header-tag">REALIZACJE</div>
+        <h2>Wybrane projekty i case studies</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="p-tag">SaaS / Telemetria</div>
+                <h3>BioPulse Enterprise Dashboard</h3>
+                <p>Zaawansowana platforma monitoringu strumieni danych z interaktywną wizualizacją klastra 3D.</p>
+            </div>
+            <div class="portfolio-card">
+                <div class="p-tag">FinTech</div>
+                <h3>Apex Capital Landing Page</h3>
+                <p>Minimalistyczny, ultraszybki interfejs internetowy zoptymalizowany pod wysoki współczynnik konwersji.</p>
+            </div>
+            <div class="portfolio-card">
+                <div class="p-tag">Corporate Identity</div>
+                <h3>Nexus Storefront UI</h3>
+                <p>Nowoczesny layout e-commerce oparty na płynnej architekturze jednostronicowej SPA.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cennik -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header-tag">CENNIK USŁUG</div>
+        <h2>Przejrzyste pakiety wdrożeniowe</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Landing Page / Wizytówka</h3>
+                <div class="price">od 1 200 zł</div>
+                <p>Idealne rozwiązanie dla firm rozpoczynających działalność.</p>
+                <ul>
+                    <li>Indywidualny projekt graficzny</li>
+                    <li>100% responsywność (Mobile / Desktop)</li>
+                    <li>Optymalizacja pod kątem SEO</li>
+                    <li>Formularz kontaktowy spięty z e-mail</li>
+                </ul>
+                <a href="#order-form" class="btn-secondary">Wybierz pakiet</a>
+            </div>
+            <div class="price-card featured">
+                <div class="popular-badge">NAJCZĘŚCIEJ WYBIERANY</div>
+                <h3>Strona Korporacyjna / SaaS</h3>
+                <div class="price">od 2 800 zł</div>
+                <p>Dla firm szukających profesjonalizmu bez kompromisów.</p>
+                <ul>
+                    <li>Rozbudowana architektura wielostronicowa</li>
+                    <li>Zaawansowane animacje (Three.js / WebGL)</li>
+                    <li>Najwyższa wydajność i ochrona Cloudflare</li>
+                    <li>Wsparcie powdrożeniowe i doradztwo</li>
+                </ul>
+                <a href="#order-form" class="btn-primary">Wybierz pakiet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formularz Zamówienia -->
+    <section class="order-section" id="order-form">
+        <div class="section-header-tag">ZAMÓWIENIE / WYCENA</div>
+        <h2>Rozpocznijmy współpracę</h2>
+        <p class="contact-desc">Wypełnij formularz poniżej, aby opisać swój projekt strony internetowej. Odpowiadamy z wyceną w 24 godziny.</p>
+        
         <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Korporacyjny adres e-mail..." required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Twoje Imię / Nazwa Firmy</label>
+                    <input type="text" name="name" placeholder="np. Jan Kowalski" required>
+                </div>
+                <div class="form-group">
+                    <label>Adres E-mail</label>
+                    <input type="email" name="email" placeholder="kontakt@twojadres.pl" required>
+                </div>
             </div>
+
             <div class="form-group">
-                <textarea name="message" placeholder="Opis zapotrzebowania infrastrukturalnego lub zakresu wdrożenia..." required></textarea>
+                <label>Wybierz pakiet / zakres projektu</label>
+                <select name="project_package">
+                    <option value="landing">Landing Page / Wizytówka (od 1 200 zł)</option>
+                    <option value="corporate">Strona Korporacyjna / SaaS (od 2 800 zł)</option>
+                    <option value="custom">Dedykowany system / Inne wymagania</option>
+                </select>
             </div>
-            <button type="submit" class="btn-primary">Wyślij zapytanie inżynieryjne</button>
+
+            <div class="form-group">
+                <label>Opis projektu i Twoje oczekiwania</label>
+                <textarea name="message" placeholder="Napisz kilka słów o swojej branży i funkcjach, jakie powinna posiadać strona..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary full-width">Wyślij zapytanie o wycenę</button>
         </form>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 devlabstudy. All rights reserved. Platforma BioPulse Enterprise.</p>
+            <p>&copy; 2026 WebCraft Studio. Wszelkie prawa zastrzeżone.</p>
             <div class="footer-links">
-                <a href="regulamin.html">Regulamin Serwisu</a>
-                <a href="cookies.html">Polityka Cookies</a>
+                <a href="regulamin.html">Regulamin</a>
+                <a href="cookies.html">Polityka Prywatności</a>
             </div>
         </div>
     </footer>
