@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Klonowanie kart w rzędach karuzeli dla idealnej pętli nieskończonej
     ['trackLeft', 'trackRight'].forEach(id => {
         const track = document.getElementById(id);
         if (track) {
