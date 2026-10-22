@@ -1,5 +1,5 @@
 site_name: BioPulse Enterprise
-site_description: Uniwersalny silnik walidacji i strukturyzacji danych biznesowych
+site_description: Inżynieryjny silnik walidacji danych i cyfrowy atlas biomedyczny
 site_url: https://biopulse.devlabstudy/
 
 theme:
@@ -7,5 +7,10 @@ theme:
 
 nav:
   - Strona Główna: index.md
-  - Architektura Systemu: architektura.md
+  - Architektura Silnika: architektura.md
+  - Atlas Biomedyczny:
+    - Tkanka Nabłonkowa: atlas/nablonkowa.md
+    - Tkanka Mięśniowa: atlas/miesniowa.md
+    - Krew i Limfa: atlas/krew.md
+    - Tkanka Nerwowa (Neuron): atlas/nerwowa.md
   - Przewodnik API: api.md
