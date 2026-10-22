@@ -3,279 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudFlow SaaS | High-End Cloud Platform Demo</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300d2ff' stroke-width='2'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <title>WebCraft Studio | Proste Strony Internetowe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-base: #030712;
-            --bg-card: rgba(15, 23, 42, 0.8);
-            --accent-blue: #38bdf8;
-            --accent-cyan: #06b6d4;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: rgba(56, 189, 248, 0.2);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body {
-            background-color: var(--bg-base);
-            background-image: radial-gradient(circle at top center, rgba(56, 189, 248, 0.07), transparent 50%);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.7;
+            --bg: #0b0f19;
+            --card: #111827;
+            --accent: #38bdf8;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --border: #1f2937;
         }
 
-        /* HEADER */
-        .header {
-            padding: 1.5rem 4rem;
-            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(3, 7, 18, 0.9);
-            backdrop-filter: blur(16px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .back-btn {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.2s;
-        }
-        .back-btn:hover { color: #fff; }
-        .brand-logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-        .brand-logo span { color: var(--accent-blue); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; padding: 0 1rem; }
 
-        /* HERO */
-        .hero {
-            max-width: 1200px;
-            margin: 6rem auto 4rem auto;
-            padding: 0 2rem;
-            text-align: center;
+        header {
+            max-width: 900px; margin: 0 auto; padding: 2rem 0;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border);
         }
-        .badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-blue);
-            padding: 6px 16px;
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            text-transform: uppercase;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 2rem;
-            letter-spacing: 2px;
-        }
-        h1 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(2.5rem, 5vw, 4.2rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            letter-spacing: -1px;
-        }
-        h1 span { color: var(--accent-blue); }
-        .desc {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-        }
+        .logo { font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; }
+        .logo span { color: var(--accent); }
 
-        .btn-saas {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-            color: #030712;
-            padding: 1rem 2.5rem;
-            border-radius: 6px;
-            font-weight: 800;
-            font-family: 'JetBrains Mono', monospace;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.82rem;
-            letter-spacing: 1px;
-            display: inline-block;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-            transition: 0.3s;
-        }
-        .btn-saas:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
-        }
+        .hero { max-width: 800px; margin: 5rem auto; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; color: #fff; }
+        .hero p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2rem; }
 
-        /* FUNKCJE / FEATURES */
-        .features-section {
-            max-width: 1200px;
-            margin: 6rem auto;
-            padding: 0 2rem;
+        .btn {
+            background: var(--accent); color: #0b0f19; padding: 0.8rem 1.8rem;
+            border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block;
+            transition: 0.2s; border: none; cursor: pointer;
         }
-        .section-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 3.5rem;
-            color: #fff;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .feature-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            backdrop-filter: blur(12px);
-            transition: 0.3s;
-        }
-        .feature-box:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-4px);
-        }
-        .feature-title { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
-        .feature-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* CENNIK */
-        .pricing-section {
-            max-width: 1200px;
-            margin: 6rem auto;
-            padding: 0 2rem;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+        .section { max-width: 900px; margin: 5rem auto; }
+        .section h2 { font-size: 1.8rem; margin-bottom: 2rem; text-align: center; color: #fff; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
         .price-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 3rem 2.5rem;
-            position: relative;
-            backdrop-filter: blur(12px);
+            background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2rem;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
-        .price-card.featured {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
-            background: linear-gradient(180deg, rgba(56, 189, 248, 0.05) 0%, rgba(15, 23, 42, 0.9) 100%);
-        }
-        .popular-tag {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-blue);
-            color: #030712;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 4px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .plan-name { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
-        .plan-price { font-family: 'JetBrains Mono', monospace; font-size: 2.2rem; font-weight: 800; color: var(--accent-blue); margin-bottom: 1.5rem; }
-        .plan-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 2rem; }
-        .plan-list li::before { content: "› "; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; }
+        .price-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff; }
+        .price { font-size: 1.5rem; font-weight: 800; color: var(--accent); margin-bottom: 1rem; }
+        .price-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
 
-        /* STOPKA */
-        .saas-footer {
-            border-top: 1px solid rgba(56, 189, 248, 0.1);
-            padding: 3rem 2rem;
-            text-align: center;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            background: #02040a;
+        .contact-form {
+            background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2.5rem;
+            max-width: 600px; margin: 0 auto;
         }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 0.8rem; background: #0b0f19; border: 1px solid var(--border);
+            border-radius: 6px; color: #fff; font-size: 0.95rem; font-family: inherit;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
 
-        @media(max-width: 768px) {
-            .header, .hero, .features-section, .pricing-section { padding: 1.5rem; }
-        }
+        footer { text-align: center; padding: 3rem 0; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 5rem; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
-        <div class="brand-logo">Cloud<span>Flow</span></div>
-        <a href="#pricing" class="btn-saas" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Zacznij</a>
-    </div>
+    <header>
+        <a href="#" class="logo">WebCraft<span>Studio</span></a>
+        <a href="#kontakt" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Kontakt</a>
+    </header>
 
     <section class="hero">
-        <div class="badge">// Cloud Infrastructure Engine</div>
-        <h1>Skalowalna Chmura <span>dla Twoich Aplikacji</span></h1>
-        <p class="desc">CloudFlow to nowoczesna platforma SaaS ułatwiająca zarządzanie infrastrukturą serwerową, bezpieczeństwem sieci i autoryzacją użytkowników w czasie rzeczywistym.</p>
-        <a href="#pricing" class="btn-saas">Sprawdź Pliki Subskrypcji</a>
+        <h1>Nowoczesne strony internetowe dla Twojego biznesu</h1>
+        <p>Tworzymy szybkie, responsywne i przejrzyste strony, które pomogą Ci pozyskać klientów w sieci.</p>
+        <a href="#cennik" class="btn">Zobacz pakiety</a>
     </section>
 
-    <div class="features-section">
-        <h2 class="section-title">Architekturka Systemu</h2>
-        <div class="features-grid">
-            <div class="feature-box">
-                <div class="feature-title">01. Globalne CDN & Edge</div>
-                <div class="feature-desc">Twoje zasoby są dystrybuowane na ponad 250 węzłach na całym świecie, co gwarantuje czas odpowiedzi poniżej 15ms.</div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-title">02. Zero-Trust Security</div>
-                <div class="feature-desc">Zaawansowany firewall aplikacyjny chroni przed atakami DDoS, SQL Injection oraz nieautoryzowanym ruchem.</div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-title">03. Real-time Telemetry</div>
-                <div class="feature-desc">Monitoruj obciążenie procesorów, zużycie pamięci RAM oraz ruch sieciowy za pomocą intuicyjnego panelu analitycznego.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pricing-section" id="pricing">
-        <h2 class="section-title">Elastyczny Cennik Usługi</h2>
+    <section class="section" id="cennik">
+        <h2>Prosty Cennik</h2>
         <div class="pricing-grid">
             <div class="price-card">
-                <div class="plan-name">Developer Node</div>
-                <div class="plan-price">149 zł <span style="font-size: 0.8rem; color: var(--text-muted);">/mc</span></div>
-                <ul class="plan-list">
-                    <li>Do 5,000 użytkowników</li>
-                    <li>Wsparcie standardowe 24h</li>
-                    <li>Globalne CDN (50GB transferu)</li>
-                </ul>
-                <a href="#pricing" class="btn-saas" style="width: 100%; text-align: center; display: block; padding: 0.8rem;">Wybierz plan</a>
+                <div>
+                    <h3>Wizytówka</h3>
+                    <div class="price">500 zł</div>
+                    <p>Idealna dla małej firmy lub eksperta potrzebującego prostej obecności w sieci.</p>
+                </div>
+                <a href="#kontakt" class="btn" style="text-align: center;">Wybierz</a>
             </div>
 
-            <div class="price-card featured">
-                <div class="popular-tag">Najwyższa Konwersja</div>
-                <div class="plan-name">Enterprise Cluster</div>
-                <div class="plan-price">499 zł <span style="font-size: 0.8rem; color: var(--text-muted);">/mc</span></div>
-                <ul class="plan-list">
-                    <li>Nieograniczona liczba użytkowników</li>
-                    <li>Dedykowane klastry serwerowe</li>
-                    <li>Priorytetowe wsparcie inżynieryjne</li>
-                    <li>Pełny dostęp do API & Webhooks</li>
-                </ul>
-                <a href="#pricing" class="btn-saas" style="width: 100%; text-align: center; display: block; padding: 0.8rem;">Wybierz plan</a>
+            <div class="price-card" style="border-color: var(--accent);">
+                <div>
+                    <h3>Landing Page</h3>
+                    <div class="price">1 200 zł</div>
+                    <p>Jednostronicowa strona nastawiona na sprzedaż i pozyskiwanie zapytań od klientów.</p>
+                </div>
+                <a href="#kontakt" class="btn" style="text-align: center;">Wybierz</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer class="saas-footer">
-        <p>&copy; 2026 CloudFlow Inc. Wszystkie prawa zastrzeżone. Projekt demonstracyjny stworzony przez WebCraft Studio.</p>
+    <section class="section" id="kontakt">
+        <h2>Napisz do nas</h2>
+        <div class="contact-form">
+            <!-- Pamiętaj, aby podmienić 'twoj-kod-formspree' na swój adres z formspree.io -->
+            <form action="https://formspree.io/f/twoj-kod-formspree" method="POST">
+                <div class="form-group">
+                    <label>Twoje Imię / Firma</label>
+                    <input type="text" name="name" required placeholder="Jan Kowalski">
+                </div>
+                <div class="form-group">
+                    <label>Adres E-mail</label>
+                    <input type="email" name="email" required placeholder="jan@domena.pl">
+                </div>
+                <div class="form-group">
+                    <label>Wiadomość / Opis Projektu</label>
+                    <textarea name="message" required placeholder="Napisz, czego potrzebujesz..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Wyślij wiadomość</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WebCraft Studio. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
 </body>
