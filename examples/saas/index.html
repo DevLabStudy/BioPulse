@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloudFlow SaaS | High-End Cloud Platform Demo</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300d2ff' stroke-width='2.5'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300d2ff' stroke-width='2'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-base: #030305;
-            --bg-card: rgba(8, 12, 20, 0.9);
-            --accent-blue: #00d2ff;
-            --text-main: #f1f5f9;
-            --text-muted: #8b9bb4;
-            --border: rgba(0, 210, 255, 0.2);
+            --bg-base: #030712;
+            --bg-card: rgba(15, 23, 42, 0.8);
+            --accent-blue: #38bdf8;
+            --accent-cyan: #06b6d4;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(56, 189, 248, 0.2);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body {
             background-color: var(--bg-base);
-            background-image: radial-gradient(circle at top center, rgba(0, 210, 255, 0.05), transparent 60%);
+            background-image: radial-gradient(circle at top center, rgba(56, 189, 248, 0.07), transparent 50%);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            line-height: 1.7;
         }
+
+        /* HEADER */
         .header {
-            padding: 1.5rem 3rem;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(3, 3, 5, 0.9);
-            backdrop-filter: blur(12px);
+            background: rgba(3, 7, 18, 0.9);
+            backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -39,36 +43,48 @@
             font-family: 'JetBrains Mono', monospace;
             color: var(--accent-blue);
             text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 700;
+            font-size: 0.85rem;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            transition: 0.2s;
         }
+        .back-btn:hover { color: #fff; }
+        .brand-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .brand-logo span { color: var(--accent-blue); }
+
+        /* HERO */
         .hero {
             max-width: 1200px;
-            margin: 5rem auto;
+            margin: 6rem auto 4rem auto;
             padding: 0 2rem;
             text-align: center;
         }
         .badge {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
-            background: rgba(0, 210, 255, 0.08);
+            font-size: 0.75rem;
+            background: rgba(56, 189, 248, 0.1);
             color: var(--accent-blue);
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 6px 16px;
+            border-radius: 30px;
             border: 1px solid var(--border);
             text-transform: uppercase;
-            font-weight: 800;
+            font-weight: 700;
             display: inline-block;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
         }
         h1 {
             font-family: 'JetBrains Mono', monospace;
             font-size: clamp(2.5rem, 5vw, 4.2rem);
-            font-weight: 900;
+            font-weight: 800;
             line-height: 1.15;
             margin-bottom: 1.5rem;
             color: #fff;
@@ -80,70 +96,187 @@
             font-size: 1.1rem;
             line-height: 1.8;
             max-width: 700px;
-            margin: 0 auto 3.5rem auto;
+            margin: 0 auto 3rem auto;
         }
-        .pricing-boxes {
+
+        .btn-saas {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: #030712;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            transition: 0.3s;
+        }
+        .btn-saas:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
+        }
+
+        /* FUNKCJE / FEATURES */
+        .features-section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: #fff;
+        }
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            text-align: left;
-            margin-bottom: 4rem;
         }
-        .price-box {
+        .feature-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            transition: 0.3s;
+        }
+        .feature-box:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+        }
+        .feature-title { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+        .feature-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+
+        /* CENNIK */
+        .pricing-section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .price-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 2.5rem 2rem;
+            padding: 3rem 2.5rem;
             position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
         }
-        .price-box.featured {
+        .price-card.featured {
             border-color: var(--accent-blue);
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.15);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+            background: linear-gradient(180deg, rgba(56, 189, 248, 0.05) 0%, rgba(15, 23, 42, 0.9) 100%);
         }
-        .price-title { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
-        .price-cost { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 900; color: var(--accent-blue); margin-bottom: 1.5rem; }
-        .price-features { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
-        .price-features li::before { content: "✓ "; color: var(--accent-blue); font-weight: bold; }
+        .popular-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-blue);
+            color: #030712;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .plan-name { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
+        .plan-price { font-family: 'JetBrains Mono', monospace; font-size: 2.2rem; font-weight: 800; color: var(--accent-blue); margin-bottom: 1.5rem; }
+        .plan-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 2rem; }
+        .plan-list li::before { content: "› "; color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; }
+
+        /* STOPKA */
+        .saas-footer {
+            border-top: 1px solid rgba(56, 189, 248, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            background: #02040a;
+        }
+
         @media(max-width: 768px) {
-            .hero { padding: 0 1.2rem; }
-            .header { padding: 1.2rem 1.5rem; }
+            .header, .hero, .features-section, .pricing-section { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
     <div class="header">
         <a href="../../index.html" class="back-btn">← Powrót do WebCraft Studio</a>
-        <span style="font-family: 'JetBrains Mono'; font-size: 0.72rem; color: var(--text-muted);">// CLOUDFLOW SaaS PLATFORM</span>
+        <div class="brand-logo">Cloud<span>Flow</span></div>
+        <a href="#pricing" class="btn-saas" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Zacznij</a>
     </div>
 
     <section class="hero">
-        <div class="badge">// Cloud Infrastructure & Software as a Service</div>
-        <h1>Skalowalny SaaS <span>dla Twojego Biznesu</span></h1>
-        <p class="desc">Projektujemy gotowe do wdrożenia aplikacje subskrypcyjne w chmurze z zachowaniem najwyższych standardów bezpieczeństwa i błyskawicznym interfejsem.</p>
-        
-        <div class="pricing-boxes">
-            <div class="price-box">
-                <div class="price-title">Starter Cloud</div>
-                <div class="price-cost">149 zł <span style="font-size:0.8rem; color:var(--text-muted);">/miesiąc</span></div>
-                <ul class="price-features">
-                    <li>Do 5,000 aktywnych użytkowników</li>
-                    <li>Podstawowy panel analityczny</li>
-                    <li>Wsparcie przez e-mail (24h)</li>
-                </ul>
+        <div class="badge">// Cloud Infrastructure Engine</div>
+        <h1>Skalowalna Chmura <span>dla Twoich Aplikacji</span></h1>
+        <p class="desc">CloudFlow to nowoczesna platforma SaaS ułatwiająca zarządzanie infrastrukturą serwerową, bezpieczeństwem sieci i autoryzacją użytkowników w czasie rzeczywistym.</p>
+        <a href="#pricing" class="btn-saas">Sprawdź Pliki Subskrypcji</a>
+    </section>
+
+    <div class="features-section">
+        <h2 class="section-title">Architekturka Systemu</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-title">01. Globalne CDN & Edge</div>
+                <div class="feature-desc">Twoje zasoby są dystrybuowane na ponad 250 węzłach na całym świecie, co gwarantuje czas odpowiedzi poniżej 15ms.</div>
             </div>
-            <div class="price-box featured">
-                <div style="position: absolute; top: -12px; left: 20px; background: var(--accent-blue); color: #030305; font-family: 'JetBrains Mono'; font-size: 0.65rem; font-weight: 900; padding: 3px 10px; border-radius: 4px; text-transform: uppercase;">Najwyższa Konwersja</div>
-                <div class="price-title">Enterprise Node</div>
-                <div class="price-cost">499 zł <span style="font-size:0.8rem; color:var(--text-muted);">/miesiąc</span></div>
-                <ul class="price-features">
-                    <li>Nieograniczona liczba użytkowników</li>
-                    <li>Zaawansowany silnik telemetryczny</li>
-                    <li>Dedykowane klastry serwerowe</li>
-                    <li>Priorytetowe wsparcie 24/7</li>
-                </ul>
+            <div class="feature-box">
+                <div class="feature-title">02. Zero-Trust Security</div>
+                <div class="feature-desc">Zaawansowany firewall aplikacyjny chroni przed atakami DDoS, SQL Injection oraz nieautoryzowanym ruchem.</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title">03. Real-time Telemetry</div>
+                <div class="feature-desc">Monitoruj obciążenie procesorów, zużycie pamięci RAM oraz ruch sieciowy za pomocą intuicyjnego panelu analitycznego.</div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="pricing-section" id="pricing">
+        <h2 class="section-title">Elastyczny Cennik Usługi</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="plan-name">Developer Node</div>
+                <div class="plan-price">149 zł <span style="font-size: 0.8rem; color: var(--text-muted);">/mc</span></div>
+                <ul class="plan-list">
+                    <li>Do 5,000 użytkowników</li>
+                    <li>Wsparcie standardowe 24h</li>
+                    <li>Globalne CDN (50GB transferu)</li>
+                </ul>
+                <a href="#pricing" class="btn-saas" style="width: 100%; text-align: center; display: block; padding: 0.8rem;">Wybierz plan</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="popular-tag">Najwyższa Konwersja</div>
+                <div class="plan-name">Enterprise Cluster</div>
+                <div class="plan-price">499 zł <span style="font-size: 0.8rem; color: var(--text-muted);">/mc</span></div>
+                <ul class="plan-list">
+                    <li>Nieograniczona liczba użytkowników</li>
+                    <li>Dedykowane klastry serwerowe</li>
+                    <li>Priorytetowe wsparcie inżynieryjne</li>
+                    <li>Pełny dostęp do API & Webhooks</li>
+                </ul>
+                <a href="#pricing" class="btn-saas" style="width: 100%; text-align: center; display: block; padding: 0.8rem;">Wybierz plan</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="saas-footer">
+        <p>&copy; 2026 CloudFlow Inc. Wszystkie prawa zastrzeżone. Projekt demonstracyjny stworzony przez WebCraft Studio.</p>
+    </footer>
+
 </body>
 </html>
