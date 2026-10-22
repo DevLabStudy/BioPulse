@@ -1,5 +1,6 @@
 site_name: BioPulse Enterprise
 site_description: Uniwersalny silnik walidacji i strukturyzacji danych biznesowych
+site_url: https://biopulse.devlabstudy/
 
 theme:
   name: mkdocs
