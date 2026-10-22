@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Klonowanie kart w rzędach karuzeli dla idealnej pętli nieskończonej
-    ['trackLeft', 'trackRight'].forEach(id => {
-        const track = document.getElementById(id);
-        if (track) {
-            const cards = Array.from(track.children);
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                track.appendChild(clone);
-            });
-        }
-    });
+    const scroller = document.querySelector('.portfolio-scroller');
+    
+    if (scroller) {
+        // Opcjonalne: płynne przewijanie kółkiem myszy w poziomie na komputerach
+        scroller.addEventListener('wheel', (evt) => {
+            if (window.innerWidth > 1024) {
+                evt.preventDefault();
+                scroller.scrollLeft += evt.deltaY;
+            }
+        });
+    }
 });
