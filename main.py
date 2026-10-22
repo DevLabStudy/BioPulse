@@ -1,66 +1,75 @@
 """
-BioPulse Enterprise Core Engine - Advanced Biomedical Data Pipeline
-Opis: Uniwersalny silnik walidacji, czyszczenia i eksportu danych biomedycznych.
+BioPulse Enterprise Core Engine - Production-Grade Data Pipeline
+Opis: Komercyjny silnik walidacji, wykrywania anomalii i eksportu strumieni danych biznesowych.
 """
 
 import csv
 import json
+import logging
 from typing import List, Dict, Any
 
-class BioPulseEnterpriseEngine:
-    def __init__(self, source_name: str):
-        self.source_name = source_name
-        self.raw_data: List[Dict[str, Any]] = []
-        self.validated_data: List[Dict[str, Any]] = []
+# Konfiguracja profesjonalnego logowania korporacyjnego
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
-    def ingest_biomedical_stream(self) -> None:
-        """Pobieranie surowych struktur biomedycznych i danych laboratoryjnych."""
-        print(f"[INFO]: Łączenie ze źródłem danych: {self.source_name}...")
+class EnterpriseDataPipeline:
+    def __init__(self, pipeline_id: str):
+        self.pipeline_id = pipeline_id
+        self.raw_stream: List[Dict[str, Any]] = []
+        self.validated_records: List[Dict[str, Any]] = []
+        self.anomalies_detected: List[Dict[str, Any]] = []
+
+    def ingest_stream(self) -> None:
+        """Etap 1: Pobieranie surowego strumienia danych (np. transakcje e-commerce / API)."""
+        logging.info(f"Inicjalizacja strumienia danych dla pipeline: {self.pipeline_id}")
         
-        # Baza danych oparta na strukturach biologicznych
-        self.raw_data = [
-            {"id": 201, "kategoria": "Nabłonek", "obiekt": "Wielowarstwowy płaski", "parametr": "Ochrona naskórka", "status": "aktywny"},
-            {"id": 202, "kategoria": "Krew", "obiekt": "Erytrocyty", "parametr": "4,5 mln/mm3", "status": "aktywny"},
-            {"id": 203, "kategoria": "Krew", "obiekt": "Trombocyty", "parametr": "200-400 tys/mm3", "status": "aktywny"},
-            {"id": 204, "kategoria": "Neuron", "obiekt": "Osłonka mielinowa", "parametr": "Lemocyty / Węzły Ranviera", "status": "aktywny"},
-            {"id": 205, "kategoria": "Anomalia", "obiekt": "Błąd pomiaru", "parametr": "0", "status": "odrzucony"} # Do odrzucenia
+        # Symulacja wejściowego strumienia danych z zewnętrznych systemów klienta
+        self.raw_stream = [
+            {"transaction_id": "TRX-9001", "client": "Global Logistics Corp", "amount": 45000.00, "currency": "USD", "status": "active"},
+            {"transaction_id": "TRX-9002", "client": "SMB Retail Shop", "amount": -1200.50, "currency": "EUR", "status": "flagged"}, # Anomalia (ujemna kwota)
+            {"transaction_id": "TRX-9003", "client": "FinTech Partner X", "amount": 125000.00, "currency": "USD", "status": "active"},
+            {"transaction_id": "TRX-9004", "client": "Local Vendor Y", "amount": 0.00, "currency": "PLN", "status": "inactive"}, # Pusta transakcja
+            {"transaction_id": "TRX-9005", "client": "Enterprise Cloud Ltd", "amount": 89000.00, "currency": "GBP", "status": "active"}
         ]
-        print(f"[INFO]: Wczytano surowo {len(self.raw_data)} rekordów.")
+        logging.info(f"Pomyślnie pobrano {len(self.raw_stream)} rekordów ze źródła.")
 
-    def validate_records(self) -> None:
-        """Silnik walidacji odrzucający anomalie i dane niespełniające norm."""
-        print("[INFO]: Uruchamianie reguł walidacyjnych BioPulse...")
-        passed = 0
+    def process_and_validate(self) -> None:
+        """Etap 2: Rygorystyczna walidacja reguł biznesowych i wykrywanie oszustw/błędów."""
+        logging.info("Uruchamianie silnika walidacji reguł biznesowych i detekcji anomalii...")
         
-        for item in self.raw_data:
-            if item["status"] == "aktywny" and item["kategoria"] != "Anomalia":
-                self.validated_data.append(item)
-                passed += 1
+        for item in self.raw_stream:
+            # Reguły biznesowe: kwota > 0 oraz status 'active'
+            if item["amount"] > 0 and item["status"] == "active":
+                self.validated_records.append(item)
             else:
-                print(f"[WARNING]: Odrzucono anomalię/błąd ID {item['id']}")
+                logging.warning(f"Odrzucono anomalny rekord [{item['transaction_id']}]: Klient {item['client']}")
+                self.anomalies_detected.append(item)
                 
-        print(f"[INFO]: Walidacja ukończona. Zweryfikowano pomyślnie: {passed}/{len(self.raw_data)}.")
+        logging.info(f"Walidacja zakończona. Przepuszczono: {len(self.validated_records)}, Odrzucono anomalii: {len(self.anomalies_detected)}.")
 
-    def export_enterprise_reports(self) -> None:
-        """Eksport zweryfikowanych danych do formatów biznesowych (CSV i JSON)."""
-        if not self.validated_data:
-            print("[ERROR]: Brak danych do eksportu.")
+    def export_reports(self) -> None:
+        """Etap 3: Eksport zweryfikowanych danych do systemów zewnętrznych (CSV / JSON API)."""
+        if not self.validated_records:
+            logging.error("Brak zweryfikowanych danych do eksportu.")
             return
 
-        with open("biopulse_raport.csv", "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=self.validated_data[0].keys())
+        # Eksport do CSV (dla tradycyjnych systemów / analityków)
+        csv_filename = "biopulse_enterprise_report.csv"
+        with open(csv_filename, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=self.validated_records[0].keys())
             writer.writeheader()
-            writer.writerows(self.validated_data)
+            writer.writerows(self.validated_records)
 
-        with open("biopulse_raport.json", "w", encoding="utf-8") as f:
-            json.dump(self.validated_data, f, ensure_ascii=False, indent=4)
+        # Eksport do JSON (dla mikroserwisów i korporacyjnego API)
+        json_filename = "biopulse_enterprise_report.json"
+        with open(json_filename, "w", encoding="utf-8") as f:
+            json.dump(self.validated_records, f, ensure_ascii=False, indent=4)
 
-        print("[SUCCESS]: Wygenerowano raporty analityczne w formacie CSV oraz JSON.")
+        logging.info(f"Wygenerowano raporty komercyjne: {csv_filename}, {json_filename}")
 
 if __name__ == "__main__":
-    print("=== START SILNIKA BIOPULSE ENTERPRISE ===")
-    engine = BioPulseEnterpriseEngine(source_name="Biomedical-Data-Pipeline-v2")
-    engine.ingest_biomedical_stream()
-    engine.validate_records()
-    engine.export_enterprise_reports()
-    print("=== ZAKOŃCZONO PROCES ===")
+    print("=== START SYSTEMU BIOPULSE ENTERPRISE ===")
+    pipeline = EnterpriseDataPipeline(pipeline_id="Prod-Cluster-US-East")
+    pipeline.ingest_stream()
+    pipeline.process_and_validate()
+    pipeline.export_reports()
+    print("=== PROCES ZAKOŃCZONY POMYŚLNIE ===")
