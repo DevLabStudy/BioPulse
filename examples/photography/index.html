@@ -15,227 +15,71 @@
             --border-warm: #e6dfd3;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Górny pasek nawigacji */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 5%;
-            background: rgba(253, 251, 247, 0.95);
-            border-bottom: 1px solid var(--border-warm);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
+            background: rgba(253, 251, 247, 0.95); border-bottom: 1px solid var(--border-warm); position: sticky; top: 0; z-index: 100;
         }
-
-        .back-link {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
+        .back-link { color: var(--text-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .back-link:hover { color: var(--accent-warm); }
 
-        /* Sekcja Hero z tłem salon.jpg */
+        /* Hero z tłem salon.jpg */
         .photo-hero {
-            position: relative;
-            height: 70vh;
-            background: url('salon.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 5%;
+            position: relative; height: 75vh; background: url('salon.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 0 5%;
         }
-
-        .photo-hero::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-        }
-
-        .photo-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        .photo-hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .photo-hero p {
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-            color: #f3f4f6;
-        }
+        .photo-hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(44, 36, 32, 0.5); }
+        .photo-hero-content { position: relative; z-index: 2; max-width: 800px; }
+        .photo-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .photo-hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #f3f4f6; }
 
         .btn-gold {
-            background-color: var(--accent-warm);
-            color: #fff;
-            padding: 0.9rem 2.2rem;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.2s;
+            background-color: var(--accent-warm); color: #fff; padding: 0.9rem 2.2rem; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; border: none; cursor: pointer; transition: background 0.2s;
         }
         .btn-gold:hover { background-color: var(--accent-hover); }
 
-        /* Sekcja Kalendarza Rezerwacji */
-        .section-container {
-            max-width: 1000px;
-            margin: 5rem auto;
-            padding: 0 5%;
-        }
+        .section-container { max-width: 1100px; margin: 5rem auto; padding: 0 5%; }
+        .section-title { text-align: center; font-size: 2.3rem; margin-bottom: 0.5rem; }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 3rem; }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
+        /* Rezerwacja i Panel Wizyt */
+        .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+        .booking-box, .appointments-box {
+            background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 20px; padding: 2.5rem;
         }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-        }
-
-        .booking-box {
-            background: var(--card-light);
-            border: 1px solid var(--border-warm);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .calendar-mockup {
-            background: #fff;
-            border: 1px solid var(--border-warm);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .calendar-mockup h4 { margin-bottom: 1rem; color: var(--accent-hover); }
-        .calendar-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        .c-day {
-            padding: 0.5rem;
-            background: #fdfbf7;
-            border-radius: 6px;
-            border: 1px solid var(--border-warm);
-        }
-        .c-day.available { background: #e9edc9; color: #386641; font-weight: bold; cursor: pointer; }
+        .booking-box h3, .appointments-box h3 { margin-bottom: 1.5rem; font-size: 1.3rem; }
 
         .booking-form input, .booking-form select, .booking-form textarea {
-            width: 100%;
-            padding: 0.9rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-warm);
-            border-radius: 8px;
-            background: #fff;
-            color: var(--text-dark);
+            width: 100%; padding: 0.9rem; margin-bottom: 1rem; border: 1px solid var(--border-warm); border-radius: 8px; background: #fff; color: var(--text-dark);
         }
 
-        /* SztucznaMapa Google Maps (Zasięg: Cała Polska) */
-        .map-section {
-            background: var(--card-light);
-            border-top: 1px solid var(--border-warm);
-            border-bottom: 1px solid var(--border-warm);
-            padding: 5rem 5%;
-            text-align: center;
+        .appointment-list { list-style: none; max-height: 250px; overflow-y: auto; }
+        .appointment-item {
+            background: #fff; padding: 0.9rem 1.2rem; border-radius: 8px; border: 1px solid var(--border-warm); margin-bottom: 0.75rem; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;
         }
 
-        .fake-map {
-            width: 100%;
-            height: 350px;
-            background: #e5e7eb url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f4efe6"/><path d="M0 50 Q 25 30, 50 50 T 100 50" fill="none" stroke="%23d4a373" stroke-width="3"/></svg>');
-            border-radius: 16px;
-            border: 1px solid var(--border-warm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin-top: 2rem;
-        }
+        /* Prawdziwa mapa Google Maps (iframe) */
+        .map-section { background: var(--card-light); border-top: 1px solid var(--border-warm); border-bottom: 1px solid var(--border-warm); padding: 5rem 5%; text-align: center; }
+        .map-container { width: 100%; height: 400px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-warm); margin-top: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        .map-badge {
-            background: #fff;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            font-weight: 700;
-            color: var(--accent-hover);
+        /* Automatyczna Karuzela Zdjęć */
+        .carousel-photo-section { padding: 5rem 5%; text-align: center; overflow: hidden; }
+        .photo-carousel-track {
+            display: flex; gap: 1.5rem; width: max-content; animation: scrollCarousel 25s linear infinite;
         }
-
-        /* Karuzela zdjęć na dole */
-        .carousel-photo-section {
-            padding: 5rem 5%;
-            text-align: center;
-        }
-
-        .photo-carousel {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding-bottom: 1.5rem;
-            scroll-snap-type: x mandatory;
-        }
-
         .photo-card-item {
-            min-width: 320px;
-            height: 240px;
-            background: var(--card-light);
-            border: 1px solid var(--border-warm);
-            border-radius: 14px;
-            flex-shrink: 0;
-            scroll-snap-align: start;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--text-muted);
+            width: 340px; height: 240px; background: var(--card-light); border: 1px solid var(--border-warm); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--text-muted); flex-shrink: 0;
+        }
+        @keyframes scrollCarousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        footer {
-            background: var(--card-light);
-            padding: 3rem 5%;
-            text-align: center;
-            border-top: 1px solid var(--border-warm);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
+        footer { background: var(--card-light); padding: 3rem 5%; text-align: center; border-top: 1px solid var(--border-warm); color: var(--text-muted); font-size: 0.85rem; }
 
-        @media(max-width: 768px) {
-            .booking-box { grid-template-columns: 1fr; }
-            .photo-hero h1 { font-size: 2.2rem; }
-        }
+        @media(max-width: 768px) { .booking-grid { grid-template-columns: 1fr; } .photo-hero h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -245,62 +89,71 @@
         <span>ArtFocus Studio – Fotografia Profesjonalna</span>
     </header>
 
-    <!-- Sekcja Hero z tłem salon.jpg -->
     <section class="photo-hero">
         <div class="photo-hero-content">
             <h1>ArtFocus Studio</h1>
-            <p>Ekskluzywna fotografia portretowa i komercyjna. Sprawdź wolne terminy w naszym kalendarzu.</p>
+            <p>Ekskluzywna fotografia portretowa i komercyjna na terenie całej Polski.</p>
             <a href="#rezerwacja" class="btn-gold">Zarezerwuj termin sesji</a>
         </div>
     </section>
 
-    <!-- Sekcja Kalendarza i Rezerwacji -->
+    <!-- Sekcja Rezerwacji i Panelu Nadchodzących Wizyt -->
     <section class="section-container" id="rezerwacja">
-        <h2 class="section-title">Wybierz termin sesji</h2>
-        <p class="section-subtitle">Sprawdź dostępność w kalendarzu i wyślij zgłoszenie.</p>
+        <h2 class="section-title">System Rezerwacji i Wizyt</h2>
+        <p class="section-subtitle">Zarezerwuj sesję i sprawdź harmonogram zaplanowanych spotkań.</p>
         
-        <div class="booking-box">
-            <div class="calendar-mockup">
-                <h4>Październik 2026</h4>
-                <div class="calendar-days">
-                    <div class="c-day">Pn</div><div class="c-day">Wt</div><div class="c-day">Śr</div><div class="c-day">Cz</div><div class="c-day">Pt</div><div class="c-day">So</div><div class="c-day">Nd</div>
-                    <div class="c-day">1</div><div class="c-day">2</div><div class="c-day available">3</div><div class="c-day">4</div><div class="c-day">5</div><div class="c-day available">6</div><div class="c-day">7</div>
-                    <div class="c-day">8</div><div class="c-day available">9</div><div class="c-day">10</div><div class="c-day">11</div><div class="c-day available">12</div><div class="c-day">13</div><div class="c-day">14</div>
-                </div>
-                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">* Zielone pola oznaczają wolne dni sesyjne.</p>
+        <div class="booking-grid">
+            <!-- Formularz rezerwacji -->
+            <div class="booking-box">
+                <h3>📅 Umów nową wizytę</h3>
+                <form class="booking-form" id="bookingForm">
+                    <input type="text" id="clientName" placeholder="Imię i Nazwisko / Firma" required>
+                    <input type="date" id="clientDate" required>
+                    <select id="sessionType">
+                        <option value="Sesja Portretowa">Sesja Portretowa</option>
+                        <option value="Sesja Biznesowa">Sesja Biznesowa</option>
+                        <option value="Fotografia Komercyjna">Fotografia Komercyjna</option>
+                    </select>
+                    <button type="submit" class="btn-gold" style="width: 100%;">Zarezerwuj termin</button>
+                </form>
             </div>
 
-            <form class="booking-form" action="https://formspree.io/f/twoj-kod-formspree" method="POST">
-                <input type="text" name="client_name" placeholder="Twoje Imię i Nazwisko" required>
-                <input type="email" name="client_email" placeholder="Adres E-mail" required>
-                <select name="session_type">
-                    <option value="portret">Sesja Portretowa / Indywidualna</option>
-                    <option value="biznes">Sesja Biznesowa / Wizerunkowa</option>
-                    <option value="komercja">Fotografia Komercyjna / Salon</option>
-                </select>
-                <textarea name="notes" placeholder="Wybrany termin z kalendarza i uwagi..." rows="3" required></textarea>
-                <button type="submit" class="btn-gold" style="width: 100%;">Potwierdź rezerwację terminu</button>
-            </form>
+            <!-- Panel podglądu zaplanowanych wizyt -->
+            <div class="appointments-box">
+                <h3>📋 Harmonogram umówionych wizyt</h3>
+                <ul class="appointment-list" id="appointmentList">
+                    <li class="appointment-item"><span><b>Jan Kowalski</b> (Sesja Portretowa)</span> <span style="color: var(--accent-hover);">2026-10-25</span></li>
+                    <li class="appointment-item"><span><b>Firma TechCorp</b> (Biznesowa)</span> <span style="color: var(--accent-hover);">2026-10-28</span></li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">* Lista aktualizuje się automatycznie po dodaniu nowej rezerwacji.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Sztuczna Mapa Google Maps (Zasięg: Cała Polska) -->
+    <!-- Prawdziwa Mapa Google Maps (Zasięg Polska) -->
     <section class="map-section">
         <h2 class="section-title">Obszar Działania</h2>
-        <p class="section-subtitle">Realizujemy sesje fotograficzne na terenie całej Polski (dojazd do klienta lub w naszym salonie).</p>
-        <div class="fake-map">
-            <div class="map-badge">📍 Zasięg Usług: Cała Polska (Mobilne Studio)</div>
+        <p class="section-subtitle">Działamy na terenie całej Polski – mobilne studio z dojazdem do klienta.</p>
+        <div class="map-container">
+            <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Poland&t=&z=6&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </section>
 
-    <!-- Karuzela Zdjęć na dole -->
+    <!-- Automatycznie przesuwająca się karuzela zdjęć -->
     <section class="carousel-photo-section">
         <h2 class="section-title" style="margin-bottom: 2rem;">Galeria Kadrów</h2>
-        <div class="photo-carousel">
-            <div class="photo-card-item">Kadr #01 – Światło dzienne</div>
-            <div class="photo-card-item">Kadr #02 – Portret studyjny</div>
-            <div class="photo-card-item">Kadr #03 – Sesja biznesowa</div>
-            <div class="photo-card-item">Kadr #04 – Detal i wnętrze salonu</div>
+        <div style="overflow: hidden; width: 100%;">
+            <div class="photo-carousel-track" id="photoTrack">
+                <div class="photo-card-item">Kadr #01 – Światło dzienne</div>
+                <div class="photo-card-item">Kadr #02 – Portret studyjny</div>
+                <div class="photo-card-item">Kadr #03 – Sesja biznesowa</div>
+                <div class="photo-card-item">Kadr #04 – Detal i wnętrze</div>
+                <!-- Duplikat dla płynnego zapętlenia karuzeli -->
+                <div class="photo-card-item">Kadr #01 – Światło dzienne</div>
+                <div class="photo-card-item">Kadr #02 – Portret studyjny</div>
+                <div class="photo-card-item">Kadr #03 – Sesja biznesowa</div>
+                <div class="photo-card-item">Kadr #04 – Detal i wnętrze</div>
+            </div>
         </div>
     </section>
 
@@ -308,5 +161,26 @@
         <p>&copy; 2026 ArtFocus Studio. Wszystkie prawa zastrzeżone. Projekt wykonany przez WebCraft Studio.</p>
     </footer>
 
+    <script>
+        // Obsługa systemu dodawania wizyt do listy
+        const form = document.getElementById('bookingForm');
+        const list = document.getElementById('appointmentList');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const date = document.getElementById('clientDate').value;
+            const type = document.getElementById('sessionType').value;
+
+            if (name && date) {
+                const li = document.createElement('li');
+                li.className = 'appointment-item';
+                li.innerHTML = `<span><b>${name}</b> (${type})</span> <span style="color: var(--accent-hover);">${date}</span>`;
+                list.prepend(li);
+                form.reset();
+                alert('Pomyślnie zarezerwowano wizytę!');
+            }
+        });
+    </script>
 </body>
 </html>
