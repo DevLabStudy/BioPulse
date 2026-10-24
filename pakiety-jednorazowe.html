@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegółowe Porównanie Pakietów Stron | WebCraft Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #030305;
+            --bg-card: rgba(8, 12, 20, 0.92);
+            --accent-blue: #00d2ff;
+            --border-blue: rgba(0, 210, 255, 0.3);
+            --text-main: #f1f5f9;
+            --text-muted: #8b9bb4;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 1250px; margin: 0 auto; }
+        
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .page-title {
+            font-family: var(--font-mono);
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            font-weight: 900;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--accent-blue);
+            color: #030305;
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+        .btn-back:hover { background: #33dbff; }
+
+        .table-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-blue);
+            border-radius: 12px;
+            overflow-x: auto;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+        }
+
+        th {
+            background: rgba(0, 210, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-blue);
+            text-transform: uppercase;
+        }
+
+        th:first-child { text-align: left; }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #f1f5f9;
+            text-align: center;
+        }
+
+        td:first-child { text-align: left; font-weight: bold; color: #fff; }
+
+        tr:hover td { background: rgba(0, 210, 255, 0.03); }
+
+        .icon-yes { color: #22c55e; font-weight: 900; font-size: 1.1rem; }
+        .icon-no { color: #ef4444; font-weight: 900; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-bar">
+            <div>
+                <div class="page-title">// SPECYFIKACJA PAKIETÓW JEDNORAZOWYCH</div>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 5px;">Szczegółowe zestawienie parametrów technicznych oraz funkcjonalności.</p>
+            </div>
+            <a href="index.html#kontakt" class="btn-back">← Powrót do Strony Głównej</a>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Moduł / Funkcjonalność Strony</th>
+                        <th>Wizytówka<br>(500 zł)</th>
+                        <th>Landing Page<br>(1 200 zł)</th>
+                        <th>E-Commerce<br>(2 800 zł)</th>
+                        <th>Portal Webowy<br>(od 4 900 zł)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dedykowany Projekt Responsywny (RWD)</td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Formularz Kontaktowy z Antyspamem</td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Optymalizacja Szybkości (Core Web Vitals)</td>
+                        <td>Podstawowa</td>
+                        <td>Zaawansowana</td>
+                        <td>Zaawansowana</td>
+                        <td>Dedykowana</td>
+                    </tr>
+                    <tr>
+                        <td>System Rezerwacji / Interaktywne Menu</td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Koszyk i Płatności Online (BLIK / Cards)</td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Panel Zarządzania Treścią (CMS)</td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td>Podstawowy</td>
+                        <td>Panel Sklepowy</td>
+                        <td>Dedykowany Panel Master</td>
+                    </tr>
+                    <tr>
+                        <td>Baza Danych &amp; Konta Użytkowników</td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Integracja Kurierów i Magazynu</td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-no">✕</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                        <td><span class="icon-yes">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Czas Realizacji Projektu</td>
+                        <td>3 - 5 dni</td>
+                        <td>7 - 10 dni</td>
+                        <td>14 - 21 dni</td>
+                        <td>Indywidualny (1 mc+)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
