@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WebCraft Studio | Strony i Opieka Abonamentowa</title>
+    <title>WebCraft Studio | Tworzenie Stron i Opieka Techniczna</title>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff5e00' stroke-width='2.5'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
@@ -53,32 +53,16 @@
         nav a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: color 0.2s; }
         nav a:hover { color: var(--accent-orange); }
 
-        .hero { max-width: 1300px; margin: 4rem auto 2.5rem auto; padding: 0 1.5rem; text-align: center; }
-        
-        .telemetry-badge {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: rgba(255, 94, 0, 0.06); border: 1px solid var(--border-subtle);
-            padding: 0.4rem 1rem; border-radius: 4px; font-family: var(--font-mono);
-            font-size: 0.68rem; margin-bottom: 1.8rem; color: var(--text-muted); text-transform: uppercase;
-        }
-        .pulse-dot {
-            width: 6px; height: 6px; background: var(--accent-orange); border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-orange); animation: pulse 2s infinite; flex-shrink: 0;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 18px var(--accent-orange); }
-            100% { transform: scale(0.95); opacity: 0.8; }
-        }
+        .hero { max-width: 1300px; margin: 3.5rem auto 3rem auto; padding: 0 1.5rem; text-align: center; }
 
-        h1 { font-size: clamp(2rem, 4.5vw, 4.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem; color: #fff; }
+        h1 { font-size: clamp(2.2rem, 4.8vw, 4.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem; color: var(--accent-blue); }
         h1 span {
-            background: linear-gradient(135deg, #fff 30%, var(--accent-orange) 100%);
+            background: linear-gradient(135deg, #ffffff 20%, var(--accent-orange) 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero p { font-size: 0.98rem; color: var(--text-muted); max-width: 720px; margin: 0 auto 2.2rem auto; line-height: 1.6; }
+        .hero p { font-size: 1.02rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 2.2rem auto; line-height: 1.6; }
         
-        .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3.5rem; }
+        .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
         
         .btn-primary {
             padding: 0.85rem 1.8rem; border-radius: 6px; font-weight: 700; font-family: var(--font-mono);
@@ -104,6 +88,70 @@
         .section-container { max-width: 1400px; margin: 0 auto 5rem auto; padding: 0 1.5rem; }
         .section-header-tag { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.6rem; font-weight: 800; }
         .section-title { font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 900; color: #fff; margin-bottom: 2rem; }
+
+        /* SEKCJA DLAczego WEBCRAFT (FEATURES GRID) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.8rem 1.5rem;
+            backdrop-filter: blur(12px);
+        }
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* SEKCJA KROKI WSPÓŁPRACY */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .step-card {
+            background: rgba(5, 8, 15, 0.9);
+            border: 1px solid var(--border-blue);
+            border-radius: 12px;
+            padding: 1.8rem 1.5rem;
+            position: relative;
+        }
+        .step-number {
+            font-family: var(--font-mono);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent-blue);
+            opacity: 0.4;
+            margin-bottom: 0.5rem;
+        }
+        .step-card h4 {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
 
         /* PORTFOLIO DEMO */
         .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 950px; margin: 0 auto; }
@@ -170,14 +218,6 @@
         .plan-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 1.5rem; }
         .plan-list li::before { content: "› "; color: var(--accent-orange); font-weight: bold; font-size: 1rem; }
 
-        /* TABELE PORÓWNAWCZE */
-        .comparison-table-wrapper { width: 100%; overflow-x: auto; margin-top: 2rem; border-radius: 10px; border: 1px solid var(--border-subtle); background: var(--bg-card); }
-        .comparison-table { width: 100%; border-collapse: collapse; min-width: 850px; text-align: left; font-family: var(--font-mono); font-size: 0.75rem; }
-        .comparison-table th, .comparison-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border-subtle); }
-        .comparison-table th { background: rgba(255, 94, 0, 0.1); color: var(--accent-orange); font-weight: 800; text-transform: uppercase; }
-        .comparison-table.blue-table th { background: rgba(0, 210, 255, 0.1); color: var(--accent-blue); }
-        .comparison-table td:not(:first-child) { text-align: center; }
-
         /* MODALE */
         .modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -194,14 +234,23 @@
         .details-list.included li::before { content: "✔  "; color: #22c55e; font-weight: bold; }
         .details-list.excluded li::before { content: "✕  "; color: #ef4444; font-weight: bold; }
 
-        /* FORMULARZ */
+        /* FORMULARZ KONTAKTOWY (STYL BŁĘKITNO-CYFROWY) */
         .order-section {
-            background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 2.5rem 1.5rem; max-width: 680px; margin: 0 auto;
+            background: var(--bg-card); 
+            border: 1px solid var(--border-blue); 
+            border-radius: 14px; 
+            padding: 2.5rem 1.5rem; 
+            max-width: 680px; 
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 210, 255, 0.05);
         }
         .form-group { margin-bottom: 1.1rem; }
-        .form-group label { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-orange); text-transform: uppercase; margin-bottom: 0.35rem; font-weight: 700; }
+        .form-group label { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 0.35rem; font-weight: 700; }
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 0.75rem 0.9rem; border: 1px solid var(--border-subtle); border-radius: 6px; background: rgba(3, 3, 5, 0.9); color: #fff; font-size: 0.9rem; font-family: inherit;
+            width: 100%; padding: 0.75rem 0.9rem; border: 1px solid var(--border-blue); border-radius: 6px; background: rgba(3, 3, 5, 0.9); color: #fff; font-size: 0.9rem; font-family: inherit; transition: all 0.25s ease;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent-blue); box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);
         }
         .form-group textarea { resize: vertical; min-height: 110px; }
 
@@ -241,6 +290,7 @@
             WebCraft <span>Studio</span>
         </a>
         <nav>
+            <a href="#dlaczego-my">O nas</a>
             <a href="#portfolio">Realizacje</a>
             <a href="#pakiety-stron" style="color: var(--accent-blue);">Strony</a>
             <a href="#pakiety-saas">Abonamenty</a>
@@ -249,21 +299,47 @@
     </header>
 
     <section class="hero">
-        <div class="telemetry-badge">
-            <span class="pulse-dot"></span> ARCHITEKTURA CYFROWA: <strong style="color: var(--accent-orange);">WYSOKA WYDAJNOŚĆ</strong>
-        </div>
         <h1>Bezkompromisowy kod<br><span>Strony oraz opieka dla Twojego biznesu</span></h1>
-        <p>Tworzymy szybkie strony internetowe oraz zapewniamy stałe wsparcie techniczne, hosting i bezpieczeństwo w modelu abonamentowym.</p>
+        <p>Tworzymy szybkie, nowoczesne strony internetowe i oferujemy stałe wsparcie techniczne, hosting oraz bezpieczeństwo w przewidywalnym modelu abonamentowym.</p>
         <div class="hero-btns">
             <a href="#pakiety-stron" class="btn-blue">Pakiety Stron (Jednorazowe)</a>
             <a href="#pakiety-saas" class="btn-primary">Pakiety Abonamentowe SaaS</a>
         </div>
     </section>
 
-    <!-- 1. KATALOG PODSTRON DEMO -->
+    <!-- 1. SEKCJA ZALET / DLACZEGO WEBCRAFT -->
+    <section class="section-container" id="dlaczego-my">
+        <div class="section-header-tag">// Dedykowana Jakość IT</div>
+        <h2 class="section-title">Dlaczego powinieneś z nami współpracować?</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Czysty Kod &amp; Szybkość</h3>
+                <p>Tworzymy lekkie witryny pozbawione zbędnych powolnych wtyczek. Twoi klienci ładują stronę w ułamku sekundy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Dedykowane RWD</h3>
+                <p>Każdy projekt jest od podstaw dopasowywany pod ekrany smartfonów, tabletów oraz dużych monitorów desktopowych.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Infrastruktura &amp; Serwery</h3>
+                <p>Strony opieramy o szybkie serwery w chmurze z wysoce wydajną bazą DNS, zapewniając stałą dostępność i ochronę.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Stałe Wsparcie (SaaS)</h3>
+                <p>Nie zostawiamy Cię ze stroną samemu sobie. W abonamencie dbamy o kopie zapasowe, poprawki i odnowienia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. KATALOG PODSTRON DEMO -->
     <section class="section-container" id="portfolio">
         <div class="section-header-tag">// Portfel Wdrożeń Komercyjnych</div>
-        <h2 class="section-title">Katalog Podstron Demo</h2>
+        <h2 class="section-title">Przykładowe Projekty &amp; Wzorce</h2>
         
         <div class="portfolio-grid">
             <a href="examples/photography/index.html" class="carousel-card">
@@ -278,7 +354,7 @@
             <a href="examples/bistro/index.html" class="carousel-card">
                 <div>
                     <div class="tag">Gastronomiczny / HoReCa</div>
-                    <h3>Bistro & Cafe Aura</h3>
+                    <h3>Bistro &amp; Cafe Aura</h3>
                     <p>Nowoczesny layout dedykowany branży gastronomicznej z interaktywną kartą menu oraz rezerwacją stolików.</p>
                 </div>
                 <div class="card-link-hint">Otwórz podstronę demo →</div>
@@ -286,7 +362,7 @@
         </div>
     </section>
 
-    <!-- 2. PAKIETY JEDNORAZOWE (NIEBIESKIE) -->
+    <!-- 3. PAKIETY JEDNORAZOWE (NIEBIESKIE) -->
     <section class="section-container" id="pakiety-stron">
         <div class="section-header-tag" style="color: var(--accent-blue);">// Cennik Jednorazowy Wdrożeń</div>
         <h2 class="section-title">Pakiety Tworzenia Stron (Jednorazowe)</h2>
@@ -346,7 +422,7 @@
                     data-price="Jednorazowo: 2 800 zł"
                     data-desc="Kompletny sklep internetowy przygotowany do sprzedaży produktów fizycznych lub cyfrowych."
                     data-included="Konfiguracja platformy sklepowej, podpięcie płatności online (Blik, PayU, Stripe), integracja z firmami kurierskimi, responsywny design"
-                    data-excluded="Brak wprowadzania masowego produktów (w cenie do 20 sztuk), Brak stałej opieki marketingowej"
+                    data-excluded="Brak wprowadzania masowego produktów (w cenie do 20 sztuk)"
                     style="width: 100%; border-color: var(--border-blue); color: #fff;">Więcej szczegółów</button>
             </div>
 
@@ -357,7 +433,7 @@
                     <ul class="plan-list-blue">
                         <li>Dedykowana architektura</li>
                         <li>System użytkowników i bazy</li>
-                        <li>Zaawansowane API & Webhooks</li>
+                        <li>Zaawansowane API &amp; Webhooks</li>
                     </ul>
                 </div>
                 <button class="btn-outline open-modal-btn" 
@@ -365,64 +441,19 @@
                     data-price="Jednorazowo: od 4 900 zł"
                     data-desc="Zaawansowane aplikacje internetowe i portale dedykowane dla wymagających projektów."
                     data-included="Pełna architektura systemowa, baza danych SQL/NoSQL, system logowania użytkowników, panele administracyjne, dokumentacja API"
-                    data-excluded="Brak hostingu dedykowanego w cenie jednorazowej (wymaga abonamentu SaaS)"
+                    data-excluded="Brak hostingu dedykowanego w cenie jednorazowej"
                     style="width: 100%; border-color: var(--border-blue); color: #fff;">Więcej szczegółów</button>
             </div>
         </div>
 
-        <div class="comparison-table-wrapper" style="margin-top: 2.5rem;">
-            <table class="comparison-table blue-table">
-                <thead>
-                    <tr>
-                        <th>Funkcja / Element strony</th>
-                        <th>Wizytówka (500 zł)</th>
-                        <th>Landing Page (1200 zł)</th>
-                        <th>Sklep E-commerce (2800 zł)</th>
-                        <th>Portal Webowy (4900 zł+)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Liczba podstron / sekcji</strong></td>
-                        <td>Jedna sekcja (One-Page)</td>
-                        <td>Do 5 podstron / sekcji</td>
-                        <td>Nieograniczona (katalog produktów)</td>
-                        <td>Dedykowana architektura</td>
-                    </tr>
-                    <tr>
-                        <td><strong>System rezerwacji / menu / koszyk</strong></td>
-                        <td>Brak (tylko kontakt)</td>
-                        <td>Wliczony (rezerwacje / menu)</td>
-                        <td>Pełny Koszyk i Kasa sklepu</td>
-                        <td>Dedykowany system logiki</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Integracja płatności online</strong></td>
-                        <td>Brak</td>
-                        <td>Brak</td>
-                        <td>Tak (Blik, karty, przelewy)</td>
-                        <td>Tak (Subskrypcje / bramki)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Panel administracyjny CMS</strong></td>
-                        <td>Brak (wsparcie przez nas)</td>
-                        <td>Podstawowy pod zmiany</td>
-                        <td>Pełny panel sklepiku</td>
-                        <td>Zaawansowany panel master</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Czas realizacji projektu</strong></td>
-                        <td>3-5 dni roboczych</td>
-                        <td>7-10 dni roboczych</td>
-                        <td>14-21 dni roboczych</td>
-                        <td>Indywidualny (1 miesiąc+)</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="pakiety-jednorazowe.html" class="btn-blue" style="text-decoration: none;">
+                📊 Otwórz Pełną Tabelę Porównawczą Pakietów Jednorazowych →
+            </a>
         </div>
     </section>
 
-    <!-- 3. PAKIETY ABONAMENTOWE (POMARAŃCZOWE) -->
+    <!-- 4. PAKIETY ABONAMENTOWE (POMARAŃCZOWE) -->
     <section class="section-container" id="pakiety-saas">
         <div class="section-header-tag">// Model Abonamentowy i Infrastruktura</div>
         <h2 class="section-title">Pakiety Opieki i Hostingu (SaaS)</h2>
@@ -433,17 +464,17 @@
                     <div class="plan-name">Starter Cloud</div>
                     <div class="plan-price">199 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Hosting i SSL w cenie</li>
-                        <li>Miesięczny backup</li>
-                        <li>Poprawki tekstów (do 2h)</li>
+                        <li>Szybki hosting w chmurze &amp; SSL</li>
+                        <li>Miesięczny backup danych</li>
+                        <li>Drobne poprawki treści (do 2h/mc)</li>
                     </ul>
                 </div>
                 <button class="btn-outline open-modal-btn" 
                     data-title="Starter Cloud (199 zł / mc)"
                     data-price="199 zł / miesiąc"
-                    data-desc="Podstawowa opieka i monitoring dla mniejszych stron wizytówkowych."
-                    data-included="Hosting w chmurze, Certyfikat SSL, Miesięczna kopia zapasowa, Drobne poprawki tekstów do 2h w miesiącu"
-                    data-excluded="Brak dedykowanego adresu IP, Brak wsparcia w weekendy, Czas reakcji do 48h, Brak własnej domeny .pl w cenie"
+                    data-desc="Podstawowy pakiet bezobsługowego utrzymania strony dla małych firm."
+                    data-included="Hosting w chmurze, Certyfikat SSL, Miesięczny backup, Wprowadzanie poprawek tekstów/zdjęć do 2h w miesiącu"
+                    data-excluded="Obsługa domen zewnętrznych w cenie, Prace powyżej limitu 2h"
                     style="width: 100%; margin-top: 1.2rem;">Więcej szczegółów</button>
             </div>
 
@@ -454,88 +485,72 @@
                     <div class="plan-price">499 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
                         <li>Wszystko z pakietu Starter</li>
-                        <li>Ciągły monitoring Uptime</li>
-                        <li>Rozbudowa funkcji (do 5h)</li>
+                        <li>Cotygodniowy backup &amp; Domena .pl</li>
+                        <li>Rozbudowa i wsparcie (do 5h/mc)</li>
                     </ul>
                 </div>
                 <button class="btn-primary open-modal-btn" 
                     data-title="Business Ops (499 zł / mc)"
                     data-price="499 zł / miesiąc"
-                    data-desc="Pełny pakiet operacyjny dla rozwijających się firm i sklepów e-commerce."
-                    data-included="Wszystko z pakietu Starter, Ciągły monitoring działania strony, Rozbudowa funkcji i podstron do 5h, Priorytetowe wsparcie (reakcja do 12h), Optymalizacja SEO co kwartał"
-                    data-excluded="Brak dedykowanego zespołu programistów na wyłączność 24/7"
+                    data-desc="Kompleksowa opieka techniczna i stałe rozwijanie funkcji witryny."
+                    data-included="Szybki hosting, SSL, Cotygodniowy backup, Wdrożenia nowości do 5h w miesiącu, Odnowienie domeny .pl w cenie, Priorytetowy kontakt"
+                    data-excluded="Prace programistyczne powyżej limitu 5h"
                     style="width: 100%; margin-top: 1.2rem;">Więcej szczegółów</button>
             </div>
 
             <div class="price-card">
                 <div>
-                    <div class="plan-name">Enterprise Dev</div>
-                    <div class="plan-price">1 299 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
+                    <div class="plan-name">Pro Support</div>
+                    <div class="plan-price">999 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Dedykowany architekt IT</li>
-                        <li>Nieograniczone modyfikacje</li>
-                        <li>SLA: Reakcja do 2h</li>
+                        <li>Wyższe zasoby serwerowe</li>
+                        <li>Codzienny backup danych</li>
+                        <li>Pakiet rozbudowy modułów (do 12h/mc)</li>
                     </ul>
                 </div>
                 <button class="btn-outline open-modal-btn" 
-                    data-title="Enterprise Dev (1 299 zł / mc)"
-                    data-price="1 299 zł / miesiąc"
-                    data-desc="Dedykowany dział IT i stały zespół programistyczny na wyłączność."
-                    data-included="Dedykowany architekt IT / Dev, Nieograniczone drobne modyfikacje kodu, Szybkie wdrażanie nowych modułów i integracji, SLA: Czas reakcji do 2 godzin, Audyty bezpieczeństwa kodu"
-                    data-excluded="Brak jakichkolwiek ograniczeń technicznych w ramach roboczogodzin"
+                    data-title="Pro Support (999 zł / mc)"
+                    data-price="999 zł / miesiąc"
+                    data-desc="Dla aktywnych projektów i sklepów wymagających stałego wsparcia technicznego."
+                    data-included="Dedykowana optymalizacja, Codzienny backup, Pakiet 12 godzin pracy w miesiącu, Czas reakcji na awarie do 4 godzin"
+                    data-excluded="Godziny nie przechodzą na kolejny miesiąc"
                     style="width: 100%; margin-top: 1.2rem;">Więcej szczegółów</button>
             </div>
         </div>
 
-        <div class="comparison-table-wrapper" style="margin-top: 2.5rem;">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Funkcja / Usługa SaaS</th>
-                        <th>Starter Cloud (199 zł)</th>
-                        <th>Business Ops (499 zł)</th>
-                        <th>Enterprise Dev (1299 zł)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Hosting i Certyfikat SSL</strong></td>
-                        <td>Tak (Standard)</td>
-                        <td>Tak (Wysoka wydajność)</td>
-                        <td>Tak (Dedykowany klaster)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Obsługa Domeny .pl / .com</strong></td>
-                        <td>We własnym zakresie</td>
-                        <td>Wliczona w cenę</td>
-                        <td>Wliczona w cenę (wielodomenowość)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Kopie zapasowe (Backup)</strong></td>
-                        <td>Miesięczne</td>
-                        <td>Cotygodniowe</td>
-                        <td>Codzienne (Real-time)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Wsparcie sklepów (Shopify / Custom)</strong></td>
-                        <td>Podstawowa pomoc</td>
-                        <td>Pełna opieka sklepu</td>
-                        <td>Zaawansowane integracje API</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Godziny na poprawki w miesiącu</strong></td>
-                        <td>Do 2 godzin</td>
-                        <td>Do 5 godzin</td>
-                        <td>Nieograniczone</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Czas reakcji (SLA)</strong></td>
-                        <td>Do 48 godzin</td>
-                        <td>Do 12 godzin</td>
-                        <td>Do 2 godzin</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="pakiety-saas.html" class="btn-outline" style="border-color: var(--accent-orange); color: var(--accent-orange); text-decoration: none;">
+                📊 Otwórz Pełną Tabelę Porównawczą Pakietów SaaS →
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. SEKCJA KROKI WSPÓŁPRACY -->
+    <section class="section-container">
+        <div class="section-header-tag">// Przejrzysty Proces</div>
+        <h2 class="section-title">Jak wygląda współpraca krok po kroku?</h2>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h4>Konsultacja &amp; Wycena</h4>
+                <p>Omawiamy Twoje potrzeby, dobieramy pakiet i ustalamy szczegóły wdrożenia bez ukrytych opłat.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h4>Makieta &amp; Kodowanie</h4>
+                <p>Tworzymy projekt graficzny, a po jego akceptacji przechodzimy do kodowania czystego HTML/CSS.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h4>Optymalizacja &amp; Testy</h4>
+                <p>Testujemy responsywność na telefonach, konfigurujemy podpięcia i optymalizujemy szybkość witryny.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h4>Publikacja &amp; Opieka</h4>
+                <p>Uruchamiamy stronę w domenie. W pakiecie SaaS dbamy o kopie zapasowe oraz sprawne działanie 24/7.</p>
+            </div>
         </div>
     </section>
 
@@ -565,9 +580,9 @@
             <button class="modal-close" id="closeRegulamin">&times;</button>
             <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; color: #fff; margin-bottom: 0.8rem;">Regulamin Świadczenia Usług</h3>
             <div style="font-size: 0.82rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.8rem; max-height: 55vh; overflow-y: auto; padding-right: 5px;">
-                <p><strong>§1. Postanowienia Ogólne</strong><br>Niniejszy regulamin określa zasady korzystania z usług WebCraft Studio oraz platformy CloudFlow.</p>
-                <p><strong>§2. Rodzaje i Zakres Usług</strong><br>1. WebCraft Studio świadczy usługi z zakresu tworzenia stron internetowych oraz stałej opieki technicznej i hostingu (pakiety abonamentowe SaaS).</p>
-                <p><strong>§3. Płatności i Abonamenty</strong><br>1. Pakiety jednorazowe opłacane są z góry. Pakiety abonamentowe rozliczane są w cyklu miesięcznym.</p>
+                <p><strong>§1. Postanowienia Ogólne</strong><br>Niniejszy regulamin określa zasady korzystania z usług WebCraft Studio.</p>
+                <p><strong>§2. Rodzaje i Zakres Usług</strong><br>1. WebCraft Studio świadczy usługi tworzenia stron www oraz opieki technicznej i hostingu w abonamencie.</p>
+                <p><strong>§3. Płatności</strong><br>1. Pakiety jednorazowe opłacane są zgodnie z umową. Pakiety abonamentowe rozliczane są miesięcznie.</p>
             </div>
             <div style="margin-top: 1.2rem;">
                 <button class="btn-primary" id="closeRegulaminBtn" style="width: 100%;">Rozumiem i zamykam</button>
@@ -575,34 +590,36 @@
         </div>
     </div>
 
-    <!-- 4. FORMULARZ (WEB3FORMS) -->
+    <!-- 6. FORMULARZ KONTAKTOWY (STYLIZOWANE MENU SELECT) -->
     <section class="section-container" id="kontakt">
         <div class="order-section">
-            <div class="section-header-tag" style="text-align: left;">// Zapytaj o ofertę</div>
+            <div class="section-header-tag" style="text-align: left; color: var(--accent-blue);">// Zapytaj o ofertę</div>
             <h2 class="section-title" style="font-size: 1.35rem; margin-bottom: 0.4rem; text-align: left;">Formularz Zamówienia / Kontakt</h2>
             <p style="text-align: left; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">Wybierz interesujący Cię pakiet lub napisz w sprawie indywidualnego projektu.</p>
             
             <form action="https://api.web3forms.com/submit" method="POST">
-                <!-- TUTAJ WKLEJ SWÓJ KLUCZ ACCESS KEY Z WEB3FORMS -->
                 <input type="hidden" name="access_key" value="df7bd377-380f-4c44-b323-35672c45dd0f">
 
                 <div class="form-group">
                     <label>Interesujący Cię Pakiet / Usługa</label>
-                    <select name="selected_plan" id="formPlanSelect" required>
+                    <select name="selected_plan" id="formPlanSelect" required style="background: #080c14; color: #fff;">
                         <option value="" disabled selected>-- Wybierz z listy --</option>
-                        <optgroup label="Jednorazowe Tworzenie Stron">
-                            <option value="Wizytówka / One-Page (500 zł)">Wizytówka / One-Page (500 zł)</option>
-                            <option value="Landing Page / Biznes (1200 zł)">Landing Page / Biznes (1200 zł)</option>
-                            <option value="Sklep E-commerce (2800 zł)">Sklep E-commerce (2800 zł)</option>
-                            <option value="Portal / System Webowy (4900 zł+)">Portal / System Webowy (4900 zł+)</option>
+                        
+                        <optgroup label="🔵 Jednorazowe Tworzenie Stron" style="background: #04101e; color: #00d2ff; font-weight: bold;">
+                            <option value="Wizytówka / One-Page (500 zł)" style="background: #030a14; color: #f1f5f9;">Wizytówka / One-Page (500 zł)</option>
+                            <option value="Landing Page / Biznes (1200 zł)" style="background: #030a14; color: #f1f5f9;">Landing Page / Biznes (1200 zł)</option>
+                            <option value="Sklep E-commerce (2800 zł)" style="background: #030a14; color: #f1f5f9;">Sklep E-commerce (2800 zł)</option>
+                            <option value="Portal / System Webowy (4900 zł+)" style="background: #030a14; color: #f1f5f9;">Portal / System Webowy (4900 zł+)</option>
                         </optgroup>
-                        <optgroup label="Abonamenty SaaS / Opieka">
-                            <option value="Starter Cloud (199 zł/mc)">Starter Cloud (199 zł/mc)</option>
-                            <option value="Business Ops (499 zł/mc)">Business Ops (499 zł/mc)</option>
-                            <option value="Enterprise Dev (1299 zł/mc)">Enterprise Dev (1299 zł/mc)</option>
+                        
+                        <optgroup label="🟠 Abonamenty SaaS / Opieka i Hosting" style="background: #1a0b02; color: #ff5e00; font-weight: bold;">
+                            <option value="Starter Cloud (199 zł/mc)" style="background: #0f0702; color: #f1f5f9;">Starter Cloud (199 zł/mc)</option>
+                            <option value="Business Ops (499 zł/mc)" style="background: #0f0702; color: #f1f5f9;">Business Ops (499 zł/mc)</option>
+                            <option value="Pro Support (999 zł/mc)" style="background: #0f0702; color: #f1f5f9;">Pro Support (999 zł/mc)</option>
                         </optgroup>
                     </select>
                 </div>
+                
                 <div class="form-group">
                     <label>Imię i Nazwisko / Firma</label>
                     <input type="text" name="name" required placeholder="Jan Kowalski">
@@ -616,10 +633,9 @@
                     <textarea name="message" placeholder="Napisz, czego potrzebujesz lub podaj adres obecnej strony..."></textarea>
                 </div>
 
-                <!-- Opcjonalnie: antyspam honeypot dla Web3Forms -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.8rem;">Wyślij wiadomość</button>
+                <button type="submit" class="btn-blue" style="width: 100%; margin-top: 0.8rem;">Wyślij wiadomość</button>
             </form>
         </div>
     </section>
