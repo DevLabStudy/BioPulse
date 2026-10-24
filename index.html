@@ -35,10 +35,12 @@
             min-height: 100vh;
         }
 
+        /* HEADER BEZ PASKA U GÓRY */
         header {
             width: 100%; max-width: 1550px; margin: 0 auto; padding: 1rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--border-subtle); position: sticky; top: 0;
+            border-bottom: none;
+            position: sticky; top: 0;
             background: rgba(3, 3, 5, 0.92); backdrop-filter: blur(16px); z-index: 1000;
         }
 
@@ -55,7 +57,7 @@
 
         .hero { max-width: 1300px; margin: 3.5rem auto 3rem auto; padding: 0 1.5rem; text-align: center; }
 
-        /* PRECYZYJNE GRADIENTY DLA H1 */
+        /* KONTROLA TEXTU H1 */
         h1 { 
             font-size: clamp(2.2rem, 4.8vw, 4.2rem); 
             font-weight: 900; 
@@ -64,22 +66,21 @@
             text-align: center;
         }
 
-        /* Niebieski gaśnie szybciej idąc w prawo */
+        /* Dłuższe łagodne wygaszanie niebieskiego */
         .h1-top {
-            background: linear-gradient(90deg, var(--accent-blue) 0%, #33dbff 22%, #ffffff 65%);
+            background: linear-gradient(90deg, var(--accent-blue) 0%, #33dbff 55%, #ffffff 85%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
         }
 
-        /* Pomarańczowy startuje z prawej strony od końca słowa 'biznesu' */
-        .h1-bottom {
-            background: linear-gradient(270deg, var(--accent-orange) 0%, #ff8c00 25%, #ffffff 70%);
+        /* Pomarańczowy akcent przechodzący przez słowa "twojego biznesu" */
+        .h1-orange-text {
+            background: linear-gradient(90deg, #ffffff 0%, var(--accent-orange) 45%, #ff8c00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            display: inline-block;
         }
 
         .hero p { font-size: 1.02rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 2.2rem auto; line-height: 1.6; }
@@ -286,7 +287,7 @@
     <section class="hero">
         <h1>
             <span class="h1-top">Bezkompromisowy kod</span><br>
-            <span class="h1-bottom">Strony oraz opieka dla Twojego biznesu</span>
+            <span>Strony oraz opieka </span><span class="h1-orange-text">twojego biznesu</span>
         </h1>
         <p>Tworzymy szybkie, nowoczesne strony internetowe i oferujemy stałe wsparcie techniczne, hosting oraz bezpieczeństwo w przewidywalnym modelu abonamentowym.</p>
         <div class="hero-btns">
