@@ -55,11 +55,28 @@
 
         .hero { max-width: 1300px; margin: 3.5rem auto 3rem auto; padding: 0 1.5rem; text-align: center; }
 
-        h1 { font-size: clamp(2.2rem, 4.8vw, 4.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem; color: var(--accent-blue); }
-        h1 span {
-            background: linear-gradient(135deg, #ffffff 20%, var(--accent-orange) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        /* DWUKIERUNKOWY GRADIENT DLA H1 */
+        h1 { 
+            font-size: clamp(2.2rem, 4.8vw, 4.2rem); 
+            font-weight: 900; 
+            line-height: 1.25; 
+            margin-bottom: 1.2rem; 
         }
+
+        .h1-top {
+            background: linear-gradient(90deg, #ffffff 0%, #33dbff 60%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .h1-bottom {
+            background: linear-gradient(90deg, var(--accent-orange) 0%, #ff8c00 35%, var(--accent-blue) 75%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
         .hero p { font-size: 1.02rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 2.2rem auto; line-height: 1.6; }
         
         .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
@@ -89,7 +106,6 @@
         .section-header-tag { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.6rem; font-weight: 800; }
         .section-title { font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 900; color: #fff; margin-bottom: 2rem; }
 
-        /* SEKCJA DLAczego WEBCRAFT (FEATURES GRID) */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -103,24 +119,10 @@
             padding: 1.8rem 1.5rem;
             backdrop-filter: blur(12px);
         }
-        .feature-icon {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-        .feature-card h3 {
-            font-family: var(--font-mono);
-            font-size: 1.05rem;
-            color: #fff;
-            margin-bottom: 0.6rem;
-        }
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.6;
-        }
+        .feature-icon { font-size: 1.8rem; margin-bottom: 1rem; display: inline-block; }
+        .feature-card h3 { font-family: var(--font-mono); font-size: 1.05rem; color: #fff; margin-bottom: 0.6rem; }
+        .feature-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
 
-        /* SEKCJA KROKI WSPÓŁPRACY */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -133,27 +135,10 @@
             padding: 1.8rem 1.5rem;
             position: relative;
         }
-        .step-number {
-            font-family: var(--font-mono);
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--accent-blue);
-            opacity: 0.4;
-            margin-bottom: 0.5rem;
-        }
-        .step-card h4 {
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        .step-card p {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            line-height: 1.5;
-        }
+        .step-number { font-family: var(--font-mono); font-size: 2.2rem; font-weight: 900; color: var(--accent-blue); opacity: 0.4; margin-bottom: 0.5rem; }
+        .step-card h4 { font-family: var(--font-mono); font-size: 1rem; color: #fff; margin-bottom: 0.5rem; }
+        .step-card p { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
 
-        /* PORTFOLIO DEMO */
         .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 950px; margin: 0 auto; }
         @media(max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
@@ -178,7 +163,6 @@
         .carousel-card p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; line-height: 1.6; }
         .card-link-hint { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-orange); font-weight: 700; text-transform: uppercase; }
 
-        /* PAKIETY NIEBIESKIE (JEDNORAZOWE) */
         .pricing-grid-blue { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
         .price-card-blue {
             background: var(--bg-card); border: 1px solid var(--border-blue); border-radius: 12px;
@@ -198,7 +182,6 @@
         .plan-list-blue { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 1.5rem; }
         .plan-list-blue li::before { content: "› "; color: var(--accent-blue); font-weight: bold; font-size: 1rem; }
 
-        /* PAKIETY POMARAŃCZOWE (ABONAMENTY) */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .price-card {
             background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px;
@@ -218,7 +201,6 @@
         .plan-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 1.5rem; }
         .plan-list li::before { content: "› "; color: var(--accent-orange); font-weight: bold; font-size: 1rem; }
 
-        /* MODALE */
         .modal-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(3, 3, 5, 0.85); backdrop-filter: blur(12px); z-index: 2000;
@@ -234,7 +216,6 @@
         .details-list.included li::before { content: "✔  "; color: #22c55e; font-weight: bold; }
         .details-list.excluded li::before { content: "✕  "; color: #ef4444; font-weight: bold; }
 
-        /* FORMULARZ KONTAKTOWY (STYL BŁĘKITNO-CYFROWY) */
         .order-section {
             background: var(--bg-card); 
             border: 1px solid var(--border-blue); 
@@ -254,7 +235,6 @@
         }
         .form-group textarea { resize: vertical; min-height: 110px; }
 
-        /* COOKIES BANNER */
         #cookieBanner {
             position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(8, 12, 20, 0.96);
             border-top: 1px solid var(--border-subtle); backdrop-filter: blur(16px); padding: 1rem 1.5rem;
@@ -299,7 +279,10 @@
     </header>
 
     <section class="hero">
-        <h1>Bezkompromisowy kod<br><span>Strony oraz opieka dla Twojego biznesu</span></h1>
+        <h1>
+            <span class="h1-top">Bezkompromisowy kod</span><br>
+            <span class="h1-bottom">Strony oraz opieka dla Twojego biznesu</span>
+        </h1>
         <p>Tworzymy szybkie, nowoczesne strony internetowe i oferujemy stałe wsparcie techniczne, hosting oraz bezpieczeństwo w przewidywalnym modelu abonamentowym.</p>
         <div class="hero-btns">
             <a href="#pakiety-stron" class="btn-blue">Pakiety Stron (Jednorazowe)</a>
@@ -307,7 +290,7 @@
         </div>
     </section>
 
-    <!-- 1. SEKCJA ZALET / DLACZEGO WEBCRAFT -->
+    <!-- 1. SEKCJA ZALET -->
     <section class="section-container" id="dlaczego-my">
         <div class="section-header-tag">// Dedykowana Jakość IT</div>
         <h2 class="section-title">Dlaczego powinieneś z nami współpracować?</h2>
@@ -448,7 +431,7 @@
 
         <div style="text-align: center; margin-top: 2.5rem;">
             <a href="pakiety-jednorazowe.html" class="btn-blue" style="text-decoration: none;">
-                📊 Otwórz Pełną Tabelę Porównawczą Pakietów Jednorazowych →
+                📊 Otwórz Pełną Tabelę Porównawczną Pakietów Jednorazowych →
             </a>
         </div>
     </section>
@@ -464,7 +447,7 @@
                     <div class="plan-name">Starter Cloud</div>
                     <div class="plan-price">199 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Szybki hosting w chmurze &amp; SSL</li>
+                        <li>Hosting Shared SSD &amp; SSL</li>
                         <li>Miesięczny backup danych</li>
                         <li>Drobne poprawki treści (do 2h/mc)</li>
                     </ul>
@@ -473,8 +456,8 @@
                     data-title="Starter Cloud (199 zł / mc)"
                     data-price="199 zł / miesiąc"
                     data-desc="Podstawowy pakiet bezobsługowego utrzymania strony dla małych firm."
-                    data-included="Hosting w chmurze, Certyfikat SSL, Miesięczny backup, Wprowadzanie poprawek tekstów/zdjęć do 2h w miesiącu"
-                    data-excluded="Obsługa domen zewnętrznych w cenie, Prace powyżej limitu 2h"
+                    data-included="Hosting w chmurze SSD (10 GB), Certyfikat SSL, Miesięczny backup, Wprowadzanie poprawek tekstów do 2h w miesiącu"
+                    data-excluded="Brak ochrony WAF przed atakami, Brak odnowienia domeny w cenie"
                     style="width: 100%; margin-top: 1.2rem;">Więcej szczegółów</button>
             </div>
 
@@ -484,17 +467,17 @@
                     <div class="plan-name">Business Ops</div>
                     <div class="plan-price">499 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Wszystko z pakietu Starter</li>
-                        <li>Cotygodniowy backup &amp; Domena .pl</li>
+                        <li>Szybki NVMe Cloud &amp; Domena .pl</li>
+                        <li>Cotygodniowy backup &amp; Ochrona WAF</li>
                         <li>Rozbudowa i wsparcie (do 5h/mc)</li>
                     </ul>
                 </div>
                 <button class="btn-primary open-modal-btn" 
                     data-title="Business Ops (499 zł / mc)"
                     data-price="499 zł / miesiąc"
-                    data-desc="Kompleksowa opieka techniczna i stałe rozwijanie funkcji witryny."
-                    data-included="Szybki hosting, SSL, Cotygodniowy backup, Wdrożenia nowości do 5h w miesiącu, Odnowienie domeny .pl w cenie, Priorytetowy kontakt"
-                    data-excluded="Prace programistyczne powyżej limitu 5h"
+                    data-desc="Kompleksowa opieka techniczna i wsparcie wydajnościowe dla sklepów i firm."
+                    data-included="Hosting NVMe (50 GB), SSL, Cotygodniowy backup, Zapora WAF przeciw atakom, Wdrożenia do 5h/mc, Odnowienie domeny .pl w cenie, Dostęp do środowiska Staging"
+                    data-excluded="Brak dedykowanego serwera izolowanego"
                     style="width: 100%; margin-top: 1.2rem;">Więcej szczegółów</button>
             </div>
 
@@ -503,24 +486,24 @@
                     <div class="plan-name">Pro Support</div>
                     <div class="plan-price">999 zł <span style="font-size: 0.75rem; color: var(--text-muted);">/mc</span></div>
                     <ul class="plan-list">
-                        <li>Wyższe zasoby serwerowe</li>
-                        <li>Codzienny backup danych</li>
+                        <li>Izolowany Serwer VPS / NVMe</li>
+                        <li>Codzienny backup &amp; Ochrona Bot/DDoS</li>
                         <li>Pakiet rozbudowy modułów (do 12h/mc)</li>
                     </ul>
                 </div>
                 <button class="btn-outline open-modal-btn" 
                     data-title="Pro Support (999 zł / mc)"
                     data-price="999 zł / miesiąc"
-                    data-desc="Dla aktywnych projektów i sklepów wymagających stałego wsparcia technicznego."
-                    data-included="Dedykowana optymalizacja, Codzienny backup, Pakiet 12 godzin pracy w miesiącu, Czas reakcji na awarie do 4 godzin"
-                    data-excluded="Godziny nie przechodzą na kolejny miesiąc"
+                    data-desc="Dla wymagających projektów potrzebujących wysokich zasobów i natychmiastowej reakcji."
+                    data-included="Dedykowana instancja VPS NVMe (200 GB), Codzienny backup, Ochrona Anti-DDoS i BotGuard, Pakiet 12h na rozwój w miesiącu, SLA reakcji do 4h, Kwartalny audyt bezpieczeństwa"
+                    data-excluded="Niewykorzystane godziny nie przechodzą na kolejny miesiąc"
                     style="width: 100%; margin-top: 1.2rem;">Więcej szczegółów</button>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 2.5rem;">
             <a href="pakiety-saas.html" class="btn-outline" style="border-color: var(--accent-orange); color: var(--accent-orange); text-decoration: none;">
-                📊 Otwórz Pełną Tabelę Porównawczą Pakietów SaaS →
+                📊 Otwórz Pełną Tabelę Porównawczną Pakietów SaaS →
             </a>
         </div>
     </section>
@@ -590,7 +573,7 @@
         </div>
     </div>
 
-    <!-- 6. FORMULARZ KONTAKTOWY (STYLIZOWANE MENU SELECT) -->
+    <!-- 6. FORMULARZ KONTAKTOWY -->
     <section class="section-container" id="kontakt">
         <div class="order-section">
             <div class="section-header-tag" style="text-align: left; color: var(--accent-blue);">// Zapytaj o ofertę</div>
