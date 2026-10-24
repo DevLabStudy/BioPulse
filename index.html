@@ -55,7 +55,7 @@
 
         .hero { max-width: 1300px; margin: 3.5rem auto 3rem auto; padding: 0 1.5rem; text-align: center; }
 
-        /* POPRAWIONE DWUKIERUNKOWE GRADIENTY DLA H1 */
+        /* PRECYZYJNE GRADIENTY DLA H1 */
         h1 { 
             font-size: clamp(2.2rem, 4.8vw, 4.2rem); 
             font-weight: 900; 
@@ -64,16 +64,18 @@
             text-align: center;
         }
 
+        /* Niebieski gaśnie szybciej idąc w prawo */
         .h1-top {
-            background: linear-gradient(90deg, var(--accent-blue) 0%, #70e4ff 45%, #ffffff 100%);
+            background: linear-gradient(90deg, var(--accent-blue) 0%, #33dbff 22%, #ffffff 65%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
         }
 
+        /* Pomarańczowy startuje z prawej strony od końca słowa 'biznesu' */
         .h1-bottom {
-            background: linear-gradient(90deg, var(--accent-orange) 0%, #ff8c00 45%, #ffffff 100%);
+            background: linear-gradient(270deg, var(--accent-orange) 0%, #ff8c00 25%, #ffffff 70%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
